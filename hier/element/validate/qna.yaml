@@ -1,0 +1,63 @@
+version: 3
+created_by: GMC2alg
+domain: turbointegrator
+seed_examples:
+- context: 'This process will review all elements in selected dimensions (you can
+    specify a single dimension, multiple dimensions or wildcards to match dimensions)
+    and hierarchies and will generate a `csv` file listing all elements with unusual
+    characters. Control dimensions are ignored. Note: - pDim: Specify which dimensions
+    to validate. When specifying a dimension name, wildcards can be specified by using
+    the `*` and `?` characters. A list of dimensions can also be entered with a delimiter
+    (e.g. `v*&plan*` will process all dimensions starting with `v` and `plan`). If
+    * is entered then it ignores anything entered for hierarchy (pHier) and processes
+    all dimensions - pHier: Specify which hierarchies to validate. To validate ALL
+    hierachies, enter *. When specifying a hierarchy name, wildcards can be specified
+    by using the `*` and `?` characters. A list of hierachies can also be entered
+    with a delimiter. If pHier has a value then it does not make sense that pDim can
+    be set up as a list or with wildcards. - pDelim: The delimiter is used when specifying
+    multiple dimensions or multiple hierachies. The default delimiter is `&`. Any
+    delimiter can be used by specifying a value for pDelim. Choose a delimiter that
+    won't be used in either the wildcard search strings or dimension names. - pFirst:
+    - When set to `1`: all requirements for all characters are validated. - ELSE:
+    ignores stringent requirements for 1st character.'
+  questions_and_answers:
+  - question: What does the Turbo Integrator Process do?
+    answer: The process reviews elements in specified dimensions and hierarchies to
+      generate a CSV file listing elements with unusual characters, ignoring control
+      dimensions.
+  - question: How do you specify dimensions in this process?
+    answer: Dimensions can be specified individually, as a list with delimiters, or
+      using wildcards like '*' and '?'.
+  - question: What is the role of the 'pFirst' parameter?
+    answer: When set to '1', it validates all character requirements; otherwise, it
+      ignores stringent requirements for the first character.
+- context: 'Entwickle einen IBM Turbo Integrator Prozess, der alle Elemente in ausgewählten
+    Dimensionen und Hierarchien überprüft und eine CSV-Datei erstellt, die alle Elemente
+    mit ungewöhnlichen Zeichen auflistet. Beachte, dass Steuerdimensionen ignoriert
+    werden. Die Parameter des Prozesses sind: - pDim: Gib an, welche Dimensionen validiert
+    werden sollen. Verwende Wildcards wie `*` und `?` für Muster oder eine Liste von
+    Dimensionen mit einem Trennzeichen. Der Stern `*` verarbeitet alle Dimensionen.
+    - pHier: Gib an, welche Hierarchien validiert werden sollen. Verwende `*` für
+    alle Hierarchien oder spezifische Muster. Beachte, dass bei Angabe von Hierarchien
+    pDim nicht als Liste oder mit Wildcards verwendet werden sollte. - pDelim: Bestimme
+    das Trennzeichen, um mehrere Dimensionen oder Hierarchien zu trennen. Der Standard
+    ist `&`, aber dies kann angepasst werden. - pFirst: Wenn `1`, werden alle Anforderungen
+    für alle Zeichen überprüft, sonst werden strenge Anforderungen für das erste Zeichen
+    ignoriert.'
+  questions_and_answers:
+  - question: Was macht der IBM Turbo Integrator Prozess?
+    answer: Der Prozess überprüft alle Elemente in ausgewählten Dimensionen und Hierarchien
+      und erstellt eine CSV-Datei, die alle Elemente mit ungewöhnlichen Zeichen auflistet.
+  - question: Welche Rolle spielt der Parameter 'pDelim' im Prozess?
+    answer: Der 'pDelim'-Parameter gibt das Trennzeichen an, um mehrere Dimensionen
+      oder Hierarchien zu trennen. Der Standard ist '&'.
+  - question: Wann wird der Parameter 'pFirst' verwendet und welche Funktion hat er?
+    answer: Wenn 'pFirst' auf '1' gesetzt ist, werden alle Anforderungen für alle
+      Zeichen überprüft. Ansonsten werden strenge Anforderungen für das erste Zeichen
+      ignoriert.
+document_outline: This document outlines the IBM Turbo Integrator Process which reviews
+  elements in selected dimensions and hierarchies, excluding control dimensions, to
+  generate a CSV file listing elements with unusual characters. Parameters like pDim,
+  pHier, pDelim, and pFirst guide the validation.
+document:
+  repo: https://raw.githubusercontent.com/GMC2alg/bedrockti/refs/heads/main/processes/%7Dbedrock.hier.elements.validate.ti

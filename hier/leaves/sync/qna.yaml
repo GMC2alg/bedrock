@@ -1,0 +1,83 @@
+version: 3
+created_by: GMC2alg
+domain: turbointegrator
+seed_examples:
+- context: The process aims to ensure that the Leaves hierarchy remains synchronized
+    with the main and alternate hierarchies of a dimension. It verifies that all leaf
+    elements are present in the Leaves hierarchy when compared to the dimensions and
+    hierarchies specified by the pDim and pHier parameters. Any missing leaf elements
+    are automatically added to the Leaves hierarchy. This process is useful for identifying
+    and addressing dimension issues during development or troubleshooting in production
+    instances.
+  questions_and_answers:
+  - question: What is the primary goal of this Turbo Integrator process?
+    answer: The primary goal is to ensure that the Leaves hierarchy is synchronized
+      with the main and alternate hierarchies of a dimension, containing all necessary
+      leaf elements.
+  - question: How does the process handle missing leaf elements?
+    answer: The process automatically adds any missing leaf elements to the Leaves
+      hierarchy.
+  - question: In which scenarios is this process particularly useful?
+    answer: The process is useful for identifying and addressing dimension issues
+      during development or troubleshooting in production instances.
+- context: The description elaborates that if the Leaves hierarchy becomes out of
+    sync and does not contain all leaf elements, the process will heal such dimensions
+    and restore the synced state. This ensures that all leaf elements from each hierarchy
+    also exist in the Leaves hierarchy of the specified dimension(s).
+  questions_and_answers:
+  - question: What happens if the Leaves hierarchy becomes out of sync?
+    answer: The process will heal the dimensions and restore the synced state to ensure
+      all leaf elements are present.
+  - question: What is expected of the Leaves hierarchy in relation to other hierarchies?
+    answer: The Leaves hierarchy should contain all leaf elements from all hierarchies
+      of a dimension.
+  - question: What does the process do if leaf elements are missing from the Leaves
+      hierarchy?
+    answer: It inserts the missing leaf elements into the Leaves hierarchy.
+- context: The process can handle both 'All dimensions' or a specific list of dimensions
+    and hierarchies, including filtering hierarchies as per the parameters provided.
+    It uses parameters like pDim and pHier to determine which dimensions and hierarchies
+    need to be checked and potentially updated.
+  questions_and_answers:
+  - question: What options does the process support for dimension and hierarchy selection?
+    answer: It supports handling both 'All dimensions' or a specific list of dimensions
+      and hierarchies.
+  - question: How does the process decide which dimensions and hierarchies to check?
+    answer: It uses parameters like pDim and pHier to determine the dimensions and
+      hierarchies to be checked.
+  - question: Does the process consider hierarchies not specified in the parameters?
+    answer: No, it only checks and updates the dimensions and hierarchies specified
+      by the parameters.
+- context: If the process encounters any errors, it is set to terminate with a major
+    error status. It logs error messages and can be configured for either strict error
+    handling, where it terminates immediately, or less strict handling where it attempts
+    to continue.
+  questions_and_answers:
+  - question: What happens if the process encounters an error?
+    answer: The process is set to terminate with a major error status and logs the
+      error messages.
+  - question: How does the process handle errors in strict error handling mode?
+    answer: In strict error handling mode, the process terminates immediately upon
+      encountering an error.
+  - question: Is less strict error handling supported by the process?
+    answer: Yes, under less strict error handling, the process attempts to continue
+      despite encountering errors.
+- context: The process outputs summary information that includes the number of dimensions
+    scanned and modified. It logs specific messages detailing the modifications made
+    to the dimensions, such as the addition of elements to the Leaves hierarchy or
+    the number of dimensions that were out of sync and corrected.
+  questions_and_answers:
+  - question: What summary information does the process provide?
+    answer: It provides information on the number of dimensions scanned and modified.
+  - question: Does the process log details about modifications made?
+    answer: Yes, it logs specific messages about modifications like adding elements
+      to the Leaves hierarchy.
+  - question: What does the process report on dimensions that were out of sync?
+    answer: It reports the number of dimensions that were out of sync and subsequently
+      corrected.
+document_outline: This document describes an IBM Turbo Integrator process to ensure
+  the synchronization of Leaves hierarchy with main and alternate hierarchies of a
+  dimension. It details the process's functionality, parameters, error handling, and
+  output logging.
+document:
+  repo: https://raw.githubusercontent.com/GMC2alg/bedrockti/refs/heads/main/processes/%7Dbedrock.hier.leaves.sync.ti

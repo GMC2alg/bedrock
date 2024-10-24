@@ -1,0 +1,42 @@
+version: 3
+created_by: GMC2alg
+domain: turbointegrator
+seed_examples:
+- context: This process will Export all Dimension elements in a Hierarchy to a File.
+    Export file maintains all data that can be used to completely reconstruct the
+    dimension. A custom record delimiter (specified by a character or its ASCII code)
+    can be used. The format of the file includes metadata, source dimension and hierarchy,
+    dimension sort order, reserved lines for future development, a header for elements
+    export, and elements export data.
+  questions_and_answers:
+  - question: What is the purpose of this process?
+    answer: The purpose of the process is to export all dimension elements in a hierarchy
+      to a file that can be used to completely reconstruct the dimension.
+  - question: How is the file format structured?
+    answer: The file format includes metadata, source dimension and hierarchy, dimension
+      sort order, reserved lines for future development, a header for elements export,
+      and elements export data.
+  - question: Can a custom delimiter be used, and how?
+    answer: Yes, a custom delimiter can be used, specified by a character or its ASCII
+      code.
+- context: The process should be used to back up the dimension before changes in the
+    productive environment or to quickly replicate a large dimension. A valid dimension
+    name, inclusion of a header, and legacy export format are mandatory; otherwise,
+    the process will abort. A custom delimiter might be specified for the parameter
+    pDelim as a single character or as a 3-digit ASCII code.
+  questions_and_answers:
+  - question: When should this process be used?
+    answer: This process should be used to back up the dimension before changes in
+      the productive environment or to quickly replicate a large dimension.
+  - question: What are the mandatory parameters for this process to run?
+    answer: A valid dimension name, inclusion of a header, and legacy export format
+      are mandatory for the process to run.
+  - question: How can a custom delimiter be specified?
+    answer: A custom delimiter can be specified as a single character or as a 3-digit
+      ASCII code for the parameter pDelim.
+document_outline: This document provides a description and instructions for an IBM
+  Turbo Integrator process that exports all dimension elements in a hierarchy to a
+  file, ensuring all data necessary for complete reconstruction is included. The process
+  also details the use of custom delimiters and mandatory parameters for proper execution.
+document:
+  repo: https://raw.githubusercontent.com/GMC2alg/bedrockti/refs/heads/main/processes/%7Dbedrock.hier.emptyconsols.delete.ti

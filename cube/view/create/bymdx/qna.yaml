@@ -1,0 +1,57 @@
+version: 3
+created_by: GMC2alg
+domain: turbointegrator
+seed_examples:
+- context: The IBM Turbo Integrator process is designed to create a dynamic view from
+    an MDX expression that evaluates to a non-empty set in the specified dimension.
+    This is suitable for development/prototyping or production environments. Its main
+    use cases include creating a view to zero out data and creating a view to be used
+    as a source for exporting or copying data. A valid cube name (pCube) is mandatory,
+    as the process will abort if not provided. If the MDX expression doesn't compile
+    or results in an empty set, the process will end with an error. The parameter
+    (pTemp) controls whether the view is temporary (value 1) or permanently retained
+    (value 0).
+  questions_and_answers:
+  - question: What is the main function of the IBM Turbo Integrator process?
+    answer: The main function of the IBM Turbo Integrator process is to create a dynamic
+      view from an MDX expression that evaluates to a non-empty set in the specified
+      dimension.
+  - question: What are the primary use cases for this IBM Turbo Integrator process?
+    answer: The primary use cases include creating a view to zero out data and creating
+      a view as a source for exporting or copying data.
+  - question: What happens if a valid cube name is not provided in this process?
+    answer: If a valid cube name (pCube) is not provided, the process will abort.
+- context: A valid cube name is essential for the IBM Turbo Integrator process to
+    run. If the MDX expression does not compile or results in an empty set, this will
+    result in an error. The pTemp parameter allows users to specify if the view should
+    be temporary or permanent, with 1 indicating temporary and 0 indicating permanent.
+  questions_and_answers:
+  - question: Why is a valid cube name necessary for the process?
+    answer: A valid cube name is necessary because the process will abort without
+      it.
+  - question: What does the parameter pTemp control?
+    answer: The parameter pTemp controls whether the view is temporary (value 1) or
+      permanently retained (value 0).
+  - question: What error condition could occur with the MDX expression?
+    answer: An error will occur if the MDX expression does not compile or results
+      in an empty set.
+- context: In this Turbo Integrator process, it's crucial to validate parameters such
+    as pCube, pView, and pMDXExpr to ensure the process executes correctly. The process
+    includes error handling and logging to capture any issues that arise. If an error
+    is detected, the system can either quit or break the process based on strict error
+    handling settings.
+  questions_and_answers:
+  - question: What parameters need validation in the Turbo Integrator process?
+    answer: The parameters that need validation include pCube, pView, and pMDXExpr.
+  - question: How does the process handle errors?
+    answer: The process includes error handling and logging to capture any issues.
+      It can either quit or break the process depending on the strict error handling
+      settings.
+  - question: What is pStrictErrorHandling's role in this process?
+    answer: pStrictErrorHandling determines whether the process quits or breaks when
+      errors are detected.
+document_outline: This document describes the function and usage of an IBM Turbo Integrator
+  process designed to create dynamic views from MDX expressions, including parameter
+  validation, error handling, and logging.
+document:
+  repo: https://raw.githubusercontent.com/GMC2alg/bedrockti/refs/heads/main/processes/%7Dbedrock.cube.view.create.bymdx.ti

@@ -1,0 +1,35 @@
+version: 3
+created_by: GMC2alg
+domain: turbointegrator
+seed_examples:
+- context: 'This process will Add or Remove Element from a Consolidation in a Hierarchy.
+    Valid dimension name (pDim), consolidated element name (pTgtConsol) and element
+    name (pEle) otherwise the process will abort. Mode can be either Add to add or
+    Remove to remove the element from a consolidation. Caution: Target hierarchy cannot
+    be 'Leaves'.'
+  questions_and_answers:
+  - question: What does the process do?
+    answer: The process adds or removes an element from a consolidation in a hierarchy.
+  - question: What are the valid input parameters for this process?
+    answer: The valid input parameters are a dimension name (pDim), consolidated element
+      name (pTgtConsol), and an element name (pEle).
+  - question: What modes can be used in this process?
+    answer: The modes that can be used are 'Add' to add or 'Remove' to remove the
+      element from a consolidation.
+- context: 'If a hierarchy has been passed as a dimension, it will handle the input
+    error by splitting dim:hier into dimension & hierarchy. Validate dimension: If
+    Trim(pDim) is empty, an error is logged stating no dimension specified. If the
+    dimension does not exist, an error is logged.'
+  questions_and_answers:
+  - question: How does the process handle a hierarchy passed as a dimension?
+    answer: It handles the input error by splitting dim:hier into dimension & hierarchy.
+  - question: What happens if no dimension is specified?
+    answer: If no dimension is specified, an error is logged stating 'No dimension
+      specified.'
+  - question: What occurs if the specified dimension does not exist?
+    answer: An error is logged stating that the dimension does not exist on the server.
+document_outline: The document outlines the functionality and operations of a Turbo
+  Integrator process for managing elements within consolidations, detailing parameters
+  and handling errors.
+document:
+  repo: https://raw.githubusercontent.com/GMC2alg/bedrockti/refs/heads/main/processes/%7Dbedrock.hier.element.move.ti

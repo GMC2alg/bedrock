@@ -1,0 +1,95 @@
+version: 3
+created_by: GMC2alg
+domain: turbointegrator
+seed_examples:
+- context: 'This process will swap the values of the nominated alias with the principal
+    name for all elements of the target dimension. Use case: Strictly for development/prototyping
+    scenarios. This process should **not be used** in a production environment. The
+    SwapAliasWithPrincipalName function is **not supported** for alternate hierarchies.
+    Therefore, this process checks for the existence of alternate hierarchies and
+    if any exist for the target dimension, then the process will abort. Use with care.
+    This process works, however, the underlying SwapAliasWithPrincipalName function
+    has never been officially documented or supported by IBM.'
+  questions_and_answers:
+  - question: What is the primary purpose of the Turbo Integrator process described?
+    answer: The primary purpose of the process is to swap the values of the nominated
+      alias with the principal name for all elements of the target dimension.
+  - question: Is the Turbo Integrator process safe to use in production environments?
+    answer: No, the process is intended strictly for development/prototyping scenarios
+      and should not be used in a production environment.
+  - question: What happens if alternate hierarchies exist for the target dimension?
+    answer: If alternate hierarchies exist for the target dimension, the process will
+      abort since the SwapAliasWithPrincipalName function is not supported for alternate
+      hierarchies.
+- context: "Global Variables and Constants: StringGlobalVariable('sProcessReturnCode');
+    NumericGlobalVariable('nProcessReturnCode'); nProcessReturnCode = 0; Constants
+    are defined for the process's name, timestamp, random integer, debug file, cube
+    attribute, user name, error level, error content, log info, dimension, and subset.
+    These constants are used throughout the script to maintain consistency and reduce
+    errors"
+  questions_and_answers:
+  - question: What are the global variables defined in the process?
+    answer: The global variables defined are 'sProcessReturnCode' as a string and
+      'nProcessReturnCode' as a numeric value, initialized to 0.
+  - question: Why does the process define constants?
+    answer: Constants are defined to maintain consistency and reduce errors by providing
+      fixed references for the process's name, timestamp, random integer, debug file,
+      cube attribute, user name, error level, error content, log info, dimension,
+      and subset.
+  - question: What is the purpose of the random integer constant?
+    answer: The random integer constant is likely used in the creation of unique file
+      names or identifiers within the process to ensure each instance can be uniquely
+      tracked or logged.
+- context: Parameter validation checks are vital to ensure that dimensions and aliases
+    are properly defined and exist within the model before proceeding with the swap
+    operation. Errors encountered during validation are logged using the specified
+    error level and content format. If strict error handling is enabled, the process
+    will quit or break upon encountering errors.
+  questions_and_answers:
+  - question: Why is parameter validation important in this process?
+    answer: Parameter validation ensures that dimensions and aliases are properly
+      defined and exist within the model, preventing potential errors that could affect
+      the swap operation.
+  - question: What happens if a parameter validation error is encountered?
+    answer: Errors encountered during validation are logged. If strict error handling
+      is enabled, the process will either quit or break upon encountering errors.
+  - question: How does the process handle error logging?
+    answer: Error logging is performed using a specified error level and content format,
+      which helps in diagnosing issues by providing detailed information about the
+      errors encountered.
+- context: The main operation performed by this process is the SwapAliasWithPrincipalName
+    function which swaps dimension element names for the specified alias. This function
+    is called after all validations are successful, ensuring that the operation proceeds
+    with correct parameters.
+  questions_and_answers:
+  - question: What is the main operation performed by the Turbo Integrator process?
+    answer: The main operation is performed by the SwapAliasWithPrincipalName function,
+      which swaps dimension element names for the specified alias.
+  - question: When is the SwapAliasWithPrincipalName function called in the process?
+    answer: The function is called after all parameter validations are successful
+      to ensure that the operation proceeds with correct parameters.
+  - question: What is the significance of ensuring successful validations before calling
+      the SwapAliasWithPrincipalName function?
+    answer: Ensuring successful validations ensures that the function operates on
+      valid and intended parameters, reducing the risk of errors during the name swap
+      operation.
+- context: Post-process handling determines the outcome based on whether errors were
+    encountered. If errors are found, an error message is logged and the process return
+    code is set accordingly. If the process completes successfully, an informational
+    message is logged, indicating the successful swap of principal element names.
+  questions_and_answers:
+  - question: How does the process handle the outcome if errors are encountered?
+    answer: If errors are encountered, an error message is logged, and the process
+      return code is set to indicate the errors.
+  - question: What happens if the process completes successfully without errors?
+    answer: An informational message is logged, indicating the successful swap of
+      principal element names, and the process return code is updated to reflect success.
+  - question: Why is it important to log messages regarding the process's outcome?
+    answer: Logging messages about the process's outcome provides transparency and
+      a record of what occurred, aiding in troubleshooting and ensuring stakeholders
+      are informed.
+document_outline: This document details the implementation and usage of an IBM Turbo
+  Integrator process to swap alias values with principal names for dimension elements,
+  strictly for development/prototyping scenarios.
+document:
+  repo: https://raw.githubusercontent.com/GMC2alg/bedrockti/refs/heads/main/processes/%7Dbedrock.dim.attr.swapalias.ti

@@ -1,0 +1,45 @@
+version: 3
+created_by: GMC2alg
+domain: turbointegrator
+seed_examples:
+- context: IBM Turbo Integrator process facilitates the automation of data loading,
+    transformations, and other tasks in a TM1 environment. The process described involves
+    validating input parameters, handling potential errors, switching transaction
+    logging off during certain operations, zeroing out data in a target cube, creating
+    a new view for data processing, and restoring the transaction logging state at
+    the end. It involves logging information and error messages, thereby providing
+    a structured way to manage data processes efficiently. This is particularly useful
+    in scenarios where automated data transformations and validations are required
+    periodically or in response to specific triggers.
+  questions_and_answers:
+  - question: What is the purpose of the IBM Turbo Integrator process?
+    answer: The IBM Turbo Integrator process automates data loading, transformations,
+      and other tasks in a TM1 environment.
+  - question: What tasks does the Turbo Integrator process handle?
+    answer: It handles tasks such as validating input parameters, error management,
+      switching transaction logging, zeroing out data in a target cube, and creating
+      new data views.
+  - question: Why is transaction logging switched off in this process?
+    answer: Transaction logging is switched off during certain operations to improve
+      performance and ensure that temporary changes do not trigger unnecessary logs.
+- context: The IBM Turbo Integrator process includes a section for error handling
+    and validating parameters. Errors related to missing or invalid source or target
+    cubes can cause the process to stop or break if strict error handling is enabled.
+    The process also validates parameters like pLogOutput and pTemp, toggling them
+    between specific values. This flow ensures that the process does not proceed with
+    incorrect data or parameters, maintaining data integrity and consistency.
+  questions_and_answers:
+  - question: How does the IBM Turbo Integrator process handle errors related to source
+      or target cubes?
+    answer: It stops or breaks the process if there are errors related to missing
+      or invalid source or target cubes, especially if strict error handling is enabled.
+  - question: What is validated in this process apart from cube names?
+    answer: The process also validates parameters like pLogOutput and pTemp, ensuring
+      they are set to specific values.
+  - question: Why is parameter validation important in this process?
+    answer: Parameter validation is crucial to prevent the process from proceeding
+      with incorrect data, thereby maintaining data integrity and consistency.
+document_outline: Description and use-case of the IBM Turbo Integrator process, outlining
+  its role in data automation, validation, and transformation within a TM1 environment.
+document:
+  repo: https://raw.githubusercontent.com/GMC2alg/bedrockti/refs/heads/main/processes/%7Dbedrock.process.template.ti

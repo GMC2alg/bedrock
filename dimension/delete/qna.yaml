@@ -1,0 +1,85 @@
+version: 3
+created_by: GMC2alg
+domain: turbointegrator
+seed_examples:
+- context: This process deletes a dimension, list of dimensions, or set of dimensions
+    specified by wildcard name match. It is intended for development/prototyping and
+    can be used during active agile development to remove dimensions due to renaming,
+    change of requirements, etc. It can also be used to clean up unused dimensions
+    prior to system Go Live. A valid dimension name pDim or list thereof is mandatory;
+    otherwise, the process will abort. Attribute dimensions are excluded since they
+    are automatically cleaned up by removing the base dimension.
+  questions_and_answers:
+  - question: What is the purpose of this process?
+    answer: The process is intended for development or prototyping, especially during
+      agile development, to remove dimensions due to renaming or change of requirements.
+      It can also be used to clean up unused dimensions before the system Go Live.
+  - question: What happens if a valid dimension name is not provided?
+    answer: If a valid dimension name pDim or list thereof is not provided, the process
+      will abort.
+  - question: Are attribute dimensions included in the deletion process?
+    answer: No, attribute dimensions are excluded because they are automatically cleaned
+      up by removing the base dimension.
+- context: Global variables include sProcessReturnCode and nProcessReturnCode with
+    nProcessReturnCode initialized to 0. Constants such as cThisProcName, cUserName,
+    cTimeStamp, cRandomInt, cTempSub, cMsgErrorLevel, and cMsgErrorContent are defined
+    to facilitate logging and process monitoring.
+  questions_and_answers:
+  - question: What is the purpose of global variables in the process?
+    answer: Global variables like sProcessReturnCode and nProcessReturnCode are used
+      to track the process execution status, with nProcessReturnCode initialized to
+      0 to indicate no errors initially.
+  - question: What constants are used for logging and monitoring the process?
+    answer: Constants such as cThisProcName, cUserName, cTimeStamp, cRandomInt, cTempSub,
+      cMsgErrorLevel, and cMsgErrorContent are used for logging and monitoring purposes.
+  - question: How is random integer generation used in the process?
+    answer: A random integer is generated and assigned to cRandomInt to create unique
+      identifiers for temporary subsets during the process.
+- context: The process validates the parameters to ensure a dimension is specified.
+    If no dimension is specified (pDim is empty), an error message is logged, and
+    the process either quits or breaks based on the strict error handling setting.
+  questions_and_answers:
+  - question: Why is parameter validation important in this process?
+    answer: Parameter validation is essential to ensure that a valid dimension or
+      list of dimensions is specified for deletion. Without a valid pDim, the process
+      cannot proceed and must halt.
+  - question: What occurs if the pDim parameter is empty?
+    answer: If the pDim parameter is empty, an error message is logged, indicating
+      that no dimension was specified. The process then either quits or breaks, depending
+      on the strict error handling setting.
+  - question: How is error handling managed in the process?
+    answer: Error handling is managed by logging appropriate error messages and controlling
+      the process flow either by quitting or breaking based on the strict error handling
+      setting.
+- context: Dimensions are deleted by looping through the specified dimensions in pDim.
+    If a dimension exists and is not used in a cube, it is destroyed. Otherwise, an
+    error message is logged, and the dimension is not deleted.
+  questions_and_answers:
+  - question: How are dimensions deleted if they exist and are not used?
+    answer: Dimensions that exist and are not used in any cubes are deleted by invoking
+      the DimensionDestroy function.
+  - question: What happens if a dimension is used in a cube?
+    answer: If a dimension is used in a cube, it is not deleted, and an error message
+      is logged specifying the cube(s) in which the dimension is used.
+  - question: What function is used to delete an existing dimension?
+    answer: The function used to delete an existing dimension is DimensionDestroy.
+- context: The process incorporates the use of a temporary subset created with a specified
+    wildcard to handle multiple dimensions dynamically. LogOutput is used to record
+    process actions and any errors encountered during execution.
+  questions_and_answers:
+  - question: How does the process handle multiple dimensions specified by a wildcard?
+    answer: The process creates a temporary subset using the specified wildcard to
+      loop through and delete multiple dimensions dynamically.
+  - question: What role does LogOutput play in the process?
+    answer: LogOutput is utilized to record process actions, including information
+      and error messages, facilitating monitoring and debugging of the process.
+  - question: How are temporary subsets managed within the process?
+    answer: Temporary subsets are created using specific MDX queries with a wildcard
+      for dimension matching, and they are utilized to delete dimensions dynamically
+      without modifying existing subsets.
+document_outline: The document provides a detailed explanation of an IBM Turbo Integrator
+  process designed to delete dimensions or lists of dimensions based on wildcard name
+  matches. It includes the purpose, parameter validations, error handling, dimension
+  deletion logic, and the use of temporary subsets.
+document:
+  repo: https://raw.githubusercontent.com/GMC2alg/bedrockti/refs/heads/main/processes/%7Dbedrock.dim.delete.ti

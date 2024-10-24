@@ -1,0 +1,38 @@
+version: 3
+created_by: GMC2alg
+domain: turbointegrator
+seed_examples:
+- context: Develop an IBM Turbo Integrator process that saves all data to disk. This
+    process should be used in a production environment. It can be executed multiple
+    times a day during the planning cycle. Note that depending on the time elapsed
+    since the last data save, this operation can take several seconds or even minutes.
+    Therefore, it should ideally be scheduled during a lunch break.
+  questions_and_answers:
+  - question: What is the purpose of the IBM Turbo Integrator process described?
+    answer: The purpose of the IBM Turbo Integrator process is to save all data to
+      disk in a production environment.
+  - question: How often can the IBM Turbo Integrator process be executed?
+    answer: The process can be executed multiple times a day during the planning cycle.
+  - question: When is the ideal time to schedule the IBM Turbo Integrator process?
+    answer: The ideal time to schedule the process is during a lunch break to minimize
+      impact on operations.
+- context: The process will Save All Data to disk. It is intended for production and
+    can be run multiple times a day during the planning cycle. Depending on how long
+    since the last data save, this could take several seconds if not minutes, so it
+    should ideally be scheduled over a lunch break.
+  questions_and_answers:
+  - question: What is the main function of this Turbo Integrator code?
+    answer: The main function of this Turbo Integrator code is to save all data to
+      disk.
+  - question: For which environment is the Turbo Integrator process intended?
+    answer: The Turbo Integrator process is intended for a production environment.
+  - question: Why should the Turbo Integrator process be scheduled during a lunch
+      break?
+    answer: It should be scheduled during a lunch break because depending on the time
+      since the last data save, it may take several seconds or minutes, minimizing
+      disruption.
+document_outline: Instructions for creating an IBM Turbo Integrator process to persistently
+  save all data to disk, suitable for use in production settings and optimized for
+  scheduling around operational downtimes.
+document:
+  repo: https://raw.githubusercontent.com/GMC2alg/bedrockti/refs/heads/main/processes/%7Dbedrock.server.savedataall.ti

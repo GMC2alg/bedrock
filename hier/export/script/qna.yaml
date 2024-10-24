@@ -1,0 +1,56 @@
+version: 3
+created_by: GMC2alg
+domain: turbointegrator
+seed_examples:
+- context: 'Develop an IBM Turbo Integrator process that exports a dimension with
+    its hierarchies into a TurboIntegrator script. This should not include a CSV export
+    but should create a hard-coded TurboIntegrator script that exports the dimension/hierarchy
+    with complete rollup structures, attribute values, subsets, and metadata information,
+    such as sort order, MDX hierarchy names, levels, and captions. The process should
+    be useful for automatic script generation for migration purposes, without the
+    need for any data source or other process parameters. This is particularly useful
+    in environments without file system access and for manually defined dimensions.
+    Consider the following parameters: pDim for filtering the dimensions/hierarchies
+    to be exported, pEle for limiting the elements for export, pDimInfo for including
+    metadata, pAttr and pAttrVal for attribute creation and values, and pSub for subset
+    definitions.'
+  questions_and_answers:
+  - question: What is the primary function of the IBM Turbo Integrator process described?
+    answer: The primary function is to export a dimension with its hierarchies into
+      a hard-coded TurboIntegrator script, including rollup structures, attribute
+      values, subsets, and metadata information.
+  - question: What parameters are considered in the IBM Turbo Integrator process?
+    answer: The parameters considered include pDim for filtering dimensions/hierarchies,
+      pEle for limiting export elements, pDimInfo for metadata inclusion, pAttr and
+      pAttrVal for attributes, and pSub for subset definitions.
+  - question: Why is this process particularly useful in certain environments?
+    answer: It is useful in environments without file system access and for manually
+      defined dimensions, as it automates script generation without needing a data
+      source or other process parameters.
+- context: '#Section Prolog
+
+
+    This process exports a dimension hierarchies as TurboIntegrator script. This is
+    rather than creating a CSV which can be read by a generic TurboIntegrator process
+    this process creates a hardcoded TurboIntegrator process to create a dimension/hierarchy
+    complete with rollup structure, attribute values, subsets and metadata information
+    such as sort order, MDX hierarchy names and levels and captions.
+
+
+    ...'
+  questions_and_answers:
+  - question: What type of script does the TurboIntegrator process generate?
+    answer: It generates a hardcoded TurboIntegrator script to create a dimension/hierarchy
+      complete with rollup structure, attribute values, subsets, and metadata information.
+  - question: Why doesn't the TurboIntegrator process create a CSV?
+    answer: Instead of creating a CSV, it creates a hardcoded script for exporting
+      the dimension, which is useful for automating script creation without a data
+      source.
+  - question: How does the TurboIntegrator process handle dimensions?
+    answer: The process uses parameters like pDim for filtering dimensions/hierarchies
+      and pEle for limiting the scope of elements included in the export.
+document_outline: The document describes a TurboIntegrator process for exporting IBM
+  TM1 dimensions, detailing the script's creation and the process' parameters for
+  effective use in various environments.
+document:
+  repo: https://raw.githubusercontent.com/GMC2alg/bedrockti/refs/heads/main/processes/%7Dbedrock.hier.export.script.ti

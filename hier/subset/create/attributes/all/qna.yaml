@@ -1,0 +1,44 @@
+version: 3
+created_by: GMC2alg
+domain: turbointegrator
+seed_examples:
+- context: 'This process will create a static subset in the hierarchy of a dimension
+    that consists of all elements with pAttr attribute value equivalent to pAttrValue.
+    Note: This process uses modification parameters to determine what to include in
+    the subset: - pAttr: If specified, only elements that have a value equivalent
+    to pAttrValue will be included in the subset. If blank, this filter will be ignored.
+    - pExclusions: If pExclusions is specified then the elements (separated by a delimiter)
+    will be excluded from the subset. Wildcard characters `*` and `?` are accepted.
+    - pAddToSubset: If the specified subset already exists then this parameter will
+    control whether elements will be added to the existing subset (value 1) or a new
+    subset will be created (value 0).'
+  questions_and_answers:
+  - question: What does the Turbo Integrator process create?
+    answer: The process creates a static subset in the hierarchy of a dimension consisting
+      of elements with a specified attribute value.
+  - question: How does the parameter pAttr affect the subset creation?
+    answer: The pAttr parameter, if specified, limits the subset to elements with
+      values equivalent to pAttrValue. If left blank, this filter is ignored.
+  - question: What role does pAddToSubset play in subset creation?
+    answer: The pAddToSubset parameter determines whether elements are added to an
+      existing subset (if 1) or if a new subset is created (if 0).
+- context: 'Develop an IBM Turbo Integrator process that creates a static subset in
+    a hierarchy of a dimension with elements having a pAttr attribute value matching
+    pAttrValue. Note this process uses specific parameters: pAttr for filtering by
+    attribute value, pExclusions for excluding specific elements, and pAddToSubset
+    for managing existing subsets.'
+  questions_and_answers:
+  - question: What parameters are used to customize the subset creation?
+    answer: The parameters include pAttr for filtering by attribute value, pExclusions
+      for excluding elements, and pAddToSubset for managing existing subsets.
+  - question: Why is pExclusions important in the subset creation?
+    answer: pExclusions is used to specify elements that should be excluded from the
+      subset, and supports wildcards like `*` and `?`.
+  - question: What happens if pAttr is left blank?
+    answer: If pAttr is left blank, the filter is ignored, and no limitation based
+      on attribute value is applied during subset creation.
+document_outline: This document provides instructions for an IBM Turbo Integrator
+  process that creates a static subset in a dimension hierarchy, emphasizing the use
+  of parameters for customization.
+document:
+  repo: https://raw.githubusercontent.com/GMC2alg/bedrockti/refs/heads/main/processes/%7Dbedrock.hier.sub.create.attribute.all.ti

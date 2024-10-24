@@ -1,0 +1,56 @@
+version: 3
+created_by: GMC2alg
+domain: turbointegrator
+seed_examples:
+- context: 'The Turbo Integrator process is designed to export data from a specified
+    cube to a flat file for a given 'slice' (any dimension/element combination).
+    This process is intended for both development/prototyping and production environments.
+    The main use cases include exporting data for inclusion in another TM1 model to
+    eliminate locking possibilities and exporting data for processing in an ERP system.
+    Note: A valid cube name (pCube) is required, otherwise, the process will abort.
+    All other parameters are optional, but the filter (pFilter) should be specified
+    to limit the file size. The default output path is the same as the error file
+    path. As this TI uses a view as a data source, implicit variables such as NValue,
+    SValue, and Value_is_String are necessary. To edit this TI in Architect, a temporary
+    cube with at least 24 dimensions is needed as the preview data source or the data
+    source should be set to ASCII and the TI file should be manually edited to add
+    back the required implicit view variables.'
+  questions_and_answers:
+  - question: What is the purpose of the Turbo Integrator process?
+    answer: The Turbo Integrator process is designed to export data from a specified
+      cube to a flat file for a given 'slice' (any dimension/element combination)
+      and is used for development/prototyping or in production environments.
+  - question: What happens if a valid cube name is not specified?
+    answer: If a valid cube name (pCube) is not specified, the process will abort.
+  - question: What should be done to edit this TI in Architect?
+    answer: To edit this TI in Architect, a temporary cube with at least 24 dimensions
+      is needed as the preview data source, or the data source should be set to ASCII
+      and the TI file should be manually edited to add back the required implicit
+      view variables.
+- context: 'If using the pFilterParallel parameter, the single dimension used as the
+    'parallelization slicer' cannot appear in the pFilter parameter. When using
+    parallelization via the *RunProcess* function, the elements listed in pFilterParallel
+    will be split one at a time and passed to a recursive call of the process being
+    added to pFilter. Each element name will also be appended to the filename. Warning:
+    As the *RunProcess* function currently has no mechanism to check the state of
+    the called process if more processes are released than available CPU cores on
+    the server, then this could lead to TM1 consuming all available server resources
+    and an associated performance issue.'
+  questions_and_answers:
+  - question: Can the parallelization slicer dimension appear in the pFilter parameter?
+    answer: No, the single dimension used as the 'parallelization slicer' cannot appear
+      in the pFilter parameter if using the pFilterParallel parameter.
+  - question: What happens when using parallelization via the *RunProcess* function?
+    answer: When using parallelization via the *RunProcess* function, the elements
+      listed in pFilterParallel will be split one at a time, and added to pFilter,
+      with each element name appended to the filename.
+  - question: What is a potential risk of using the *RunProcess* function without
+      proper checks?
+    answer: The potential risk is consuming all available server resources and causing
+      a performance issue if more processes are released than the available CPU cores
+      on the server.
+document_outline: The document provides an overview of a Turbo Integrator code used
+  to export data from TM1 cubes to flat files, including usage cases, parameter validations,
+  and cautions regarding parallel processing.
+document:
+  repo: https://raw.githubusercontent.com/GMC2alg/bedrockti/refs/heads/main/processes/%7Dbedrock.cube.data.export.ti

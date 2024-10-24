@@ -1,0 +1,71 @@
+version: 3
+created_by: GMC2alg
+domain: turbointegrator
+seed_examples:
+- context: 'This process will delete specified or all elements from a dimension Hierarchy.
+    Elements might be specified as a delimited list of elements. Each member in the
+    list might be specified exactly or by a wildcard pattern. Wildcards '*' and
+    '?' are accepted. Caution: When pEle is set to *, __all__ elements in pHier
+    will be deleted!'
+  questions_and_answers:
+  - question: What does the process do?
+    answer: The process deletes specified or all elements from a dimension hierarchy.
+  - question: How can elements be specified for deletion?
+    answer: Elements can be specified as a delimited list of elements, each member
+      of which might be specified exactly or by a wildcard pattern.
+  - question: What is the cautionary note when using the process?
+    answer: When pEle is set to '*', all elements in the hierarchy will be deleted.
+- context: Parameters such as dimension, hierarchy, and elements can contain wildcards
+    '*' and '?'. If a wildcard is used, a subset of dimensions or elements is created,
+    which the process loops through for element deletion.
+  questions_and_answers:
+  - question: What symbols are used as wildcards?
+    answer: The symbols '*' and '?' are used as wildcards.
+  - question: What happens when wildcards are used in parameter specifications?
+    answer: A subset of dimensions or elements is created, and the process loops through
+      these for deletion.
+  - question: Are wildcards allowed in parameter specifications?
+    answer: Yes, both '*' and '?' are allowed as wildcards in parameter specifications.
+- context: 'The process includes logging for errors and actions depending on the log
+    output parameter setting. If there are errors or important actions, the process
+    logs these messages with the appropriate level: 'ERROR' or 'INFO'.'
+  questions_and_answers:
+  - question: How does the process handle errors and actions?
+    answer: The process logs errors and actions using messages with levels 'ERROR'
+      and 'INFO', depending on the log output parameter setting.
+  - question: What log levels are used in the process?
+    answer: The process uses 'ERROR' and 'INFO' as log levels.
+  - question: What triggers logging within the process?
+    answer: Errors or significant actions trigger logging within the process.
+- context: The input for dimension and hierarchy should not include wildcards, except
+    when creating subsets dynamically for deletion loops. Proper handling of errors
+    involves quitting or breaking the process based on strict error handling settings.
+  questions_and_answers:
+  - question: Can wildcards be used in every parameter?
+    answer: Wildcards should not be used in every parameter, except when creating
+      subsets dynamically for deletion loops.
+  - question: What should happen when an error occurs during the process?
+    answer: Upon error occurrence, the process should either quit or break based on
+      the strict error handling settings.
+  - question: How are inputs for dimensions and hierarchies typically handled?
+    answer: Inputs should not include wildcards unless dynamically creating subsets
+      for deletion loops.
+- context: The process employs several global variables and constants for constructing
+    unique temporary subset names, user information, error messages, and information
+    messages. Additionally, it makes use of logical constructs to ensure proper execution
+    flow.
+  questions_and_answers:
+  - question: What are global variables and constants used for in the process?
+    answer: They are used for constructing unique temporary subset names, storing
+      user information, and formatting error and information messages.
+  - question: What role do logical constructs have in the process?
+    answer: Logical constructs ensure proper execution flow and decision-making within
+      the process.
+  - question: Why are temporary subset names constructed uniquely?
+    answer: Unique temporary subset names are constructed to ensure no conflicts and
+      correct execution during the process.
+document_outline: This document outlines the usage, functionality, parameters, and
+  cautionary details of an IBM Turbo Integrator process for deleting elements from
+  dimension hierarchies.
+document:
+  repo: https://raw.githubusercontent.com/GMC2alg/bedrockti/refs/heads/main/processes/%7Dbedrock.hier.element.delete.ti

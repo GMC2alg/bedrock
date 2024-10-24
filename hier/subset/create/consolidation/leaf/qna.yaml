@@ -1,0 +1,56 @@
+version: 3
+created_by: GMC2alg
+domain: turbointegrator
+seed_examples:
+- context: 'This process will create a static subset in a Hierarchy of target Dimension
+    that consists of all leaf descendants of a specified consolidated element.
+
+    Note: - pExclusions: If pExclusions is specified then the elements (separated
+    by a delimiter) will be excluded from the subset. Wildcards characters `*` and
+    `?` are accepted.
+
+    - pAddToSubset : If the specified subset already exists then this parameter will
+    control whether elements will be added to the existing subset (value 1) or a new
+    subset will be created (value 0).'
+  questions_and_answers:
+  - question: What does the Turbo Integrator process create?
+    answer: The process creates a static subset in a hierarchy of a target dimension
+      consisting of all leaf descendants of a specified consolidated element.
+  - question: How can elements be excluded from the subset?
+    answer: Elements can be excluded from the subset by specifying them in the pExclusions
+      parameter, separated by a delimiter. Wildcard characters `*` and `?` are accepted.
+  - question: What happens if the specified subset already exists?
+    answer: If the specified subset already exists, the pAddToSubset parameter will
+      control the process. If set to 1, elements will be added to the existing subset;
+      if set to 0, a new subset will be created.
+- context: IF( pTemp <> 0 & pTemp <> 1 ); nErrors = 1; sMessage = 'Wrong parameter
+    pTemp value (only 0 or 1 accepted).'; LogOutput( cMsgErrorLevel, Expand( cMsgErrorContent
+    ) ); EndIf;
+  questions_and_answers:
+  - question: What values are acceptable for the pTemp parameter?
+    answer: The values acceptable for the pTemp parameter are 0 and 1.
+  - question: What happens if pTemp is set to a value other than 0 or 1?
+    answer: If pTemp is set to a value other than 0 or 1, it results in an error,
+      and an error message is logged.
+  - question: What is the content of the error message if pTemp is incorrect?
+    answer: The error message states 'Wrong parameter pTemp value (only 0 or 1 accepted).'
+- context: ExecuteProcess( '}bedrock.hier.sub.create', 'pLogOutput', pLogOutput, 'pStrictErrorHandling',
+    pStrictErrorHandling, 'pDim', pDim, 'pHier', pHier, 'pSub', pSub, 'pConsol', pConsol,
+    'pAttr', ', 'pAttrValue', ', 'pLevelFrom', 0, 'pLevelTo', 0, 'pExclusions',
+    pExclusions, 'pDelim', pDelim, 'pAddToSubset', pAddToSubset, 'pAlias', pAlias,
+    'pTemp', pTemp);
+  questions_and_answers:
+  - question: Which process is executed within this Turbo Integrator script?
+    answer: The process executed within the script is '}bedrock.hier.sub.create'.
+  - question: What parameters are passed to the ExecuteProcess function?
+    answer: Parameters passed include 'pLogOutput', 'pStrictErrorHandling', 'pDim',
+      'pHier', 'pSub', 'pConsol', 'pExclusions', 'pDelim', 'pAddToSubset', 'pAlias',
+      and 'pTemp'.
+  - question: What is the significance of 'pDelim' in the ExecuteProcess function?
+    answer: The 'pDelim' parameter specifies the delimiter used for separating elements
+      in exclusions or other relevant lists within the process.
+document_outline: This document provides an overview of a Turbo Integrator process
+  designed to create a static subset in a target dimension. It describes the handling
+  of exclusions, the parameter to add to existing subsets, and error handling procedures.
+document:
+  repo: https://raw.githubusercontent.com/GMC2alg/bedrockti/refs/heads/main/processes/%7Dbedrock.hier.sub.create.consolidation.leaf.ti

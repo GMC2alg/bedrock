@@ -1,0 +1,93 @@
+version: 3
+created_by: GMC2alg
+domain: turbointegrator
+seed_examples:
+  - context:
+      This process automatically creates a cube based on a delimited string of
+      dimension names. Intended for development/prototyping, it can be used to quickly
+      create a cube for a demo or development. The pDims parameter contains the dimension
+      list and is mandatory. The format of the pDims parameter uses '&' as a delimiter
+      (e.g. Dim1 & Dim2 & Dim3). Spaces are ignored to enhance readability. The order
+      of the dimension list specifies the initial index order of dimensions in the cube.
+    questions_and_answers:
+      - question: What is the purpose of this Turbo Integrator process?
+        answer:
+          The process is used to automatically create a cube based on a delimited
+          string of dimension names, mainly for development or prototyping purposes.
+      - question: How should the dimension list be formatted?
+        answer:
+          The dimension list should be formatted with '&' as a delimiter, like 'Dim1
+          & Dim2 & Dim3'. Spaces are ignored for readability.
+      - question: What determines the index order of dimensions in the cube?
+        answer:
+          The order of the dimension list determines the initial index order of
+          dimensions in the cube.
+  - context:
+      "The pRecreate parameter is optional for creating new cubes: If a cube
+      already exists and pRecreate is set to 0, then the process will abort. If a cube
+      already exists and pRecreate is set to 1, then the process will destroy the old
+      cube and recreate it with the specified dimensionality."
+    questions_and_answers:
+      - question: What happens if a cube already exists and pRecreate is set to 0?
+        answer: If a cube already exists and pRecreate is set to 0, the process will abort.
+      - question: What happens if a cube already exists and pRecreate is set to 1?
+        answer:
+          If a cube already exists and pRecreate is set to 1, the process will destroy
+          the old cube and recreate it with the specified dimensionality.
+      - question: Is the pRecreate parameter mandatory?
+        answer: No, the pRecreate parameter is optional.
+  - context:
+      The code sets a maximum of 100 dimensions. If the number of dimensions
+      exceeds this, the process logs an error message and increments the error count.
+      It then checks if pStrictErrorHandling is set to 1 to decide whether to quit or
+      break the process.
+    questions_and_answers:
+      - question: What is the maximum number of dimensions allowed?
+        answer: The maximum number of dimensions allowed is 100.
+      - question: What happens if the number of dimensions exceeds 100?
+        answer:
+          If the number of dimensions exceeds 100, an error message is logged, and
+          the error count is incremented.
+      - question: How does the process decide whether to quit or break after an error?
+        answer:
+          The process checks if pStrictErrorHandling is set to 1 to decide whether
+          to quit or break.
+  - context:
+      The process uses a loop to split the delimited dimension list and check
+      each dimension. If a dimension exists, it increments the dimension counter and
+      assigns the dimension to the appropriate variable. If not recognized, it logs
+      an error message.
+    questions_and_answers:
+      - question: How are the dimensions split and checked?
+        answer:
+          The dimensions are split using a loop that checks each dimension. If recognized,
+          it increments the counter; otherwise, it logs an error.
+      - question: What happens when a dimension is recognized?
+        answer:
+          When a dimension is recognized, the dimension counter is incremented,
+          and the dimension is assigned to a variable.
+      - question: What is logged if a dimension is not recognized?
+        answer: An error message is logged if a dimension is not recognized.
+  - context:
+      On successful completion with no errors, the process logs a success message.
+      If there are errors, it logs that the process completed with errors and advises
+      checking the log for more details.
+    questions_and_answers:
+      - question: What does the process log on successful completion?
+        answer:
+          On successful completion, it logs a success message stating the process
+          successfully created the cube with the specified dimensions.
+      - question: What happens if errors are encountered during the process?
+        answer:
+          If errors are encountered, the process logs that it completed with errors
+          and advises checking the log for more details.
+      - question: How is the completion status communicated?
+        answer:
+          The completion status is communicated via log messages indicating success
+          or errors.
+document_outline:
+  Description and instructions for a Turbo Integrator process that
+  creates a cube based on dimension names. Includes parameter formatting, error handling,
+  and logging.
+document:
+  repo: https://raw.githubusercontent.com/GMC2alg/bedrockti/refs/heads/main/processes/%7Dbedrock.cube.create.ti

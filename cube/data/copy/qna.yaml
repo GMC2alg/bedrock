@@ -1,0 +1,43 @@
+version: 3
+created_by: GMC2alg
+domain: turbointegrator
+seed_examples:
+  - context:
+      Entwickle einen Turbo Integrator Prozess, der verwendet wird, um Daten
+      von einem Quellwürfel zu einem anderen Zielwürfel zu kopieren. Der Prozess wird
+      hauptsächlich in Produktionsumgebungen eingesetzt, um beispielsweise einen Berichtswürfel
+      zu befüllen oder Daten von einem Würfel zu einem anderen zu archivieren. Beachte,
+      dass der Zielwürfel möglicherweise eine andere Anzahl an Dimensionen als der Quellwürfel
+      aufweist. Wo Ziel- und Quellwürfel dieselben Dimensionen teilen, wird der Prozess
+      die Dimensionen entsprechend abgleichen, auch wenn sich ihre Position im Würfel
+      unterscheidet. Für jede Dimension, die im Ziel- aber nicht im Quellwürfel vorhanden
+      ist, muss ein Eingabeelement mit dem Parameter pMappingToNewDims angegeben werden.
+      Der Prozesss kann maximal 27 Dimensionen im Zielwürfel unterstützen. Werte aller
+      N-Level-Elemente in den Quell-Dimensionen, die nicht im Ziel vorhanden sind, werden
+      akkumuliert. Verwende den Parameter pFilter, um die Quellwürfel basierend auf
+      Dimensionen und Elementen zu filtern. Parallelisierung kann über den Parameter
+      pFilterParallel erreicht werden, wobei Elemente einzeln an rekursive Aufrufe des
+      Prozesses weitergegeben werden. Ein Beispiel wäre das Kopieren von tatsächlichen
+      Verkaufsdaten von 2011 vom Verkaufswürfel in den Hauptbuchwürfel, wobei spezielle
+      Kriterien verwendet werden.
+    questions_and_answers:
+      - question: Wofür wird der Turbo Integrator Prozess hauptsächlich verwendet?
+        answer:
+          Der Turbo Integrator Prozess wird hauptsächlich in Produktionsumgebungen
+          eingesetzt, um beispielsweise einen Berichtswürfel zu befüllen oder Daten von
+          einem Würfel zu einem anderen zu archivieren.
+      - question:
+          Kann der Zielwürfel eine andere Anzahl an Dimensionen als der Quellwürfel
+          haben?
+        answer:
+          Ja, der Zielwürfel kann eine andere Anzahl an Dimensionen als der Quellwürfel
+          aufweisen.
+      - question: Wie werden Werte in nicht geteilten Dimensionen behandelt?
+        answer:
+          Werte aller N-Level-Elemente in den Quell-Dimensionen, die nicht im Ziel
+          vorhanden sind, werden akkumuliert.
+document_outline:
+  Entwickle einen Turbo Integrator Prozess für die Datenintegration
+  zwischen Würfeln, mit Fokus auf Produktionsumgebungen und flexiblen Dimensionen.
+document:
+  repo: https://raw.githubusercontent.com/GMC2alg/bedrockti/refs/heads/main/processes/%7Dbedrock.cube.data.copy.ti

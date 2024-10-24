@@ -1,0 +1,70 @@
+version: 3
+created_by: GMC2alg
+domain: turbointegrator
+seed_examples:
+- context: 'This process deletes public views. Use case: Intended for development/prototyping
+    or production. After a view has been created to zero or as a data source it needs
+    to be deleted. Clean up public views after Go Live. This process can work on a
+    single cubes or multiple cubes. This process can work on a single view or multiple
+    views. When specifying view names wildcards can be included by using the * character.'
+  questions_and_answers:
+  - question: What is the purpose of the process described?
+    answer: The process is designed to delete public views in a development, prototyping,
+      or production environment after their purpose has been fulfilled.
+  - question: Can the process handle multiple cubes and views?
+    answer: Yes, the process can manage and delete views from both single and multiple
+      cubes, as well as from single or multiple views.
+  - question: How can wildcards be used in this process?
+    answer: Wildcards can be included in view names by using the * character, allowing
+      for flexible pattern matching.
+- context: 'Parameter pCube: To specify which cubes to delete views from use the pCubes
+    parameter. To delete views from a single cube only just specify that cube name
+    e.g. Sales. To delete views from multiple cubes specify each cube name separated
+    by a delimiter e.g. Sales&Inventory&Cashflow. To delete views from all cubes then
+    set pCubes as *.'
+  questions_and_answers:
+  - question: How do you delete views from multiple cubes?
+    answer: 'Specify each cube name separated by a delimiter, for example: Sales&Inventory&Cashflow.'
+  - question: What does setting the pCubes parameter to * do?
+    answer: Setting pCubes to * instructs the process to delete views from all cubes.
+  - question: What happens if an invalid cube is specified?
+    answer: Invalid cubes are skipped, and the process continues with the other cubes.
+- context: 'Parameter pView: To specify which views to delete use the pViews parameter.
+    This parameter must be specified, a blank value will cause the process to terminate.
+    To delete a single view only just specify that view name e.g. SalesByProduct.'
+  questions_and_answers:
+  - question: Is it mandatory to specify the pViews parameter?
+    answer: Yes, failing to specify the pViews parameter will cause the process to
+      terminate.
+  - question: Can multiple views be deleted in one operation?
+    answer: Yes, by specifying each view name separated by a delimiter.
+  - question: What happens if a blank value is provided for pView?
+    answer: The process will terminate if pView is left blank.
+- context: 'Parameter pDelim: The delimiter can be used when specifying multiple cubes
+    and/or multiple views. The default delimiter is &. Any delimiter can be used by
+    specifying a value for pDelimiter.'
+  questions_and_answers:
+  - question: What is the default delimiter used in the process?
+    answer: The default delimiter is &.
+  - question: Can the delimiter be changed?
+    answer: Yes, any suitable delimiter can be specified via the pDelimiter parameter.
+  - question: Why would you change the default delimiter?
+    answer: A different delimiter may be chosen to avoid conflicts with characters
+      in wildcard search strings or cube names.
+- context: The process can skip invalid cubes but will continue with valid ones. It
+    also includes error handling; if there are errors, processes can either quit or
+    break based on strict error handling settings.
+  questions_and_answers:
+  - question: Does the process continue if there are invalid cubes?
+    answer: Yes, the process skips invalid cubes and continues with valid ones.
+  - question: What happens if there are errors during the process?
+    answer: If strict error handling is enabled, the process will quit; otherwise,
+      it will break and continue where possible.
+  - question: Is there a mechanism for handling errors in this process?
+    answer: Yes, it includes error handling that can either quit or break the process
+      based on configured error handling settings.
+document_outline: A process for deleting public views in a TM1 environment, including
+  an explanation of the use of wildcards, and the roles of parameters like pCube,
+  pView, and pDelim.
+document:
+  repo: https://raw.githubusercontent.com/GMC2alg/bedrockti/refs/heads/main/processes/%7Dbedrock.cube.view.delete.ti

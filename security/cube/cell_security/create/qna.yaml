@@ -1,0 +1,40 @@
+version: 3
+created_by: GMC2alg
+domain: turbointegrator
+seed_examples:
+- context: This IBM Turbo Integrator process creates a cell security cube for a specified
+    cube and a specified list of dimensions using the TI function _CellSecurityCubeCreate_.
+    The benefit of this process is that it eliminates the need to write a custom process
+    each time a cell security cube is needed. A valid cube (pCube) is mandatory; otherwise,
+    the process will abort. If cell security is already set up, the TI process will
+    also abort. The pDim parameter must map _ALL_ the dimensions in order in the cube
+    with a 0 or 1. This process is intended for development purposes and is used for
+    setting up cell security cubes.
+  questions_and_answers:
+  - question: What does this IBM Turbo Integrator process do?
+    answer: This process creates a cell security cube for a specified cube and list
+      of dimensions using the _CellSecurityCubeCreate_ function, avoiding the need
+      for custom processes.
+  - question: What is required for the process to not abort?
+    answer: A valid cube (pCube) must be specified; otherwise, the process will abort.
+  - question: What is the purpose of the pDim parameter?
+    answer: The pDim parameter must map _ALL_ the dimensions in order in the cube
+      with a 0 or 1.
+- context: Use of the IBM Turbo Integrator process helps in setting up cell security
+    cubes without needing a custom process every time. This action is meant for development
+    purposes, emphasizing that a valid cube parameter is crucial. The TI function
+    _CellSecurityCubeCreate_ is central to this process, aiming to simplify the development
+    process by automating cell security cube creation.
+  questions_and_answers:
+  - question: What is the main function used in this TI process?
+    answer: The main function used is _CellSecurityCubeCreate_.
+  - question: For what purpose is this TI process intended?
+    answer: The process is intended for development purposes, particularly in setting
+      up cell security cubes.
+  - question: What happens if cell security is already set up?
+    answer: If cell security is already set up, the TI process will abort.
+document_outline: A description of an IBM Turbo Integrator process designed to automate
+  the creation of cell security cubes for specified cubes and dimensions, highlighting
+  the importance of the _CellSecurityCubeCreate_ function.
+document:
+  repo: https://raw.githubusercontent.com/GMC2alg/bedrockti/refs/heads/main/processes/%7Dbedrock.security.cube.cellsecurity.create.ti

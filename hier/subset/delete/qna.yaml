@@ -1,0 +1,72 @@
+version: 3
+created_by: GMC2alg
+domain: turbointegrator
+seed_examples:
+- context: 'This process deletes public subsets from selected dimensions and hierarchies.
+    Dimensions, hierarchies, and subsets can be specified as a delimited list. Wildcards
+    are accepted as '*' and '?' characters. Note: - pDim: To specify which dimensions
+    to delete subsets from use the pDim parameter. - To delete subsets from a single
+    dimension only just specify that dimension name e.g. 'Product'. - To delete
+    subsets from multiple dimensions specify each dimension name separated by a delimiter
+    e.g. 'Product & Customer & Account'. - To delete subsets from all dimensions
+    then leave pDim parameter blank or supply 'ALL'.'
+  questions_and_answers:
+  - question: How do you specify which dimensions to delete subsets from?
+    answer: You specify the dimensions using the pDim parameter. You can provide a
+      single dimension or multiple dimensions by separating them with a delimiter.
+      To apply to all dimensions, you can leave the parameter blank or use 'ALL'.
+  - question: Are wildcards accepted in the parameter values for specifying dimensions?
+    answer: Yes, wildcards '*' and '?' are accepted in the parameter values.
+  - question: What should you do if you want to delete subsets from multiple dimensions?
+    answer: Specify each dimension name separated by a delimiter e.g., 'Product &
+      Customer & Account'.
+- context: '- pHier: To specify which hierarchies to delete subsets from use the pHier
+    parameter. - To specify the default hierarchy, leave the parameter value empty.
+    - To specify all available hierarchies, set parameter value to '*'.'
+  questions_and_answers:
+  - question: How do you specify that subsets should be deleted from all hierarchies?
+    answer: Set the pHier parameter value to '*'.
+  - question: What happens if you leave the pHier parameter value empty?
+    answer: It defaults to deleting subsets from the default hierarchy.
+  - question: Can you use a wildcard to specify hierarchies?
+    answer: Yes, wildcards are allowed and all hierarchies matching the wildcard string
+      will be processed.
+- context: '- pSub: To specify which subsets to delete use the pSub parameter. - This
+    parameter must be specified, a blank value will cause the process to terminate.
+    - To delete a single subset only just specify that subset name e.g. 'SmallProducts'.
+    - To delete multiple subsets, specify each subset name separated by a delimiter
+    e.g. 'SmallProducts & LargeProducts'.'
+  questions_and_answers:
+  - question: What happens if the pSub parameter is left blank?
+    answer: The process will terminate because this parameter must be specified.
+  - question: How do you specify the deletion of multiple subsets?
+    answer: Separate each subset name with a delimiter, e.g., 'SmallProducts & LargeProducts'.
+  - question: Is it mandatory to specify the pSub parameter?
+    answer: Yes, it is mandatory and cannot be left blank.
+- context: '- pDelim: The delimiter is used when specifying multiple dimensions and/or
+    multiple subsets. - The default delimiter is '&'. Any delimiter can be used
+    by specifying a value for pDelim. - Choose a delimiter that won't be used in
+    either the wildcard search strings or dimension names.'
+  questions_and_answers:
+  - question: What is the default delimiter for separating items?
+    answer: The default delimiter is '&'.
+  - question: Can you change the default delimiter?
+    answer: Yes, any delimiter can be used by specifying it in the pDelim parameter.
+  - question: What should be considered when choosing a custom delimiter?
+    answer: Ensure that the chosen delimiter isn't used in wildcard search strings
+      or dimension names.
+- context: '- pMode: - When set to a value less or equal to '1': all found subsets
+    will be destroyed. - When set to a value of '2': all found subsets will be emptied.'
+  questions_and_answers:
+  - question: What happens if you set the pMode parameter to a value less or equal
+      to '1'?
+    answer: All found subsets will be destroyed.
+  - question: What is the effect of setting pMode to '2'?
+    answer: All found subsets will be emptied but not destroyed.
+  - question: When using pMode, what is the difference between values '1' and '2'?
+    answer: Value '1' destroys subsets, while value '2' empties them.
+document_outline: Description of a Turbo Integrator process for deleting public subsets
+  from selected dimensions and hierarchies with parameters to specify dimensions,
+  hierarchies, subsets, delimiters, and modes of operation.
+document:
+  repo: https://raw.githubusercontent.com/GMC2alg/bedrockti/refs/heads/main/processes/%7Dbedrock.hier.sub.delete.ti

@@ -1,0 +1,69 @@
+version: 3
+created_by: GMC2alg
+domain: turbointegrator
+seed_examples:
+- context: This process will write a Message into the TM1 server Message Log. It includes
+    steps for initialization, execution, and error handling.
+  questions_and_answers:
+  - question: What does this Turbo Integrator process do?
+    answer: This process writes a message into the TM1 server Message Log.
+  - question: What are the main steps defined in this process?
+    answer: The main steps are initialization, execution, and error handling.
+  - question: What is the purpose of error handling in this process?
+    answer: The error handling ensures that any issues are logged and handled appropriately,
+      either by quitting the process or breaking it, depending on the strict error
+      handling setting.
+- context: Global and numeric variables are used to capture process details like return
+    codes. Logging is utilized to document the process execution and errors.
+  questions_and_answers:
+  - question: How are process details captured in this Turbo Integrator process?
+    answer: Process details are captured using global and numeric variables like 'sProcessReturnCode'
+      and 'nProcessReturnCode'.
+  - question: What role does logging play in this process?
+    answer: Logging is used to document the process execution details and any errors
+      encountered.
+  - question: What variables store the process return codes?
+    answer: The variables 'sProcessReturnCode' and 'nProcessReturnCode' store the
+      process return codes.
+- context: Parameters like 'pLogoutput' and 'pStrictErrorHandling' control logging
+    behavior and error handling rigor. Incorrect parameter types trigger error logging.
+  questions_and_answers:
+  - question: How does the process respond to incorrect parameter types?
+    answer: Incorrect parameter types trigger error logging, and the process may either
+      quit or break depending on error handling settings.
+  - question: What does the 'pLogoutput' parameter control?
+    answer: The 'pLogoutput' parameter controls whether the process writes additional
+      information logs.
+  - question: What happens if 'pStrictErrorHandling' is set to 1?
+    answer: If 'pStrictErrorHandling' is set to 1, the process will quit immediately
+      upon encountering errors.
+- context: The process uses conditional statements to validate input parameters and
+    log errors. Message templates are predefined for error and process information
+    logging.
+  questions_and_answers:
+  - question: What are message templates used for in this process?
+    answer: Message templates are used for predefined formatting of error and informational
+      log messages.
+  - question: What purpose do conditional statements serve in this process?
+    answer: Conditional statements are used to validate input parameters and control
+      error logging.
+  - question: How are errors logged in this process?
+    answer: Errors are logged using message templates and might include process and
+      user details in the error message.
+- context: The final section of the process checks for any errors that occurred, logs
+    a final message, and sets the return code accordingly. It ensures the process
+    is completed with or without errors.
+  questions_and_answers:
+  - question: How does the process handle the final error check?
+    answer: The final error check determines if any errors occurred, logs a summary
+      message, and sets a return code.
+  - question: What dictates the process return code?
+    answer: The process return code is set based on whether the process completes
+      successfully or with errors.
+  - question: What is logged if the process completes with errors?
+    answer: If the process completes with errors, a message is logged indicating at
+      least one error occurred and advising to check the TM1 server log.
+document_outline: An IBM Turbo Integrator process designed to log messages in the
+  TM1 server, including clear steps for initialization, execution, and error handling.
+document:
+  repo: https://raw.githubusercontent.com/GMC2alg/bedrockti/refs/heads/main/processes/%7Dbedrock.server.writetomessagelog.ti

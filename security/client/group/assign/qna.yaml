@@ -1,0 +1,38 @@
+version: 3
+created_by: GMC2alg
+domain: turbointegrator
+seed_examples:
+- context: 'This process will assign Client and Group Security. Use case: Intended
+    for production. After adding new user(s) using '}bedrock.security.client.create'
+    they must be assigned to groups. Naturally, valid client (pClient) is mandatory
+    otherwise the process can't make assignments. This process can either add or
+    remove clients to groups based on pAddOrRemove. It can work on a single client
+    or multiple clients separated by a delimiter and a single group or multiple groups
+    separated by a delimiter.'
+  questions_and_answers:
+  - question: What is the main purpose of this Turbo Integrator process?
+    answer: The main purpose of the Turbo Integrator process is to assign clients
+      to groups for security purposes, after new users are added using '}bedrock.security.client.create'.
+  - question: In what cases can this process be used?
+    answer: This process can be used to add or remove a single client to/from a single
+      group, many clients to/from a single group, a single client to/from many groups,
+      or many clients to/from many groups.
+  - question: What is required for this process to make assignments?
+    answer: A valid client (pClient) is mandatory for the process to make assignments.
+- context: The caller can choose whether or not to refresh security at the end. Default
+    is yes. The process is flexible enough to handle a single client with multiple
+    groups or multiple clients with a single group by using delimiters. It also includes
+    parameters to specify if security should be refreshed.
+  questions_and_answers:
+  - question: What is the default setting for security refresh in this process?
+    answer: The default setting for security refresh is set to 'yes'.
+  - question: How does the process handle multiple clients or groups?
+    answer: The process can handle multiple clients or groups by accepting them separated
+      by a delimiter.
+  - question: Can the caller control security refresh, and how?
+    answer: Yes, the caller can choose whether or not to refresh security at the end
+      of the process by specifying a parameter.
+document_outline: A detailed explanation of an IBM Turbo Integrator process for managing
+  client and group security assignments in a production environment.
+document:
+  repo: https://raw.githubusercontent.com/GMC2alg/bedrockti/refs/heads/main/processes/%7Dbedrock.security.client.group.assign.ti

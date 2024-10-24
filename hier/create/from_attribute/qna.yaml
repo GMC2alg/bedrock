@@ -1,0 +1,34 @@
+version: 3
+created_by: GMC2alg
+domain: turbointegrator
+seed_examples:
+- context: This process will create a new dimension hierarchy from attribute values.
+    Valid dimension name (pDim) and attribute name (pAttr) are mandatory, otherwise
+    the process will abort.
+  questions_and_answers:
+  - question: What does the Turbo Integrator process do?
+    answer: The process creates a new dimension hierarchy from attribute values.
+  - question: What are the required parameters for the process?
+    answer: A valid dimension name (pDim) and attribute name (pAttr) are mandatory,
+      otherwise the process will abort.
+  - question: What happens if the mandatory parameters are not provided?
+    answer: The process will abort if a valid dimension name (pDim) and attribute
+      name (pAttr) are not provided.
+- context: It is assumed each element exists only once within the hierarchy. This
+    should hold true except in exceptional circumstances.
+  questions_and_answers:
+  - question: What is assumed about the elements within the hierarchy?
+    answer: It is assumed each element exists only once within the hierarchy.
+  - question: Are there any exceptions to the rule about element occurrence?
+    answer: Yes, the rule should hold true except in exceptional circumstances.
+  - question: What could cause the assumption about element uniqueness to not hold
+      true?
+    answer: Exceptional circumstances could cause each element not to exist only once
+      within the hierarchy.
+document_outline: This IBM Turbo Integrator process is intended to create a new dimension
+  hierarchy based on attribute values. It is important that a valid dimension name
+  and attribute name are provided; otherwise, the process will terminate. It is also
+  assumed that each element appears only once within the hierarchy, except in special
+  cases.
+document:
+  repo: https://raw.githubusercontent.com/GMC2alg/bedrockti/refs/heads/main/processes/%7Dbedrock.hier.create.fromattribute.ti

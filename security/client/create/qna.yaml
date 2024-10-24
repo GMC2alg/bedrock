@@ -1,0 +1,43 @@
+version: 3
+created_by: GMC2alg
+domain: turbointegrator
+seed_examples:
+- context: This process will create clients, assign a password and max ports. Intended
+    for production, it allows creating clients for multiple new hires simultaneously.
+    A client (pClient) is mandatory otherwise the process will abort. Multiple clients
+    can be specified separated by a delimiter. If a client already exists, the process
+    will reset the password and max ports instead of re-creating it. Each client will
+    have to be assigned to a group afterwards.
+  questions_and_answers:
+  - question: What is the primary function of this Turbo Integrator process?
+    answer: The primary function of this process is to create clients, assign a password,
+      and set the maximum number of ports for each client, particularly for multiple
+      new hires.
+  - question: What happens if a client already exists when the process runs?
+    answer: If a client already exists, the process will not attempt to re-create
+      it. Instead, it will reset the client's password and max ports.
+  - question: Is it possible to create multiple clients in one process run, and how?
+    answer: Yes, it is possible to create multiple clients in one process run by specifying
+      them separated by a delimiter.
+- context: If no clients have been specified, the process will terminate. Clients
+    must be specified in the pClient parameter, with multiple clients separated by
+    a delimiter. A blank delimiter will default to '&'. Error handling is in place,
+    which can either terminate (ProcessQuit) or break (ProcessBreak) the process based
+    on the error handling setting (pStrictErrorHandling).
+  questions_and_answers:
+  - question: What will happen if no clients are specified for the process?
+    answer: If no clients are specified, the process will terminate, as a client (pClient)
+      parameter is mandatory.
+  - question: What is the default delimiter used if none is specified for separating
+      multiple clients?
+    answer: If no delimiter is specified, the process will default to using '&' as
+      the delimiter.
+  - question: How does the process handle errors?
+    answer: The process handles errors by either terminating the process with ProcessQuit
+      or breaking it with ProcessBreak, based on the Strict Error Handling setting
+      (pStrictErrorHandling).
+document_outline: A Turbo Integrator process designed for creating and managing client
+  accounts, including password and port assignment, specifically aimed at managing
+  new hires effectively and ensuring they are set up in the production environment.
+document:
+  repo: https://raw.githubusercontent.com/GMC2alg/bedrockti/refs/heads/main/processes/%7Dbedrock.security.client.create.ti

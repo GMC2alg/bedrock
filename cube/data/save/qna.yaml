@@ -1,0 +1,36 @@
+version: 3
+created_by: GMC2alg
+domain: turbointegrator
+seed_examples:
+- context: 'This IBM Turbo Integrator process is used to save data to disk for the cubes 
+      specified in the parameters. Use case: Intended for Development or production 
+      environments. This process would be used any time data for a specific cube needs 
+      to be saved (i.e.: After a data loading to save a specific cube or for manual entry cubes). 
+      Note: A valid cube name (pCube) is mandatory otherwise the process will abort. 
+      Wildcards and lists are acceptable. This process saves the data for a cube.'
+  questions_and_answers:
+  - question: When would you use this Turbo Integrator process?
+    answer: You would use this process any time data for a specific cube needs to be saved, 
+      such as after loading data or for manual entry cubes.
+  - question: What parameter is mandatory for this process?
+    answer: A valid cube name (pCube) is mandatory, otherwise the process will abort.
+  - question: What is the purpose of this process?
+    answer: This process is used to save data to disk for the cubes specified in the parameters.
+- context: '# Description: This process saves data to disk for the cubes provided
+    in the parameter. Use case: Intended for Development or production. This process
+    would be used any time data for a specific cube need to be saved (i.e.: After
+    a data loading to save a specific cube or for manual entry cubes). Note: A valid
+    cube name (pCube) is mandatory otherwise the process will abort. Wildcards and
+    lists are acceptable.'
+  questions_and_answers:
+  - question: When would you use this Turbo Integrator process?
+    answer: You would use this process any time data for a specific cube needs to
+      be saved, such as after loading data or for manual entry cubes.
+  - question: What happens if a valid cube name is not provided?
+    answer: If a valid cube name (pCube) is not provided, the process will abort.
+  - question: Are wildcards and lists acceptable in specifying the cube names?
+    answer: Yes, wildcards and lists are acceptable when specifying cube names.
+document_outline: Overview of the Turbo Integrator process, its use case, and requirements
+  for saving cube data in IBM systems.
+document:
+  repo: https://raw.githubusercontent.com/GMC2alg/bedrockti/refs/heads/main/processes/%7Dbedrock.cube.data.save.ti

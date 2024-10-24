@@ -1,0 +1,51 @@
+version: 3
+created_by: GMC2alg
+domain: turbointegrator
+seed_examples:
+- context: This process will make a copy of an existing dimension subset, creating
+    it as a new dimension hierarchy. Intended for Development but could be used in
+    production too. Create a new hierarchy for testing or to reflect new business
+    needs. Valid source dimension name (pSrcDim) and source subset (pSubset) are mandatory,
+    otherwise the process will abort. If a source hierarchy name (pSrcHier) is specified,
+    it needs to be valid, otherwise the process will abort. Target hierarchy cannot
+    be 'Leaves'. If the target hierarchy already exists, then it will be overwritten.
+  questions_and_answers:
+  - question: What does the Turbo Integrator process do?
+    answer: The process makes a copy of an existing dimension subset, creating it
+      as a new dimension hierarchy.
+  - question: What are the mandatory fields for the Turbo Integrator process to run?
+    answer: The mandatory fields are a valid source dimension name (pSrcDim) and source
+      subset (pSubset).
+  - question: Can the target hierarchy be 'Leaves'?
+    answer: No, the target hierarchy cannot be 'Leaves'.
+- context: If a source hierarchy name (pSrcHier) is specified, it needs to be valid,
+    otherwise the process will abort. The process is for Development but can be used
+    in production as well. Target hierarchy cannot be 'Leaves'. If the target hierarchy
+    already exists, it will be overwritten. The source dimension name (pSrcDim) and
+    source subset (pSubset) are mandatory for the process to continue.
+  questions_and_answers:
+  - question: What happens if the source hierarchy name specified is invalid?
+    answer: The process will abort if the source hierarchy name specified is invalid.
+  - question: Can this process be used in production?
+    answer: Yes, the process is intended for Development but can also be used in production.
+  - question: What happens if the target hierarchy already exists?
+    answer: If the target hierarchy already exists, it will be overwritten.
+- context: The source dimension name (pSrcDim) and source subset (pSubset) are mandatory;
+    otherwise, the process will abort. If a source hierarchy name (pSrcHier) is specified,
+    it needs to be valid. The process can be used for creating new hierarchies for
+    testing or to reflect changed business requirements. The target hierarchy cannot
+    be 'Leaves'.
+  questions_and_answers:
+  - question: Why might one use this Turbo Integrator process?
+    answer: One might use this process to create new hierarchies for testing or to
+      reflect changed business requirements.
+  - question: What are the restrictions on the target hierarchy name?
+    answer: The target hierarchy cannot be 'Leaves'.
+  - question: What is required if you specify a source hierarchy name?
+    answer: If you specify a source hierarchy name, it needs to be valid; otherwise,
+      the process will abort.
+document_outline: Develop an IBM Turbo Integrator process that creates a copy of an
+  existing dimension subset and sets it as a new dimension hierarchy. Ensure necessary
+  fields are provided to avoid process abortion.
+document:
+  repo: https://raw.githubusercontent.com/GMC2alg/bedrockti/refs/heads/main/processes/%7Dbedrock.hier.create.fromsubset.ti

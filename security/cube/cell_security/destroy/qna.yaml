@@ -1,0 +1,37 @@
+version: 3
+created_by: GMC2alg
+domain: turbointegrator
+seed_examples:
+- context: 'This process will destroy the cell security cube(s) for the specified
+    cube(s). Use case: Intended for development. Remove cell level security for one
+    or more cubes. Naturally, a valid cube (pCube) is mandatory otherwise the process
+    will abort. If the cube does not have cell security set up, it will skip that
+    cube but log an error. Multiple cubes can be specified separated by the pDelim
+    or by using wildcards (*).'
+  questions_and_answers:
+  - question: What is the purpose of the Turbo Integrator process?
+    answer: The Turbo Integrator process is designed to destroy the cell security
+      cubes for specified cubes, primarily for development purposes.
+  - question: What happens if a cube without cell security is specified?
+    answer: If a cube without cell security is specified, the process will skip that
+      cube but log an error.
+  - question: How can multiple cubes be specified in the process?
+    answer: Multiple cubes can be specified by separating them with the delimiter
+      pDelim or by using wildcards (*).
+- context: The process requires a valid cube (pCube); otherwise, it aborts. It logs
+    an error if no cell security is found for a cube. The process supports multiple
+    cube entries, separated by a delimiter (pDelim) or using wildcards.
+  questions_and_answers:
+  - question: Is a valid cube mandatory for the process?
+    answer: Yes, a valid cube (pCube) is mandatory for the process, or it will abort.
+  - question: How does the process manage errors?
+    answer: The process logs an error if a cube does not have cell security set up
+      or if no cubes are specified.
+  - question: What are the methods to specify multiple cubes in the process?
+    answer: Multiple cubes can be specified by separating them with a delimiter (pDelim)
+      or by using wildcards (*).
+document_outline: Describes the purpose and functionality of a Turbo Integrator process
+  for removing cell-level security from cubes in IBM environments, including the input
+  parameters and error handling.
+document:
+  repo: https://raw.githubusercontent.com/GMC2alg/bedrockti/refs/heads/main/processes/%7Dbedrock.security.cube.cellsecurity.destroy.ti

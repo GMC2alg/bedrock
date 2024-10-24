@@ -1,0 +1,71 @@
+version: 3
+created_by: GMC2alg
+domain: turbointegrator
+seed_examples:
+- context: This IBM Turbo Integrator Process encrypts and decrypts a file using the
+    tm1crypt utility. This process is designed to handle a single file for encryption
+    or decryption operations. The generated commands will only be functional if the
+    TM1 instance is encrypted.
+  questions_and_answers:
+  - question: What does the IBM Turbo Integrator process do?
+    answer: The IBM Turbo Integrator process encrypts and decrypts a file using the
+      tm1crypt utility.
+  - question: Can this process handle multiple files?
+    answer: No, this process is designed to encrypt or decrypt a single file.
+  - question: Are there any prerequisites for running the generated commands?
+    answer: Yes, the generated commands will only work if the TM1 instance is encrypted.
+- context: The script uses various global variables and constants. Key constants include
+    the process name, timestamp, a random integer for operations, and error message
+    templates such as 'User:%cUserName% Process:%cThisProcName% ErrorMsg:%sMessage%'.
+  questions_and_answers:
+  - question: What purposes do the constants serve in the script?
+    answer: The constants are used for storing the process name, timestamp, a random
+      integer for operations, and creating error message templates.
+  - question: How is the timestamp represented in the script?
+    answer: The timestamp is represented in the format '\Y\m\d\h\i\s'.
+  - question: What is the format of the error message template?
+    answer: The error message template is 'User:%cUserName% Process:%cThisProcName%
+      ErrorMsg:%sMessage%'.
+- context: The script checks the operating system and adjusts its behavior accordingly,
+    supporting both Windows and Linux. It determines the OS by scanning the directory
+    structure and sets an OS-specific delimiter.
+  questions_and_answers:
+  - question: How does the script determine the operating system?
+    answer: The script determines the operating system by examining the directory
+      structure and sets an OS-specific delimiter based on the findings.
+  - question: Is this script designed to work on Windows?
+    answer: Yes, the script is designed to support both Windows and Linux operating
+      systems.
+  - question: What is an OS-specific delimiter?
+    answer: An OS-specific delimiter is a character used to separate elements in a
+      file path. For example, '\' is used in Windows, while '/' is used in Linux.
+- context: The TI script validates various parameters such as the action to be performed,
+    the existences of configuration and executable files, and the source and destination
+    file paths.
+  questions_and_answers:
+  - question: What parameters are validated by the script?
+    answer: The script validates parameters such as the action to perform, the existence
+      of configuration and executable files, and source and destination file paths.
+  - question: What happens if an invalid action is specified?
+    answer: If an invalid action is specified, the script logs an error message, sets
+      an error flag and either quits or breaks the process depending on error handling
+      settings.
+  - question: How does the script respond if a file path is invalid?
+    answer: The script logs an error message if a file path is invalid and sets an
+      error flag to prevent further operations.
+- context: If no errors are encountered, the script proceeds to create a batch file
+    to execute the encryption or decryption command. It uses the appropriate extensions
+    for Windows (.bat) and Linux (.sh), and then deletes the batch file after execution.
+  questions_and_answers:
+  - question: What does the script do after validating input parameters?
+    answer: After validating input parameters, the script creates a batch file to
+      execute the command for encryption or decryption.
+  - question: What file extensions are used for batch files in Windows and Linux?
+    answer: The script uses '.bat' for Windows and '.sh' for Linux batch files.
+  - question: Does the script retain the batch file after execution?
+    answer: No, the script deletes the batch file after it has been executed.
+document_outline: This document describes an IBM Turbo Integrator process that encrypts
+  or decrypts a single file using the tm1crypt utility. Included are explanations
+  of the process structure, parameter validations, and execution steps.
+document:
+  repo: https://raw.githubusercontent.com/GMC2alg/bedrockti/refs/heads/main/processes/%7Dbedrock.server.encrypt.file.ti

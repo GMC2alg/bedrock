@@ -1,0 +1,82 @@
+version: 3
+created_by: GMC2alg
+domain: turbointegrator
+seed_examples:
+  - context:
+      This TI was created to overcome the limited scheduling options in chores.
+      In order to use this TI it has to be the 1st TI in the chore. As an example, if
+      you need to run a chore every Monday & Wednesday you would schedule it to run
+      EVERY day but set the pWeekdays parameter to Mon & Wed. The chore would then kick
+      off every day but this TI will perform a ProcessExitByChoreQuit function on all
+      days NOT mentioned in pWeekdays.
+    questions_and_answers:
+      - question: What is the purpose of this Turbo Integrator process?
+        answer:
+          The purpose of this Turbo Integrator process is to overcome the limited
+          scheduling options in chores by allowing a chore to be scheduled every day and
+          only execute on specified weekdays using the pWeekdays parameter.
+      - question: How should this Turbo Integrator be positioned in the chore?
+        answer:
+          This Turbo Integrator process should be the first process in the chore
+          to ensure it can control whether or not the chore should continue based on the
+          specified days.
+      - question: What function does this TI perform on days not specified in pWeekdays?
+        answer:
+          On days not specified in pWeekdays, this TI process executes a ProcessExitByChoreQuit
+          function to terminate the chore.
+  - context:
+      "Use case: For productive systems. 1. A chore should run every 30 minutes
+      between 8am & 8pm on weekdays. Schedule chore for every 30 minutes and include
+      this process 1st in chore with parameters pWeekDays=MON&TUE&WED&THU&FRI pStartTime=8
+      pEndTime=20. 2. A chore should run only on 1st calendar day of each month. Schedule
+      chore for daily execution and include this process 1st in chore with parameters
+      pMonthDays=1."
+    questions_and_answers:
+      - question:
+          How can this TI process be used to schedule a chore only on weekdays
+          between 8am and 8pm?
+        answer:
+          The TI process can be used by setting the parameters pWeekDays to MON&TUE&WED&THU&FRI
+          and setting pStartTime to 8 and pEndTime to 20. The chore should be scheduled
+          for every 30 minutes and this TI process should be included first in the chore.
+      - question:
+          What setup should be used to run a chore only on the first day of each
+          month?
+        answer:
+          To run a chore only on the first day of each month, the chore should be
+          scheduled for daily execution and this process should be included first in the
+          chore with the parameter pMonthDays set to 1.
+      - question:
+          What are some use cases where this TI process is helpful for productive
+          systems?
+        answer:
+          This TI process is helpful for productive systems when specific scheduling
+          needs are required, such as running a chore at specific times during weekdays
+          or on specific days of the month that regularly scheduled options cannot accommodate.
+  - context:
+      "Note: * This process will quit a chore if any time-bound, weekday-bound
+      or date-bound conditions which define when the chore should NOT run are met. *
+      Only the parameters(s) needed should be specified. * Only scheduled executions
+      will be quit outside the parameters. The checks are bypassed if a chore is manually
+      executed by a user. This is done by checking the TM1User function."
+    questions_and_answers:
+      - question: Why will the process quit a chore?
+        answer:
+          The process will quit a chore if any of the defined time-bound, weekday-bound,
+          or date-bound conditions indicating that the chore should not run are met.
+      - question: Are manual executions affected by the checks of this TI process?
+        answer:
+          No, manual executions are not affected by the checks of this TI process.
+          The checks are bypassed when a user manually executes a chore by evaluating
+          the TM1User function.
+      - question: What parameters should be specified for the TI to function correctly?
+        answer:
+          Only the parameters relevant to defining when the chore should not run
+          need to be specified for the TI to function correctly, such as pMonthDays, pWeekDays,
+          and time constraints like pStartTime and pEndTime.
+document_outline:
+  This document describes a Turbo Integrator process to enhance scheduling
+  options in IBM TM1 chores. It provides guidance on setting up scheduling constraints
+  such as specific weekdays, times, and days of the month for chore execution.
+document:
+  repo: https://raw.githubusercontent.com/GMC2alg/bedrockti/refs/heads/main/processes/%7Dbedrock.chore.execution.check.ti

@@ -1,0 +1,79 @@
+version: 3
+created_by: GMC2alg
+domain: turbointegrator
+seed_examples:
+- context: 'The process unencrypts all files existing in a directory, using the tm1crypt
+    utility. Use case: To encrypt/unencrypt multiple files in a directory. Calls sub-processes.
+    Note: Generated commands will only work when the TM1 instance is encrypted.'
+  questions_and_answers:
+  - question: What is the main purpose of this Turbo Integrator process?
+    answer: The main purpose of this Turbo Integrator process is to unencrypt all
+      files existing in a directory using the tm1crypt utility.
+  - question: What is the use case for this Turbo Integrator process?
+    answer: The use case for this process is to encrypt or unencrypt multiple files
+      in a directory, calling sub-processes as necessary.
+  - question: Under what condition will the generated commands work?
+    answer: The generated commands will only work when the TM1 instance is encrypted.
+- context: Global variables and constants are used in this Turbo Integrator process.
+    StringGlobalVariable and NumericGlobalVariable are defined for handling process
+    return codes. Various constants are defined, such as cThisProcName for process
+    name and cTimeStamp for timestamps.
+  questions_and_answers:
+  - question: What are StringGlobalVariable and NumericGlobalVariable used for in
+      this process?
+    answer: StringGlobalVariable and NumericGlobalVariable are used for handling process
+      return codes in this Turbo Integrator process.
+  - question: Name a constant defined in this process and its purpose.
+    answer: The constant cThisProcName is defined to store the name of the process,
+      aiding in logging and reporting.
+  - question: How is a timestamp utilized in this process?
+    answer: A timestamp, defined as cTimeStamp, is used for logging purposes, capturing
+      the exact time actions are performed.
+- context: Parameters are validated within the process. Checks include verifying the
+    operating system, validating the source directory, and ensuring specified files
+    exist for configuration and tm1crypt usage. Errors are logged, and corrective
+    actions like quitting or breaking the process are defined.
+  questions_and_answers:
+  - question: What parameters are validated in the process?
+    answer: Parameters such as the operating system, source directory, and existence
+      of specified files for configuration and tm1crypt are validated.
+  - question: How are errors handled during parameter validation?
+    answer: Errors are logged, and corrective actions like quitting or breaking the
+      process are defined if validation fails.
+  - question: What happens if the source directory is not valid?
+    answer: If the source directory is not valid, an error is logged, and the process
+      may be quit or broken, depending on error handling settings.
+- context: The process performs a search for files in the specified source path using
+    a wildcard pattern. It logs the processing of each file and handles errors, incrementing
+    error counts as necessary. The process involves the execution of a sub-process
+    for each file.
+  questions_and_answers:
+  - question: How does the process handle files in the source directory?
+    answer: The process uses a wildcard search to find files and logs the processing
+      of each file while handling errors by incrementing error counts.
+  - question: What action is performed for each file found in the directory?
+    answer: A sub-process is executed for each file found in the directory, handling
+      encryption or decryption based on parameters.
+  - question: What happens when an error occurs during the processing of a file?
+    answer: When an error occurs, the error count is incremented, a log entry is made,
+      and the process may either continue with the next file or handle the error based
+      on defined conditions.
+- context: The final section deals with handling the overall result of the process.
+    If errors occurred, appropriate messages are logged, and return codes are set
+    to indicate the process's success or failure. Log outputs are used to provide
+    a summary of actions taken.
+  questions_and_answers:
+  - question: How are the final results of the process handled?
+    answer: The final results are handled by logging messages based on whether errors
+      occurred and setting return codes to indicate success or failure.
+  - question: What happens if no errors are found during the process?
+    answer: If no errors are found, a success message is logged, and the appropriate
+      return code is set to reflect successful process execution.
+  - question: How does the process communicate the occurrence of errors?
+    answer: The process uses log outputs to communicate errors, marking the log with
+      details of what failed and setting return codes accordingly.
+document_outline: A detailed explanation of an IBM Turbo Integrator process that unencrypts
+  files in a directory using tm1crypt, covering its purpose, parameter validation,
+  file processing, error handling, and result logging.
+document:
+  repo: https://raw.githubusercontent.com/GMC2alg/bedrockti/refs/heads/main/processes/%7Dbedrock.server.encrypt.directory.ti

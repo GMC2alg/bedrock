@@ -1,0 +1,49 @@
+version: 3
+created_by: GMC2alg
+domain: turbointegrator
+seed_examples:
+- context: This process reprocesses feeders when consolidated totals are not adding
+    up. Intended for Development or production, it is used any time feeders need to
+    be reprocessed, such as when new elements are added to any of the dimensions.
+    A valid cube name (pCube) is mandatory; otherwise, the process will abort. Wildcards
+    and lists are acceptable. This process will process feeders for a cube.
+  questions_and_answers:
+  - question: What is the purpose of this Turbo Integrator process?
+    answer: The purpose of this process is to reprocess feeders when consolidated
+      totals are not adding up. It is intended for development or production use.
+  - question: When should this process be used?
+    answer: This process should be used anytime feeders need to be reprocessed, such
+      as when new elements are added to any of the dimensions.
+  - question: What is necessary for this process to execute successfully?
+    answer: A valid cube name (pCube) is mandatory; otherwise, the process will abort.
+- context: The process checks if a wildcard has been used to specify the Cube name
+    and creates a subset of cubes using a wildcard. If a delimited list of cube names
+    includes wildcards, the subset might be reused multiple times. If the cube exists,
+    the process proceeds to reprocess the feeders.
+  questions_and_answers:
+  - question: How does the process handle wildcard cube names?
+    answer: The process checks for wildcards and creates a subset of cubes. If a delimited
+      list includes wildcards, the subset might be reused multiple times.
+  - question: What happens if the cube exists?
+    answer: If the cube exists, the process will proceed to reprocess the feeders
+      for that cube.
+  - question: What is created if wildcards are used?
+    answer: A subset of cubes is created when wildcards are used to specify the cube
+      name.
+- context: The process uses global variables to store process details, logging messages
+    with specific error levels, and logs the execution with parameters. If errors
+    are found, the process might quit or break depending on error handling settings.
+  questions_and_answers:
+  - question: What role do global variables play in this process?
+    answer: Global variables are used to store process details and control flow, such
+      as the return code and logging messages.
+  - question: How is logging managed in this process?
+    answer: Logging messages are created with specific error levels. The process logs
+      execution details with parameters if enabled.
+  - question: What happens if errors are found during the process?
+    answer: If errors are found, the process might quit or break, depending on the
+      strict error handling settings.
+document_outline: The Turbo Integrator process for reprocessing feeders includes descriptions
+  of its purpose, usage scenarios, parameter handling, logging, and error management.
+document:
+  repo: https://raw.githubusercontent.com/GMC2alg/bedrockti/refs/heads/main/processes/%7Dbedrock.cube.rule.processfeeders.ti

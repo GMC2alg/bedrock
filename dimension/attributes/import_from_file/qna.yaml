@@ -1,0 +1,79 @@
+version: 3
+created_by: GMC2alg
+domain: turbointegrator
+seed_examples:
+- context: This Turbo Integrator process is designed to create Attributes of a dimension
+    from a file. It is particularly intended for development and prototyping purposes,
+    allowing for the addition of multiple dimension attributes of different types.
+    The file format must be as per the dimension export file applied to an }ElementsAttributes
+    dimension. A valid dimension name (pDim) and a valid path (pSrcDir) and file name
+    (pSrcFile) are mandatory; otherwise, the process will terminate.
+  questions_and_answers:
+  - question: What is the main function of the Turbo Integrator process described?
+    answer: The Turbo Integrator process is designed to create attributes of a dimension
+      from a file, primarily for development and prototyping.
+  - question: What are the mandatory parameters required for the process?
+    answer: The mandatory parameters required are a valid dimension name (pDim), a
+      valid path (pSrcDir), and a valid file name (pSrcFile).
+  - question: What must the file format be for the process to function correctly?
+    answer: The file format must match the dimension export file applied to an }ElementsAttributes
+      dimension.
+- context: The process aborts if essential parameters are missing. It checks the operating
+    system to adapt its path handling and verifies the existence of the specified
+    directory and file. The dimension is also validated for existence on the server.
+    If errors are found in these validations, the process either terminates or continues
+    based on strict error handling settings.
+  questions_and_answers:
+  - question: What happens if essential parameters are missing in the process?
+    answer: The process will abort if essential parameters like the dimension name,
+      source directory, or source file are missing.
+  - question: How does the process handle different operating systems?
+    answer: It checks the operating system and adjusts its path handling accordingly.
+  - question: What is the role of strict error handling in this process?
+    answer: Strict error handling dictates whether the process terminates or continues
+      after encountering validation errors.
+- context: The process includes global variables and constants like user name, process
+    name, and log info format. It uses these parameters to log output and validate
+    input parameters. It initially sets error count to zero and increments upon discovering
+    validation failures.
+  questions_and_answers:
+  - question: What are some constants and variables used in the process?
+    answer: Constants and variables include user name, process name, and log info
+      format, used for logging and validation.
+  - question: How does the process handle logging?
+    answer: It logs outputs using predefined formats and parameters, including detailed
+      error messages if errors occur.
+  - question: What initial value is the error count set to at the beginning?
+    answer: The error count is initially set to zero.
+- context: This Turbo Integrator script uses a CHARACTERDELIMITED data source type
+    and performs delimiter and quote character validations. It validates ASCII code
+    inputs for delimiters and quote characters, ensuring they are correctly formatted
+    before proceeding.
+  questions_and_answers:
+  - question: What type of data source does this process use?
+    answer: The process uses a CHARACTERDELIMITED data source type.
+  - question: How are delimiters and quote characters validated in this process?
+    answer: The process checks if the delimiters and quote characters are formatted
+      correctly, including ASCII code validation.
+  - question: What role does ASCII code validation play in the process?
+    answer: ASCII code validation ensures that delimiters and quote characters are
+      entered correctly, allowing the process to handle them accurately.
+- context: Following metadata validation, the process attempts to write data from
+    the source file to the target dimension. It checks the attribute type and inserts
+    it into the dimension if valid. Invalid attribute types lead to records being
+    skipped. The epilog section manages process termination and provides feedback
+    about error handling and process completion.
+  questions_and_answers:
+  - question: What does the process do after metadata validation?
+    answer: After metadata validation, the process attempts to write data from the
+      source file to the target dimension.
+  - question: How are invalid attribute types handled?
+    answer: Invalid attribute types result in records being skipped.
+  - question: What information does the epilog section of the process provide?
+    answer: The epilog section manages process termination and provides feedback on
+      error handling and process completion.
+document_outline: This Turbo Integrator script describes a process to create dimension
+  attributes from a file, ensuring proper validation and error handling. It details
+  the parameters, logging, and data source settings crucial for successful execution.
+document:
+  repo: https://raw.githubusercontent.com/GMC2alg/bedrockti/refs/heads/main/processes/%7Dbedrock.dim.attr.importfromfile.ti

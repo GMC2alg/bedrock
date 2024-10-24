@@ -1,0 +1,46 @@
+version: 3
+created_by: GMC2alg
+domain: turbointegrator
+seed_examples:
+- context: 'This process converts a private view to a public view for the named client.
+    Use case: Intended for development/prototyping or production. 1. Make private
+    view public to enable public consumption. Note: * A valid cube name pCube is mandatory
+    otherwise the process will abort. * Also, a valid view name pView is mandatory
+    otherwise the process will abort. * This process must be run by the user owning
+    the private view; it cannot be run by another user. * If the view contains private
+    subsets they must also be made public or the view publish will fail.'
+  questions_and_answers:
+  - question: What is the main purpose of this Turbo Integrator process?
+    answer: The main purpose of this process is to convert a private view to a public
+      view for a specified client, making it publicly accessible.
+  - question: What conditions must be met for the process to successfully convert
+      a view from private to public?
+    answer: A valid cube name (pCube) and a valid view name (pView) must be specified;
+      the process must be executed by the user who owns the private view, and any
+      private subsets within the view must also be made public.
+  - question: In what scenarios is this process intended to be used?
+    answer: The process is intended for use in development, prototyping, or production
+      scenarios.
+- context: 'Validate Cube: If a cube name is not specified or does not exist, the
+    process will log an error and terminate if strict error handling is enabled. Validate
+    view: A view name must also be specified. No direct way to check if private view
+    exists except via file system. Parameters Publish Private Subsets and Overwrite:
+    Ensure they are valid values. If Overwrite is set to 0 and a public view with
+    the same name exists, an error is logged.'
+  questions_and_answers:
+  - question: What happens if a cube name is not provided or does not exist?
+    answer: The process will log an error and terminate if strict error handling is
+      enabled.
+  - question: What are the validation steps before publishing the view?
+    answer: 1. Validate that a cube name is provided and exists. 2. Validate that
+      a view name is provided. 3. Ensure parameters for publishing private subsets
+      and overwriting views are valid.
+  - question: How does the process handle an overwrite situation where a public view
+      of the same name already exists?
+    answer: If Overwrite is set to 0 and a public view of the same name already exists,
+      the process logs an error.
+document_outline: This document describes an IBM Turbo Integrator process to convert
+  a private view to a public view, including validation steps, constraints, and possible
+  error conditions.
+document:
+  repo: https://raw.githubusercontent.com/GMC2alg/bedrockti/refs/heads/main/processes/%7Dbedrock.cube.view.publish.ti
