@@ -2,41 +2,44 @@ version: 3
 created_by: GMC2alg
 domain: turbointegrator
 seed_examples:
-- context: 'The process adds the consolidated element pTgtConsol in the dimension
-    hierarchy. Use case: Intended for development but can also be used in production.
-    1/ Create a new hierarchy for testing. 2/ Create a new hierarchy to reflect new
-    business needs. Note: If source parent element (pSrcConsol) is defined, all its
-    leaf elements will be copied to target parent element consolidation. Otherwise,
-    all leaf elements in the dimension hierarchy will be added into target parent
-    element consolidation. Valid source dimension name (pDim), hierarchy (pHier) and
-    target parent element (pTgtConsol) are mandatory otherwise the process will abort.
-    The weight of all added elements into target parent consolidation will be assigned
-    according to pWeight parameter value. Caution: If the target element pTgtConsol
-    exists in the hierarchy, it will be overwritten.'
-  questions_and_answers:
-  - question: What is the main purpose of the process described?
-    answer: The process adds the consolidated element pTgtConsol in the dimension
-      hierarchy, intended for development or production use.
-  - question: What happens if a source parent element is defined?
-    answer: All its leaf elements will be copied to the target parent element consolidation.
-  - question: What must be provided for the process to avoid aborting?
-    answer: Valid source dimension name (pDim), hierarchy (pHier) and target parent
-      element (pTgtConsol).
-- context: Valid source dimension name (pDim), hierarchy (pHier), and target parent
-    element (pTgtConsol) are mandatory, otherwise the process will abort. Weight of
-    all added elements into target parent consolidation will be assigned according
-    to pWeight parameter value.
-  questions_and_answers:
-  - question: What are mandatory requirements to avoid process abortion?
-    answer: Valid source dimension name (pDim), hierarchy (pHier), and target parent
-      element (pTgtConsol) are mandatory.
-  - question: How is the weight assigned to the added elements?
-    answer: The weight is assigned according to the pWeight parameter value.
-  - question: What happens if any of the required parameters are missing?
-    answer: The process will abort.
-document_outline: Description of a Turbo Integrator process for adding consolidated
-  elements to a hierarchy with development and production use cases, parameter validation,
-  and detail on handling existing elements.
+  - context: "The process adds the consolidated element pTgtConsol in the dimension
+      hierarchy. Use case: Intended for development but can also be used in
+      production. 1/ Create a new hierarchy for testing. 2/ Create a new
+      hierarchy to reflect new business needs. Note: If source parent element
+      (pSrcConsol) is defined, all its leaf elements will be copied to target
+      parent element consolidation. Otherwise, all leaf elements in the
+      dimension hierarchy will be added into target parent element
+      consolidation. Valid source dimension name (pDim), hierarchy (pHier) and
+      target parent element (pTgtConsol) are mandatory otherwise the process
+      will abort. The weight of all added elements into target parent
+      consolidation will be assigned according to pWeight parameter value.
+      Caution: If the target element pTgtConsol exists in the hierarchy, it will
+      be overwritten."
+    questions_and_answers:
+      - question: What is the main purpose of the process described?
+        answer: The process adds the consolidated element pTgtConsol in the dimension
+          hierarchy, intended for development or production use.
+      - question: What happens if a source parent element is defined?
+        answer: All its leaf elements will be copied to the target parent element
+          consolidation.
+      - question: What must be provided for the process to avoid aborting?
+        answer: Valid source dimension name (pDim), hierarchy (pHier) and target parent
+          element (pTgtConsol).
+  - context: Valid source dimension name (pDim), hierarchy (pHier), and target
+      parent element (pTgtConsol) are mandatory, otherwise the process will
+      abort. Weight of all added elements into target parent consolidation will
+      be assigned according to pWeight parameter value.
+    questions_and_answers:
+      - question: What are mandatory requirements to avoid process abortion?
+        answer: Valid source dimension name (pDim), hierarchy (pHier), and target parent
+          element (pTgtConsol) are mandatory.
+      - question: How is the weight assigned to the added elements?
+        answer: The weight is assigned according to the pWeight parameter value.
+      - question: What happens if any of the required parameters are missing?
+        answer: The process will abort.
+document_outline: Description of a Turbo Integrator process for adding
+  consolidated elements to a hierarchy with development and production use
+  cases, parameter validation, and detail on handling existing elements.
 document:
   repo: https://github.com/GMC2alg/bedrockti.git
   commit: 8c3ed2fbaa5674f3c984a9ed08a1c51f77c2b271

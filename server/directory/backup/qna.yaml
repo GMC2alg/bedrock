@@ -2,53 +2,58 @@ version: 3
 created_by: GMC2alg
 domain: turbointegrator
 seed_examples:
-- context: Entwickle einen IBM Turbo Integrator Prozess, der das Sichern des Datenverzeichnisses
-    automatisiert. Dieser Prozess soll sowohl in der Entwicklungs- als auch in der
-    Produktionsumgebung eingesetzt werden. Die Sicherung des Datenverzeichnisses soll
-    täglich während der Entwicklungsphase und während des Planungszyklus durchgeführt
-    werden. Beachte, dass ein gültiges Datenverzeichnis (pSrcDir) und ein Zielverzeichnis
-    (pTgtDir) erforderlich sind, da der Prozess andernfalls abbricht.
-  questions_and_answers:
-  - question: What is the purpose of the IBM Turbo Integrator process?
-    answer: The purpose is to automate the backup of the data directory, both in development
-      and production environments.
-  - question: How often should the data directory be backed up?
-    answer: The data directory should be backed up daily during the development phase
-      and during the planning cycle.
-  - question: What directories are necessary for the backup process to function correctly?
-    answer: A valid data directory (pSrcDir) and a target directory (pTgtDir) are
-      required for the process to function correctly.
-- context: 'This process will back up the Data Directory. Use case: Intended for development
-    and production. 1/ Backup Data directory every day during development. 2/ Backup
-    Data directory every day during planning cycle. Note: A valid data directory (pSrcDir)
-    and target directory (pTgtDir) is mandatory otherwise the process will abort.'
-  questions_and_answers:
-  - question: In what environments is the data backup process intended to be used?
-    answer: The data backup process is intended to be used in both development and
-      production environments.
-  - question: What will happen if the data directory or target directory is invalid?
-    answer: The process will abort if a valid data directory or target directory is
-      not specified.
-  - question: Why is it important to have a valid directory for the backup process?
-    answer: Having a valid directory ensures that the backup process can be executed
-      successfully without interruption.
-- context: Naturally, a valid data directory (pSrcDir) and target directory (pTgtDir)
-    is mandatory otherwise the process will abort. The process uses global variables
-    and constants for configuring the backup operations, checks the operating system
-    to adjust commands accordingly, and ensures directories are specified and available.
-  questions_and_answers:
-  - question: What are some of the key configurations used in the backup process?
-    answer: The process uses global variables and constants to configure backup operations
-      and checks the operating system for adjusted commands.
-  - question: How does the process handle operating system differences?
-    answer: The process checks the operating system and adjusts the commands accordingly
-      for file directory handling.
-  - question: What is mandatory for the process to run without aborting?
-    answer: A valid data directory and target directory must be specified to prevent
-      the process from aborting.
-document_outline: A description of an IBM Turbo Integrator process for automating
-  data directory backup, discussing the requirements, usage scenarios, and process
-  logic.
+  - context: Entwickle einen IBM Turbo Integrator Prozess, der das Sichern des
+      Datenverzeichnisses automatisiert. Dieser Prozess soll sowohl in der
+      Entwicklungs- als auch in der Produktionsumgebung eingesetzt werden. Die
+      Sicherung des Datenverzeichnisses soll täglich während der
+      Entwicklungsphase und während des Planungszyklus durchgeführt werden.
+      Beachte, dass ein gültiges Datenverzeichnis (pSrcDir) und ein
+      Zielverzeichnis (pTgtDir) erforderlich sind, da der Prozess andernfalls
+      abbricht.
+    questions_and_answers:
+      - question: What is the purpose of the IBM Turbo Integrator process?
+        answer: The purpose is to automate the backup of the data directory, both in
+          development and production environments.
+      - question: How often should the data directory be backed up?
+        answer: The data directory should be backed up daily during the development
+          phase and during the planning cycle.
+      - question: What directories are necessary for the backup process to function
+          correctly?
+        answer: A valid data directory (pSrcDir) and a target directory (pTgtDir) are
+          required for the process to function correctly.
+  - context: "This process will back up the Data Directory. Use case: Intended for
+      development and production. 1/ Backup Data directory every day during
+      development. 2/ Backup Data directory every day during planning cycle.
+      Note: A valid data directory (pSrcDir) and target directory (pTgtDir) is
+      mandatory otherwise the process will abort."
+    questions_and_answers:
+      - question: In what environments is the data backup process intended to be used?
+        answer: The data backup process is intended to be used in both development and
+          production environments.
+      - question: What will happen if the data directory or target directory is invalid?
+        answer: The process will abort if a valid data directory or target directory is
+          not specified.
+      - question: Why is it important to have a valid directory for the backup process?
+        answer: Having a valid directory ensures that the backup process can be executed
+          successfully without interruption.
+  - context: Naturally, a valid data directory (pSrcDir) and target directory
+      (pTgtDir) is mandatory otherwise the process will abort. The process uses
+      global variables and constants for configuring the backup operations,
+      checks the operating system to adjust commands accordingly, and ensures
+      directories are specified and available.
+    questions_and_answers:
+      - question: What are some of the key configurations used in the backup process?
+        answer: The process uses global variables and constants to configure backup
+          operations and checks the operating system for adjusted commands.
+      - question: How does the process handle operating system differences?
+        answer: The process checks the operating system and adjusts the commands
+          accordingly for file directory handling.
+      - question: What is mandatory for the process to run without aborting?
+        answer: A valid data directory and target directory must be specified to prevent
+          the process from aborting.
+document_outline: A description of an IBM Turbo Integrator process for
+  automating data directory backup, discussing the requirements, usage
+  scenarios, and process logic.
 document:
   repo: https://github.com/GMC2alg/bedrockti.git
   commit: 8c3ed2fbaa5674f3c984a9ed08a1c51f77c2b271

@@ -2,58 +2,63 @@ version: 3
 created_by: GMC2alg
 domain: turbointegrator
 seed_examples:
-- context: 'This process will create a static subset in a Hierarchy of target Dimension.
-    It uses multiple parameters to determine what elements to include in the subset:
-    - pConsol: If specified, only elements that are descendants of the consol will
-    be included. Otherwise, this filter is ignored. - pAttr: If specified, only elements
-    with a value equivalent to pAttrValue are included; otherwise, this filter is
-    ignored. - pLevelFrom: Only elements with a level greater than or equal to pLevelFrom
-    are included. - pLevelTo: Only elements with a level less than or equal to pLevelTo
-    are included. - pExclusions: If specified, elements (separated by a delimiter)
-    are excluded from the subset. Wildcards `*` and `?` are accepted. - pAddToSubset:
-    If the subset already exists, this parameter controls whether elements are added
-    (value 1) or if a new subset is created (value 0).'
-  questions_and_answers:
-  - question: What does the parameter pConsol do in the Turbo Integrator process?
-    answer: The parameter pConsol specifies that only elements which are descendants
-      of the consol will be included in the subset.
-  - question: How does the process handle the parameter pAttr?
-    answer: If pAttr is specified, only elements with a value equivalent to pAttrValue
-      are included in the subset. Otherwise, this filter is ignored.
-  - question: What happens if a subset already exists and pAddToSubset is set to 0?
-    answer: If a subset already exists and pAddToSubset is set to 0, a new subset
-      will be created instead of adding elements to the existing subset.
-- context: The process includes validation steps for parameters. For example, it ensures
-    dimensions and hierarchies are correctly specified and verifies subset existence.
-    It handles errors via logging messages and can quit or break the process depending
-    on error handling settings.
-  questions_and_answers:
-  - question: How are validation errors handled in this Turbo Integrator process?
-    answer: Validation errors are logged, and depending on the strict error handling
-      setting, the process may either quit or break.
-  - question: What checks are performed on the dimension parameter?
-    answer: The process checks if a dimension is specified and if it exists. If a
-      hierarchy has been passed incorrectly with the dimension, it will extract and
-      validate it separately.
-  - question: What does the process do if no subset is specified?
-    answer: If no subset is specified, it logs an error message indicating that no
-      subset is specified.
-- context: The process contains sections for Prolog, Metadaten, and Epilog. It has
-    a systematic approach for preparing subsets, setting aliases, and executing exclusion
-    processes. It ends by logging completion messages and handling final errors.
-  questions_and_answers:
-  - question: What is the role of the Prolog section in this process?
-    answer: The Prolog section validates parameters, sets up global variables, prepares
-      subsets, and logs initial information.
-  - question: What does the process do in the Metadaten section?
-    answer: In the Metadaten section, the process adds elements to the subset, checks
-      that elements meet specified criteria, and logs any issues encountered.
-  - question: How does the process conclude in the Epilog section?
-    answer: The Epilog section handles final error messages, logs processing actions,
-      and executes exclusion processes where necessary.
-document_outline: This document outlines the implementation of an IBM Turbo Integrator
-  process that creates a static subset in a dimension's hierarchy by applying various
-  filters and parameters.
+  - context: "This process will create a static subset in a Hierarchy of target
+      Dimension. It uses multiple parameters to determine what elements to
+      include in the subset: - pConsol: If specified, only elements that are
+      descendants of the consol will be included. Otherwise, this filter is
+      ignored. - pAttr: If specified, only elements with a value equivalent to
+      pAttrValue are included; otherwise, this filter is ignored. - pLevelFrom:
+      Only elements with a level greater than or equal to pLevelFrom are
+      included. - pLevelTo: Only elements with a level less than or equal to
+      pLevelTo are included. - pExclusions: If specified, elements (separated by
+      a delimiter) are excluded from the subset. Wildcards `*` and `?` are
+      accepted. - pAddToSubset: If the subset already exists, this parameter
+      controls whether elements are added (value 1) or if a new subset is
+      created (value 0)."
+    questions_and_answers:
+      - question: What does the parameter pConsol do in the Turbo Integrator process?
+        answer: The parameter pConsol specifies that only elements which are descendants
+          of the consol will be included in the subset.
+      - question: How does the process handle the parameter pAttr?
+        answer: If pAttr is specified, only elements with a value equivalent to
+          pAttrValue are included in the subset. Otherwise, this filter is
+          ignored.
+      - question: What happens if a subset already exists and pAddToSubset is set to 0?
+        answer: If a subset already exists and pAddToSubset is set to 0, a new subset
+          will be created instead of adding elements to the existing subset.
+  - context: The process includes validation steps for parameters. For example, it
+      ensures dimensions and hierarchies are correctly specified and verifies
+      subset existence. It handles errors via logging messages and can quit or
+      break the process depending on error handling settings.
+    questions_and_answers:
+      - question: How are validation errors handled in this Turbo Integrator process?
+        answer: Validation errors are logged, and depending on the strict error handling
+          setting, the process may either quit or break.
+      - question: What checks are performed on the dimension parameter?
+        answer: The process checks if a dimension is specified and if it exists. If a
+          hierarchy has been passed incorrectly with the dimension, it will
+          extract and validate it separately.
+      - question: What does the process do if no subset is specified?
+        answer: If no subset is specified, it logs an error message indicating that no
+          subset is specified.
+  - context: The process contains sections for Prolog, Metadaten, and Epilog. It has
+      a systematic approach for preparing subsets, setting aliases, and
+      executing exclusion processes. It ends by logging completion messages and
+      handling final errors.
+    questions_and_answers:
+      - question: What is the role of the Prolog section in this process?
+        answer: The Prolog section validates parameters, sets up global variables,
+          prepares subsets, and logs initial information.
+      - question: What does the process do in the Metadaten section?
+        answer: In the Metadaten section, the process adds elements to the subset,
+          checks that elements meet specified criteria, and logs any issues
+          encountered.
+      - question: How does the process conclude in the Epilog section?
+        answer: The Epilog section handles final error messages, logs processing
+          actions, and executes exclusion processes where necessary.
+document_outline: This document outlines the implementation of an IBM Turbo
+  Integrator process that creates a static subset in a dimension's hierarchy by
+  applying various filters and parameters.
 document:
   repo: https://github.com/GMC2alg/bedrockti.git
   commit: 8c3ed2fbaa5674f3c984a9ed08a1c51f77c2b271

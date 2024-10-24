@@ -2,79 +2,83 @@ version: 3
 created_by: GMC2alg
 domain: turbointegrator
 seed_examples:
-- context: This process creates a processing view for the cube and for specified dimensions
-    of the cube. It is intended for development/prototyping or in Production environment.
-    The process creates empty subsets and assigns them to the view. A subsequent process
-    is required to insert elements into subsets otherwise the views will not contain
-    any data. A valid cube name (pCube) is mandatory, otherwise the process will abort.
-  questions_and_answers:
-  - question: What does the Turbo Integrator process create?
-    answer: The Turbo Integrator process creates a processing view for the cube and
-      for specified dimensions of the cube.
-  - question: Is a valid cube name mandatory for the process?
-    answer: Yes, a valid cube name (pCube) is mandatory, otherwise the process will
-      abort.
-  - question: What is required after creating the view with empty subsets?
-    answer: A subsequent process is required to insert elements into subsets; otherwise,
-      the views will not contain any data.
-- context: The code checks various parameters for validation, such as cube name, dimensions,
-    and suppression parameters. It ensures that each is correctly specified, logging
-    errors when any are missing or incorrect. The process uses tokens and MDX expressions
-    to navigate and manipulate the cube and dimensions based on input parameters.
-  questions_and_answers:
-  - question: What parameters does the code validate?
-    answer: The code validates parameters such as cube name, dimensions, and suppression
-      parameters.
-  - question: What happens if parameters are missing or incorrect?
-    answer: Errors are logged when parameters are missing or incorrect.
-  - question: How does the process handle navigation and manipulation?
-    answer: The process uses tokens and MDX expressions to navigate and manipulate
-      the cube and dimensions based on input parameters.
-- context: The process uses conditional logic to handle cube and dimension lists,
-    utilizing constructs like 'While' and 'If' to iterate through and perform actions
-    only if conditions are met. This ensures that the correct subsets and views are
-    created and managed efficiently, including handling of the 'ALL' keyword for comprehensive
-    operations.
-  questions_and_answers:
-  - question: What programming constructs does the process use for logic handling?
-    answer: The process uses conditional logic with constructs like 'While' and 'If'.
-  - question: Does the process handle both cube and dimension lists?
-    answer: Yes, it handles both cube and dimension lists.
-  - question: What does the 'ALL' keyword signify in the process?
-    answer: The 'ALL' keyword is used for comprehensive operations on cubes or dimensions.
-- context: The process checks if views or subsets exist and, if they do, deletes them
-    before creating new ones. This is, in part, to ensure that no duplicated or conflicting
-    entries interfere with the view creation and to maintain data integrity throughout
-    the process lifecycle.
-  questions_and_answers:
-  - question: What does the process do if views or subsets already exist?
-    answer: If views or subsets already exist, the process deletes them before creating
-      new ones.
-  - question: Why does the process delete existing views or subsets?
-    answer: This ensures that no duplicated or conflicting entries interfere with
-      the view creation and maintains data integrity.
-  - question: How does the process maintain data integrity?
-    answer: By deleting existing views or subsets before creating new ones, ensuring
-      no duplication or conflicts.
-- context: After processing, the code handles error logging and return codes, preparing
-    messages based on whether errors occurred. If strict error handling is enabled,
-    the process quits upon errors; otherwise, it breaks the process flow slightly
-    to notify but continue.
-  questions_and_answers:
-  - question: How does the process handle errors?
-    answer: Errors are logged, and if strict error handling is enabled, the process
-      quits. Otherwise, it slightly breaks the flow but continues after logging the
-      error.
-  - question: What determines if the process quits on errors?
-    answer: Whether strict error handling is enabled determines if the process quits
-      on errors.
-  - question: Does the process continue after logging an error when strict error handling
-      is not enabled?
-    answer: Yes, the process continues after logging an error if strict error handling
-      is not enabled.
-document_outline: Description of a Turbo Integrator process that creates a processing
-  view for cubes and specified dimensions, intended for development and production
-  environments.
+  - context: This process creates a processing view for the cube and for specified
+      dimensions of the cube. It is intended for development/prototyping or in
+      Production environment. The process creates empty subsets and assigns them
+      to the view. A subsequent process is required to insert elements into
+      subsets otherwise the views will not contain any data. A valid cube name
+      (pCube) is mandatory, otherwise the process will abort.
+    questions_and_answers:
+      - question: What does the Turbo Integrator process create?
+        answer: The Turbo Integrator process creates a processing view for the cube and
+          for specified dimensions of the cube.
+      - question: Is a valid cube name mandatory for the process?
+        answer: Yes, a valid cube name (pCube) is mandatory, otherwise the process will
+          abort.
+      - question: What is required after creating the view with empty subsets?
+        answer: A subsequent process is required to insert elements into subsets;
+          otherwise, the views will not contain any data.
+  - context: The code checks various parameters for validation, such as cube name,
+      dimensions, and suppression parameters. It ensures that each is correctly
+      specified, logging errors when any are missing or incorrect. The process
+      uses tokens and MDX expressions to navigate and manipulate the cube and
+      dimensions based on input parameters.
+    questions_and_answers:
+      - question: What parameters does the code validate?
+        answer: The code validates parameters such as cube name, dimensions, and
+          suppression parameters.
+      - question: What happens if parameters are missing or incorrect?
+        answer: Errors are logged when parameters are missing or incorrect.
+      - question: How does the process handle navigation and manipulation?
+        answer: The process uses tokens and MDX expressions to navigate and manipulate
+          the cube and dimensions based on input parameters.
+  - context: The process uses conditional logic to handle cube and dimension lists,
+      utilizing constructs like 'While' and 'If' to iterate through and perform
+      actions only if conditions are met. This ensures that the correct subsets
+      and views are created and managed efficiently, including handling of the
+      'ALL' keyword for comprehensive operations.
+    questions_and_answers:
+      - question: What programming constructs does the process use for logic handling?
+        answer: The process uses conditional logic with constructs like 'While' and
+          'If'.
+      - question: Does the process handle both cube and dimension lists?
+        answer: Yes, it handles both cube and dimension lists.
+      - question: What does the 'ALL' keyword signify in the process?
+        answer: The 'ALL' keyword is used for comprehensive operations on cubes or
+          dimensions.
+  - context: The process checks if views or subsets exist and, if they do, deletes
+      them before creating new ones. This is, in part, to ensure that no
+      duplicated or conflicting entries interfere with the view creation and to
+      maintain data integrity throughout the process lifecycle.
+    questions_and_answers:
+      - question: What does the process do if views or subsets already exist?
+        answer: If views or subsets already exist, the process deletes them before
+          creating new ones.
+      - question: Why does the process delete existing views or subsets?
+        answer: This ensures that no duplicated or conflicting entries interfere with
+          the view creation and maintains data integrity.
+      - question: How does the process maintain data integrity?
+        answer: By deleting existing views or subsets before creating new ones, ensuring
+          no duplication or conflicts.
+  - context: After processing, the code handles error logging and return codes,
+      preparing messages based on whether errors occurred. If strict error
+      handling is enabled, the process quits upon errors; otherwise, it breaks
+      the process flow slightly to notify but continue.
+    questions_and_answers:
+      - question: How does the process handle errors?
+        answer: Errors are logged, and if strict error handling is enabled, the process
+          quits. Otherwise, it slightly breaks the flow but continues after
+          logging the error.
+      - question: What determines if the process quits on errors?
+        answer: Whether strict error handling is enabled determines if the process quits
+          on errors.
+      - question: Does the process continue after logging an error when strict error
+          handling is not enabled?
+        answer: Yes, the process continues after logging an error if strict error
+          handling is not enabled.
+document_outline: Description of a Turbo Integrator process that creates a
+  processing view for cubes and specified dimensions, intended for development
+  and production environments.
 document:
   repo: https://github.com/GMC2alg/bedrockti.git
   commit: 8c3ed2fbaa5674f3c984a9ed08a1c51f77c2b271

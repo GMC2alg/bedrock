@@ -2,74 +2,76 @@ version: 3
 created_by: GMC2alg
 domain: turbointegrator
 seed_examples:
-- context: "This process creates new elements in a dimension hierarchy. If the parameter
-    pEle is supplied with a delimited list of elements, multiple elements will be
-    created. A valid dimension name (pDim) and element list are mandatory, otherwise
-    the process will abort. Caution: When target hierarchy is 'Leaves', no consolidated
-    elements will be created."
-  questions_and_answers:
-  - question: What does the Turbo Integrator process do?
-    answer: The process creates new elements in a dimension hierarchy.
-  - question: What happens if the parameter pEle contains a delimited list of elements?
-    answer: If pEle contains a delimited list of elements, multiple elements will
-      be created.
-  - question: Are there any conditions where the process will abort?
-    answer: Yes, the process will abort if a valid dimension name (pDim) and element
-      list are not provided.
-- context: The process uses several global and constant variables, including StringGlobalVariable('sProcessReturnCode')
-    and NumericGlobalVariable('nProcessReturnCode'). It uses 'cMsgErrorLevel' and
-    'cMsgErrorContent' for logging error messages.
-  questions_and_answers:
-  - question: What types of global variables does the process use?
-    answer: The process uses StringGlobalVariable and NumericGlobalVariable types
-      for global variables.
-  - question: How are error messages handled in the process?
-    answer: Error messages are logged using 'cMsgErrorLevel' and 'cMsgErrorContent'.
-  - question: What is the purpose of 'sProcessReturnCode' in the process?
-    answer: "'sProcessReturnCode' is used to capture the process's return code
-      as a string for reporting purposes."
-- context: Parameter validation is an essential part of the process. The parameters
-    pDim, pHier, pEle, and pDelim are validated to ensure they meet specific criteria
-    like non-emptiness and correct format.
-  questions_and_answers:
-  - question: What is the role of parameter validation in this process?
-    answer: Parameter validation ensures that necessary parameters like pDim, pHier,
-      pEle, and pDelim meet specific criteria and formats.
-  - question: What happens if a parameter fails validation?
-    answer: If a parameter fails validation, the process logs an error and may abort
-      or break based on the error handling configuration.
-  - question: What is the criteria for validating pDim?
-    answer: pDim must be a non-empty string without wildcards or delimiters unless
-      part of a hierarchy expression.
-- context: The process contains sections for Prolog, Metadaten, Daten, and Epilog.
-    Each section serves different purposes such as initialization, metadata operations,
-    data operations, and finalization.
-  questions_and_answers:
-  - question: What are the sections contained in the Turbo Integrator process?
-    answer: The sections include Prolog, Metadaten, Daten, and Epilog, each serving
-      a unique purpose in the process.
-  - question: What is the purpose of the Prolog section in the process?
-    answer: The Prolog section is used for initialization, such as setting up global
-      variables and defining constants.
-  - question: What does the Epilog section do?
-    answer: The Epilog section handles the finalization and cleanup tasks, such as
-      error handling and logging outcomes.
-- context: If errors are encountered, the process will employ different error handling
-    strategies based on the configuration, like ProcessQuit or ProcessBreak, and then
-    log the error details.
-  questions_and_answers:
-  - question: How does the process handle errors encountered during execution?
-    answer: The process handles errors using strategies like ProcessQuit or ProcessBreak,
-      depending on the error handling configuration.
-  - question: What happens after an error is logged in the process?
-    answer: After logging an error, the process might quit or break based on the configured
-      error handling mechanism.
-  - question: Is there provision for detailed error reporting in the process?
-    answer: Yes, detailed error messages are logged, and the process provides information
-      on the encountered issues through log outputs.
-document_outline: Instruction for creating a Turbo Integrator process in IBM that
-  initializes and validates parameters, executes main logic, and handles errors for
-  element creation in a dimension hierarchy.
+  - context: "This process creates new elements in a dimension hierarchy. If the
+      parameter pEle is supplied with a delimited list of elements, multiple
+      elements will be created. A valid dimension name (pDim) and element list
+      are mandatory, otherwise the process will abort. Caution: When target
+      hierarchy is 'Leaves', no consolidated elements will be created."
+    questions_and_answers:
+      - question: What does the Turbo Integrator process do?
+        answer: The process creates new elements in a dimension hierarchy.
+      - question: What happens if the parameter pEle contains a delimited list of
+          elements?
+        answer: If pEle contains a delimited list of elements, multiple elements will be
+          created.
+      - question: Are there any conditions where the process will abort?
+        answer: Yes, the process will abort if a valid dimension name (pDim) and element
+          list are not provided.
+  - context: The process uses several global and constant variables, including
+      StringGlobalVariable('sProcessReturnCode') and
+      NumericGlobalVariable('nProcessReturnCode'). It uses 'cMsgErrorLevel' and
+      'cMsgErrorContent' for logging error messages.
+    questions_and_answers:
+      - question: What types of global variables does the process use?
+        answer: The process uses StringGlobalVariable and NumericGlobalVariable types
+          for global variables.
+      - question: How are error messages handled in the process?
+        answer: Error messages are logged using 'cMsgErrorLevel' and 'cMsgErrorContent'.
+      - question: What is the purpose of 'sProcessReturnCode' in the process?
+        answer: "'sProcessReturnCode' is used to capture the process's return code as a
+          string for reporting purposes."
+  - context: Parameter validation is an essential part of the process. The
+      parameters pDim, pHier, pEle, and pDelim are validated to ensure they meet
+      specific criteria like non-emptiness and correct format.
+    questions_and_answers:
+      - question: What is the role of parameter validation in this process?
+        answer: Parameter validation ensures that necessary parameters like pDim, pHier,
+          pEle, and pDelim meet specific criteria and formats.
+      - question: What happens if a parameter fails validation?
+        answer: If a parameter fails validation, the process logs an error and may abort
+          or break based on the error handling configuration.
+      - question: What is the criteria for validating pDim?
+        answer: pDim must be a non-empty string without wildcards or delimiters unless
+          part of a hierarchy expression.
+  - context: The process contains sections for Prolog, Metadaten, Daten, and Epilog.
+      Each section serves different purposes such as initialization, metadata
+      operations, data operations, and finalization.
+    questions_and_answers:
+      - question: What are the sections contained in the Turbo Integrator process?
+        answer: The sections include Prolog, Metadaten, Daten, and Epilog, each serving
+          a unique purpose in the process.
+      - question: What is the purpose of the Prolog section in the process?
+        answer: The Prolog section is used for initialization, such as setting up global
+          variables and defining constants.
+      - question: What does the Epilog section do?
+        answer: The Epilog section handles the finalization and cleanup tasks, such as
+          error handling and logging outcomes.
+  - context: If errors are encountered, the process will employ different error
+      handling strategies based on the configuration, like ProcessQuit or
+      ProcessBreak, and then log the error details.
+    questions_and_answers:
+      - question: How does the process handle errors encountered during execution?
+        answer: The process handles errors using strategies like ProcessQuit or
+          ProcessBreak, depending on the error handling configuration.
+      - question: What happens after an error is logged in the process?
+        answer: After logging an error, the process might quit or break based on the
+          configured error handling mechanism.
+      - question: Is there provision for detailed error reporting in the process?
+        answer: Yes, detailed error messages are logged, and the process provides
+          information on the encountered issues through log outputs.
+document_outline: Instruction for creating a Turbo Integrator process in IBM
+  that initializes and validates parameters, executes main logic, and handles
+  errors for element creation in a dimension hierarchy.
 document:
   repo: https://github.com/GMC2alg/bedrockti.git
   commit: 8c3ed2fbaa5674f3c984a9ed08a1c51f77c2b271

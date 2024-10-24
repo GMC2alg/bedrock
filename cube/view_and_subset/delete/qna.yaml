@@ -2,72 +2,80 @@ version: 3
 created_by: GMC2alg
 domain: turbointegrator
 seed_examples:
-- context: 'Dieser IBM Turbo Integrator-Prozess löscht eine Ansicht und alle Teilmengen
-    desselben Namens. Der Anwendungsfall umfasst zwei Hauptszenarien: Erstens wird
-    er in Produktionsumgebungen im Epilog verwendet, um Ansichten und Teilmengen zu
-    entfernen, die für die Verarbeitung genutzt werden. Zweitens dient er der manuellen
-    Bereinigung von Ansichten und Teilmengen in Entwicklungs- oder Prototypenphasen.'
-  questions_and_answers:
-  - question: Was ist der Hauptzweck dieses IBM Turbo Integrator-Prozesses?
-    answer: Der Prozess löscht eine Ansicht und alle Teilmengen desselben Namens in
-      Produktions- und Entwicklungsumgebungen.
-  - question: In welchen Umgebungen wird dieser Prozess angewendet?
-    answer: Er wird in Produktionsumgebungen im Epilog und in Entwicklungs- oder Prototypenphasen
-      angewendet.
-  - question: Unterstützt der Prozess die Verwendung von Listen und Platzhaltern?
-    answer: Nein, Listen und Platzhalter werden in diesem Prozess nicht unterstützt.
-- context: Ein gültiger Würfelname (pCube) ist zwingend erforderlich, andernfalls
-    wird der Prozess abgebrochen. Ebenso ist ein gültiger Ansichtsname (pView) erforderlich,
-    um den Prozess fortzusetzen.
-  questions_and_answers:
-  - question: Was passiert, wenn kein gültiger Würfelname angegeben wird?
-    answer: Der Prozess wird abgebrochen, wenn kein gültiger Würfelname (pCube) angegeben
-      wird.
-  - question: Warum ist ein gültiger Ansichtsname erforderlich?
-    answer: Ein gültiger Ansichtsname (pView) ist erforderlich, um den Prozess fortzusetzen.
-  - question: Welche beiden Parameter sind zwingend erforderlich, um den Prozess auszuführen?
-    answer: Ein gültiger Würfelname (pCube) und ein gültiger Ansichtsname (pView)
-      sind zwingend erforderlich.
-- context: Die Annahme zur Übereinstimmung basiert auf dem **Namen**. Teilmengen mit
-    demselben Namen wie die Ansicht werden gelöscht, unabhängig davon, ob sie der
-    Ansicht zugeordnet waren oder nicht.
-  questions_and_answers:
-  - question: Worauf basiert die Annahme zur Übereinstimmung im Prozess?
-    answer: Die Annahme zur Übereinstimmung basiert auf dem Namen.
-  - question: Werden Teilmengen gelöscht, auch wenn sie nicht der Ansicht zugeordnet
-      waren?
-    answer: Ja, Teilmengen mit demselben Namen wie die Ansicht werden gelöscht, auch
-      wenn sie nicht der Ansicht zugeordnet waren.
-  - question: Können Teilmengen mit unterschiedlichen Namen von der Ansicht gelöscht
-      werden?
-    answer: Nein, nur Teilmengen mit demselben Namen wie die Ansicht werden gelöscht.
-- context: 'Für die Parameter gibt es drei Modi: Modus 0 löscht Ansichten und löscht
-    Teilmengen **indirekt** über den Bedrock-Prozessaufruf. Sollte eine Teilmenge
-    nicht gelöscht werden können, wird der Prozess mit einem geringfügigen Fehlerstatus
-    fortgesetzt.'
-  questions_and_answers:
-  - question: Was ist Modus 0 in diesem Prozess?
-    answer: Modus 0 löscht Ansichten und löscht Teilmengen indirekt über den Bedrock-Prozessaufruf.
-  - question: Was passiert, wenn eine Teilmenge im Modus 0 nicht gelöscht werden kann?
-    answer: Der Prozess wird mit einem geringfügigen Fehlerstatus fortgesetzt.
-  - question: Wird der Prozess im Modus 0 bei Fehlern abgebrochen?
-    answer: Nein, der Prozess wird nicht abgebrochen, sondern mit einem geringfügigen
-      Fehlerstatus fortgesetzt.
-- context: Modus 1 löscht Ansichten und löscht Teilmengen **direkt** über die SubsetDestroy-Funktion.
-    Scheitert das Löschen einer Teilmenge, wird der Prozess mit großem Fehlerstatus
-    abgebrochen. Modus 2 löscht nur Ansichten und belässt Teilmengen unverändert.
-  questions_and_answers:
-  - question: Was unterscheidet Modus 1 von Modus 0?
-    answer: Modus 1 löscht Teilmengen direkt über die SubsetDestroy-Funktion und bricht
-      bei Fehlern mit großem Fehlerstatus ab.
-  - question: Wie reagiert der Prozess in Modus 1, wenn eine Teilmenge nicht gelöscht
-      werden kann?
-    answer: Der Prozess wird mit großem Fehlerstatus abgebrochen.
-  - question: Was bewirkt Modus 2 in diesem Prozess?
-    answer: Modus 2 löscht nur Ansichten und belässt Teilmengen unverändert.
-document_outline: Dieser Dokumentabschnitt beschreibt einen IBM Turbo Integrator-Prozess
-  zur Löschung von Ansichten und Teilmengen in Produktions- und Entwicklungsumgebungen.
-  Es werden Parameteranforderungen und drei Betriebsmodi vorgestellt.
+  - context: "Dieser IBM Turbo Integrator-Prozess löscht eine Ansicht und alle
+      Teilmengen desselben Namens. Der Anwendungsfall umfasst zwei
+      Hauptszenarien: Erstens wird er in Produktionsumgebungen im Epilog
+      verwendet, um Ansichten und Teilmengen zu entfernen, die für die
+      Verarbeitung genutzt werden. Zweitens dient er der manuellen Bereinigung
+      von Ansichten und Teilmengen in Entwicklungs- oder Prototypenphasen."
+    questions_and_answers:
+      - question: Was ist der Hauptzweck dieses IBM Turbo Integrator-Prozesses?
+        answer: Der Prozess löscht eine Ansicht und alle Teilmengen desselben Namens in
+          Produktions- und Entwicklungsumgebungen.
+      - question: In welchen Umgebungen wird dieser Prozess angewendet?
+        answer: Er wird in Produktionsumgebungen im Epilog und in Entwicklungs- oder
+          Prototypenphasen angewendet.
+      - question: Unterstützt der Prozess die Verwendung von Listen und Platzhaltern?
+        answer: Nein, Listen und Platzhalter werden in diesem Prozess nicht unterstützt.
+  - context: Ein gültiger Würfelname (pCube) ist zwingend erforderlich, andernfalls
+      wird der Prozess abgebrochen. Ebenso ist ein gültiger Ansichtsname (pView)
+      erforderlich, um den Prozess fortzusetzen.
+    questions_and_answers:
+      - question: Was passiert, wenn kein gültiger Würfelname angegeben wird?
+        answer: Der Prozess wird abgebrochen, wenn kein gültiger Würfelname (pCube)
+          angegeben wird.
+      - question: Warum ist ein gültiger Ansichtsname erforderlich?
+        answer: Ein gültiger Ansichtsname (pView) ist erforderlich, um den Prozess
+          fortzusetzen.
+      - question: Welche beiden Parameter sind zwingend erforderlich, um den Prozess
+          auszuführen?
+        answer: Ein gültiger Würfelname (pCube) und ein gültiger Ansichtsname (pView)
+          sind zwingend erforderlich.
+  - context: Die Annahme zur Übereinstimmung basiert auf dem **Namen**. Teilmengen
+      mit demselben Namen wie die Ansicht werden gelöscht, unabhängig davon, ob
+      sie der Ansicht zugeordnet waren oder nicht.
+    questions_and_answers:
+      - question: Worauf basiert die Annahme zur Übereinstimmung im Prozess?
+        answer: Die Annahme zur Übereinstimmung basiert auf dem Namen.
+      - question: Werden Teilmengen gelöscht, auch wenn sie nicht der Ansicht zugeordnet
+          waren?
+        answer: Ja, Teilmengen mit demselben Namen wie die Ansicht werden gelöscht, auch
+          wenn sie nicht der Ansicht zugeordnet waren.
+      - question: Können Teilmengen mit unterschiedlichen Namen von der Ansicht gelöscht
+          werden?
+        answer: Nein, nur Teilmengen mit demselben Namen wie die Ansicht werden
+          gelöscht.
+  - context: "Für die Parameter gibt es drei Modi: Modus 0 löscht Ansichten und
+      löscht Teilmengen **indirekt** über den Bedrock-Prozessaufruf. Sollte eine
+      Teilmenge nicht gelöscht werden können, wird der Prozess mit einem
+      geringfügigen Fehlerstatus fortgesetzt."
+    questions_and_answers:
+      - question: Was ist Modus 0 in diesem Prozess?
+        answer: Modus 0 löscht Ansichten und löscht Teilmengen indirekt über den
+          Bedrock-Prozessaufruf.
+      - question: Was passiert, wenn eine Teilmenge im Modus 0 nicht gelöscht werden
+          kann?
+        answer: Der Prozess wird mit einem geringfügigen Fehlerstatus fortgesetzt.
+      - question: Wird der Prozess im Modus 0 bei Fehlern abgebrochen?
+        answer: Nein, der Prozess wird nicht abgebrochen, sondern mit einem
+          geringfügigen Fehlerstatus fortgesetzt.
+  - context: Modus 1 löscht Ansichten und löscht Teilmengen **direkt** über die
+      SubsetDestroy-Funktion. Scheitert das Löschen einer Teilmenge, wird der
+      Prozess mit großem Fehlerstatus abgebrochen. Modus 2 löscht nur Ansichten
+      und belässt Teilmengen unverändert.
+    questions_and_answers:
+      - question: Was unterscheidet Modus 1 von Modus 0?
+        answer: Modus 1 löscht Teilmengen direkt über die SubsetDestroy-Funktion und
+          bricht bei Fehlern mit großem Fehlerstatus ab.
+      - question: Wie reagiert der Prozess in Modus 1, wenn eine Teilmenge nicht
+          gelöscht werden kann?
+        answer: Der Prozess wird mit großem Fehlerstatus abgebrochen.
+      - question: Was bewirkt Modus 2 in diesem Prozess?
+        answer: Modus 2 löscht nur Ansichten und belässt Teilmengen unverändert.
+document_outline: Dieser Dokumentabschnitt beschreibt einen IBM Turbo
+  Integrator-Prozess zur Löschung von Ansichten und Teilmengen in Produktions-
+  und Entwicklungsumgebungen. Es werden Parameteranforderungen und drei
+  Betriebsmodi vorgestellt.
 document:
   repo: https://github.com/GMC2alg/bedrockti.git
   commit: 8c3ed2fbaa5674f3c984a9ed08a1c51f77c2b271

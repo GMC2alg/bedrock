@@ -2,70 +2,72 @@ version: 3
 created_by: GMC2alg
 domain: turbointegrator
 seed_examples:
-- context: This process will copy a subset from a Hierarchy in source Dimension to
-    a Hierarchy in target Dimension. Valid source dimension name (pSrcDim), source
-    (pSrcSub) and target subset (pTgtSub) are mandatory otherwise the process will
-    abort. Target hierarchy cannot be `Leaves`. If the target dimension Hierarchy
-    exists then it will be overwritten.
-  questions_and_answers:
-  - question: What does this Turbo Integrator process do?
-    answer: It copies a subset from a Hierarchy in the source Dimension to a Hierarchy
-      in the target Dimension.
-  - question: What are the mandatory parameters for the process?
-    answer: The mandatory parameters are source dimension name (pSrcDim), source subset
-      (pSrcSub), and target subset (pTgtSub).
-  - question: Can the target hierarchy be 'Leaves' if it already exists?
-    answer: No, the target hierarchy cannot be 'Leaves'. If it exists, it will be
-      overwritten.
-- context: Constants used in the process include cThisProcName, cUserName, cTimeStamp,
-    cRandomInt, cTempSub, cMsgErrorLevel, and cMsgErrorContent. The cThisProcName
-    is the name of the process.
-  questions_and_answers:
-  - question: What is cThisProcName?
-    answer: cThisProcName is a constant representing the name of the process.
-  - question: What does cMsgErrorLevel represent?
-    answer: cMsgErrorLevel is a constant set to 'ERROR'.
-  - question: What is cTempSub?
-    answer: cTempSub is a temporary subset name composed of process name, timestamp,
-      and a random integer.
-- context: LogOutput parameters are logged if pLogoutput equals 1. Error messages
-    are logged with error level and message content. Information about process execution
-    is logged if parameters are set.
-  questions_and_answers:
-  - question: When are LogOutput parameters logged?
-    answer: They are logged when pLogoutput is set to 1.
-  - question: What types of messages are logged with LogOutput?
-    answer: Error level messages and process execution information are logged.
-  - question: What happens if pLogoutput is 1?
-    answer: Information about the process execution and its parameters will be logged.
-- context: The process will check for errors before continuing. If nErrors is not
-    zero and pStrictErrorHandling is set to 1, the process will quit. Otherwise, it
-    will break.
-  questions_and_answers:
-  - question: What happens if nErrors is not zero and pStrictErrorHandling is 1?
-    answer: The process will quit.
-  - question: What does ProcessBreak mean in this context?
-    answer: ProcessBreak pauses the process if nErrors is not zero and pStrictErrorHandling
-      is not 1.
-  - question: How does the process handle errors?
-    answer: It either quits if conditions are met or breaks based on error handling
-      settings.
-- context: Final error message handling involves checking nErrors and setting a return
-    code. If errors exist, the process logs an error message and may quit based on
-    error handling settings. A success message and return code are logged if no errors
-    are present.
-  questions_and_answers:
-  - question: What happens if no errors are present at the end of the process?
-    answer: A success message and return code are logged.
-  - question: How does the process end if errors were detected?
-    answer: An error message is logged, the return code is set to 0, and the process
-      may quit or continue based on settings.
-  - question: What determines the final log message and code?
-    answer: It depends on whether errors were found and if strict error handling is
-      enabled, influencing the process log message and return code.
-document_outline: The document provides instructions on creating a Turbo Integrator
-  process to copy a subset of a hierarchy from a source dimension to a target dimension,
-  outlining mandatory parameters, error handling, and logging.
+  - context: This process will copy a subset from a Hierarchy in source Dimension to
+      a Hierarchy in target Dimension. Valid source dimension name (pSrcDim),
+      source (pSrcSub) and target subset (pTgtSub) are mandatory otherwise the
+      process will abort. Target hierarchy cannot be `Leaves`. If the target
+      dimension Hierarchy exists then it will be overwritten.
+    questions_and_answers:
+      - question: What does this Turbo Integrator process do?
+        answer: It copies a subset from a Hierarchy in the source Dimension to a
+          Hierarchy in the target Dimension.
+      - question: What are the mandatory parameters for the process?
+        answer: The mandatory parameters are source dimension name (pSrcDim), source
+          subset (pSrcSub), and target subset (pTgtSub).
+      - question: Can the target hierarchy be 'Leaves' if it already exists?
+        answer: No, the target hierarchy cannot be 'Leaves'. If it exists, it will be
+          overwritten.
+  - context: Constants used in the process include cThisProcName, cUserName,
+      cTimeStamp, cRandomInt, cTempSub, cMsgErrorLevel, and cMsgErrorContent.
+      The cThisProcName is the name of the process.
+    questions_and_answers:
+      - question: What is cThisProcName?
+        answer: cThisProcName is a constant representing the name of the process.
+      - question: What does cMsgErrorLevel represent?
+        answer: cMsgErrorLevel is a constant set to 'ERROR'.
+      - question: What is cTempSub?
+        answer: cTempSub is a temporary subset name composed of process name, timestamp,
+          and a random integer.
+  - context: LogOutput parameters are logged if pLogoutput equals 1. Error messages
+      are logged with error level and message content. Information about process
+      execution is logged if parameters are set.
+    questions_and_answers:
+      - question: When are LogOutput parameters logged?
+        answer: They are logged when pLogoutput is set to 1.
+      - question: What types of messages are logged with LogOutput?
+        answer: Error level messages and process execution information are logged.
+      - question: What happens if pLogoutput is 1?
+        answer: Information about the process execution and its parameters will be
+          logged.
+  - context: The process will check for errors before continuing. If nErrors is not
+      zero and pStrictErrorHandling is set to 1, the process will quit.
+      Otherwise, it will break.
+    questions_and_answers:
+      - question: What happens if nErrors is not zero and pStrictErrorHandling is 1?
+        answer: The process will quit.
+      - question: What does ProcessBreak mean in this context?
+        answer: ProcessBreak pauses the process if nErrors is not zero and
+          pStrictErrorHandling is not 1.
+      - question: How does the process handle errors?
+        answer: It either quits if conditions are met or breaks based on error handling
+          settings.
+  - context: Final error message handling involves checking nErrors and setting a
+      return code. If errors exist, the process logs an error message and may
+      quit based on error handling settings. A success message and return code
+      are logged if no errors are present.
+    questions_and_answers:
+      - question: What happens if no errors are present at the end of the process?
+        answer: A success message and return code are logged.
+      - question: How does the process end if errors were detected?
+        answer: An error message is logged, the return code is set to 0, and the process
+          may quit or continue based on settings.
+      - question: What determines the final log message and code?
+        answer: It depends on whether errors were found and if strict error handling is
+          enabled, influencing the process log message and return code.
+document_outline: The document provides instructions on creating a Turbo
+  Integrator process to copy a subset of a hierarchy from a source dimension to
+  a target dimension, outlining mandatory parameters, error handling, and
+  logging.
 document:
   repo: https://github.com/GMC2alg/bedrockti.git
   commit: 8c3ed2fbaa5674f3c984a9ed08a1c51f77c2b271

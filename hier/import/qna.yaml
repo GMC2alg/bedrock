@@ -2,80 +2,87 @@ version: 3
 created_by: GMC2alg
 domain: turbointegrator
 seed_examples:
-- context: 'This process will import Dimension elements into a specified Hierarchy
-    from a File. The format of the file includes various lines: The first line contains
-    metadata of the file with summary information about the dimension, hierarchy,
-    number of elements, and date/time of file creation. The second line specifies
-    the source dimension and hierarchy. The third line describes the dimension sort
-    order. The fourth and fifth lines are reserved for future development. The sixth
-    line includes the header for elements export, while the seventh line and following
-    represent the exported element data.'
-  questions_and_answers:
-  - question: What does the process import?
-    answer: The process imports Dimension elements into a specified Hierarchy from
-      a File.
-  - question: What information is on the first line of the file?
-    answer: The first line contains metadata of the file with summary information
-      about the dimension, hierarchy, number of elements, and date/time of file creation.
-  - question: What does the third line of the file describe?
-    answer: The third line describes the dimension sort order.
-- context: Use cases for this process include restoring a dimension from a backup
-    and quick replication of a large dimension. A valid dimension name (pDim) is mandatory,
-    otherwise, the process will abort. If needed, a custom delimiter might be used
-    by specifying the parameter pDelim value as either a single character or a 3-digit
-    decimal ASCII code.
-  questions_and_answers:
-  - question: What are some use cases for this process?
-    answer: Some use cases include restoring a dimension from a backup and quick replication
-      of a large dimension.
-  - question: What is required for the process to not abort?
-    answer: A valid dimension name (pDim) is mandatory for the process to not abort.
-  - question: How can a custom delimiter be specified?
-    answer: A custom delimiter can be specified by giving the parameter pDelim value
-      as either a single character or a 3-digit decimal ASCII code.
-- context: The pUnwind parameter provides options to 1 (unwind) or 0 (delete) elements
-    in the target dimension. Default is to unwind, but care should be taken when using
-    option 0 to avoid data loss. The process was redesigned in Bedrock4 but can process
-    dimension extracts from prior versions of Bedrock in legacy mode (pLegacy = 1).
-  questions_and_answers:
-  - question: What does the pUnwind parameter do?
-    answer: The pUnwind parameter provides options to 1 (unwind) or 0 (delete) elements
-      in the target dimension.
-  - question: What is the default option for pUnwind?
-    answer: The default option for pUnwind is 1, which means to unwind elements.
-  - question: Can the process handle dimension extracts from prior versions?
-    answer: Yes, the process can handle dimension extracts from prior versions of
+  - context: "This process will import Dimension elements into a specified Hierarchy
+      from a File. The format of the file includes various lines: The first line
+      contains metadata of the file with summary information about the
+      dimension, hierarchy, number of elements, and date/time of file creation.
+      The second line specifies the source dimension and hierarchy. The third
+      line describes the dimension sort order. The fourth and fifth lines are
+      reserved for future development. The sixth line includes the header for
+      elements export, while the seventh line and following represent the
+      exported element data."
+    questions_and_answers:
+      - question: What does the process import?
+        answer: The process imports Dimension elements into a specified Hierarchy from a
+          File.
+      - question: What information is on the first line of the file?
+        answer: The first line contains metadata of the file with summary information
+          about the dimension, hierarchy, number of elements, and date/time of
+          file creation.
+      - question: What does the third line of the file describe?
+        answer: The third line describes the dimension sort order.
+  - context: Use cases for this process include restoring a dimension from a backup
+      and quick replication of a large dimension. A valid dimension name (pDim)
+      is mandatory, otherwise, the process will abort. If needed, a custom
+      delimiter might be used by specifying the parameter pDelim value as either
+      a single character or a 3-digit decimal ASCII code.
+    questions_and_answers:
+      - question: What are some use cases for this process?
+        answer: Some use cases include restoring a dimension from a backup and quick
+          replication of a large dimension.
+      - question: What is required for the process to not abort?
+        answer: A valid dimension name (pDim) is mandatory for the process to not abort.
+      - question: How can a custom delimiter be specified?
+        answer: A custom delimiter can be specified by giving the parameter pDelim value
+          as either a single character or a 3-digit decimal ASCII code.
+  - context: The pUnwind parameter provides options to 1 (unwind) or 0 (delete)
+      elements in the target dimension. Default is to unwind, but care should be
+      taken when using option 0 to avoid data loss. The process was redesigned
+      in Bedrock4 but can process dimension extracts from prior versions of
       Bedrock in legacy mode (pLegacy = 1).
-- context: '### Validate Parameters - If the dimension is not specified, an error
-    is logged and nErrors is set to 1. If the source path does not exist, an error
-    is logged, and nErrors is incremented. The process checks for a valid legacy file
-    format and constructs the full export filename including the path.'
-  questions_and_answers:
-  - question: What happens if the dimension is not specified?
-    answer: If the dimension is not specified, an error is logged and nErrors is set
-      to 1.
-  - question: What occurs if the source path doesn't exist?
-    answer: If the source path doesn't exist, an error is logged, and nErrors is incremented.
-  - question: What does the process check for regarding the legacy file format?
-    answer: The process checks for a valid legacy file format and constructs the full
-      export filename including the path.
-- context: '### Prepare target dimension - If the hierarchy exists in the specified
-    dimension and unwind is selected, the process calls }bedrock.hier.unwind to unwind
-    the dimension elements. If no hierarchy exists, it creates a new one using }bedrock.hier.create.
-    If errors are found, the process is terminated or aborted based on the error handling
-    settings.'
-  questions_and_answers:
-  - question: What happens if the hierarchy exists and unwind is selected?
-    answer: If the hierarchy exists and unwind is selected, the process calls }bedrock.hier.unwind
-      to unwind the dimension elements.
-  - question: What is done if no hierarchy exists?
-    answer: If no hierarchy exists, the process creates a new one using }bedrock.hier.create.
-  - question: What happens if errors are found during preparation?
-    answer: If errors are found, the process is terminated or aborted based on the
-      error handling settings.
-document_outline: This document details the process for importing Dimension elements
-  from a file to a specified hierarchy, including use cases, parameter validation,
-  and error handling.
+    questions_and_answers:
+      - question: What does the pUnwind parameter do?
+        answer: The pUnwind parameter provides options to 1 (unwind) or 0 (delete)
+          elements in the target dimension.
+      - question: What is the default option for pUnwind?
+        answer: The default option for pUnwind is 1, which means to unwind elements.
+      - question: Can the process handle dimension extracts from prior versions?
+        answer: Yes, the process can handle dimension extracts from prior versions of
+          Bedrock in legacy mode (pLegacy = 1).
+  - context: "### Validate Parameters - If the dimension is not specified, an error
+      is logged and nErrors is set to 1. If the source path does not exist, an
+      error is logged, and nErrors is incremented. The process checks for a
+      valid legacy file format and constructs the full export filename including
+      the path."
+    questions_and_answers:
+      - question: What happens if the dimension is not specified?
+        answer: If the dimension is not specified, an error is logged and nErrors is set
+          to 1.
+      - question: What occurs if the source path doesn't exist?
+        answer: If the source path doesn't exist, an error is logged, and nErrors is
+          incremented.
+      - question: What does the process check for regarding the legacy file format?
+        answer: The process checks for a valid legacy file format and constructs the
+          full export filename including the path.
+  - context: "### Prepare target dimension - If the hierarchy exists in the
+      specified dimension and unwind is selected, the process calls
+      }bedrock.hier.unwind to unwind the dimension elements. If no hierarchy
+      exists, it creates a new one using }bedrock.hier.create. If errors are
+      found, the process is terminated or aborted based on the error handling
+      settings."
+    questions_and_answers:
+      - question: What happens if the hierarchy exists and unwind is selected?
+        answer: If the hierarchy exists and unwind is selected, the process calls
+          }bedrock.hier.unwind to unwind the dimension elements.
+      - question: What is done if no hierarchy exists?
+        answer: If no hierarchy exists, the process creates a new one using
+          }bedrock.hier.create.
+      - question: What happens if errors are found during preparation?
+        answer: If errors are found, the process is terminated or aborted based on the
+          error handling settings.
+document_outline: This document details the process for importing Dimension
+  elements from a file to a specified hierarchy, including use cases, parameter
+  validation, and error handling.
 document:
   repo: https://github.com/GMC2alg/bedrockti.git
   commit: 8c3ed2fbaa5674f3c984a9ed08a1c51f77c2b271

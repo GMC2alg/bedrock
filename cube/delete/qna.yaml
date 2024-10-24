@@ -2,72 +2,74 @@ version: 3
 created_by: GMC2alg
 domain: turbointegrator
 seed_examples:
-- context: This process deletes cube(s). Intended for cleaning up after development/prototyping.
-    Delete all cubes not needed after Go Live. A list of cubes can be specified and/or
-    wild cards can be used. Valid cube name(s) must be specified otherwise the process
-    will abort. By default (pCtrlObj) the process will not delete control cubes (i.e.
-    attributes, security etc).
-  questions_and_answers:
-  - question: What is the purpose of the deletion process?
-    answer: The process is intended for cleaning up cubes that are not needed after
-      development or prototyping, specifically after Go Live.
-  - question: Can the process delete control cubes?
-    answer: By default, the process will not delete control cubes such as attributes
-      or security cubes, unless explicitly specified.
-  - question: What must be specified for the process to delete cubes?
-    answer: Valid cube name(s) must be specified for the process to proceed. If invalid
-      names are provided, the process will abort.
-- context: pDelim is used as a delimiter, and if not specified, defaults to '&'. If
-    no cubes are specified, an error is logged. If a cube name does not contain a
-    wildcard or delimiter and is invalid, an error is logged.
-  questions_and_answers:
-  - question: What is the default delimiter for cube names?
-    answer: The default delimiter is '&' if none is specified.
-  - question: What happens if no cubes are specified?
-    answer: An error message is logged indicating that no cubes were specified.
-  - question: What occurs if an invalid cube name is given?
-    answer: An error message is logged specifying that the cube name is invalid.
-- context: The process allows for the use of wildcards to specify cube names. If wildcards
-    are used, an MDX expression is created to handle the cubes that match the pattern,
-    allowing for bulk operations.
-  questions_and_answers:
-  - question: What functionality does using a wildcard provide?
-    answer: Using a wildcard allows the process to handle multiple cubes matching
-      the pattern, enabling bulk operations.
-  - question: How are cubes handled when wildcards are used?
-    answer: When wildcards are used, an MDX expression is created to manage cubes
-      that match the specified pattern.
-  - question: What is the benefit of using wildcard expressions?
-    answer: Wildcard expressions enable efficient handling and deletion of multiple
-      cubes simultaneously.
-- context: The process logs output based on specified parameters. A message log is
-    created with details like user, process name, and parameters when pLogoutput is
-    enabled.
-  questions_and_answers:
-  - question: What happens when pLogoutput is enabled?
-    answer: When pLogoutput is enabled, a log is created containing details about
-      the user, process name, and specified parameters.
-  - question: What information is included in the log message?
-    answer: The log message includes user details, process name, the parameter pCube,
-      delimiter pDelim, and control object setting pCtrlObj.
-  - question: Why is logging important in this process?
-    answer: Logging is important for monitoring the process execution, for error tracking,
-      and for auditing purposes.
-- context: Error handling is implemented, logging errors when conditions are not met
-    and providing options for strict error handling or process break.
-  questions_and_answers:
-  - question: How does the process handle errors?
-    answer: The process logs errors when issues are detected and provides options
-      for strict error handling to abort or break the process.
-  - question: What is strict error handling?
-    answer: Strict error handling ensures the process quits immediately upon encountering
-      an error.
-  - question: What happens if an error occurs but strict error handling is not enforced?
-    answer: If strict error handling is not enforced, the process might log the error
-      and proceed by breaking or attempting recovery.
-document_outline: Instructions to create and execute an IBM Turbo Integrator process
-  for deleting cubes, which is especially useful post-development for removing unnecessary
-  cubes.
+  - context: This process deletes cube(s). Intended for cleaning up after
+      development/prototyping. Delete all cubes not needed after Go Live. A list
+      of cubes can be specified and/or wild cards can be used. Valid cube
+      name(s) must be specified otherwise the process will abort. By default
+      (pCtrlObj) the process will not delete control cubes (i.e. attributes,
+      security etc).
+    questions_and_answers:
+      - question: What is the purpose of the deletion process?
+        answer: The process is intended for cleaning up cubes that are not needed after
+          development or prototyping, specifically after Go Live.
+      - question: Can the process delete control cubes?
+        answer: By default, the process will not delete control cubes such as attributes
+          or security cubes, unless explicitly specified.
+      - question: What must be specified for the process to delete cubes?
+        answer: Valid cube name(s) must be specified for the process to proceed. If
+          invalid names are provided, the process will abort.
+  - context: pDelim is used as a delimiter, and if not specified, defaults to '&'.
+      If no cubes are specified, an error is logged. If a cube name does not
+      contain a wildcard or delimiter and is invalid, an error is logged.
+    questions_and_answers:
+      - question: What is the default delimiter for cube names?
+        answer: The default delimiter is '&' if none is specified.
+      - question: What happens if no cubes are specified?
+        answer: An error message is logged indicating that no cubes were specified.
+      - question: What occurs if an invalid cube name is given?
+        answer: An error message is logged specifying that the cube name is invalid.
+  - context: The process allows for the use of wildcards to specify cube names. If
+      wildcards are used, an MDX expression is created to handle the cubes that
+      match the pattern, allowing for bulk operations.
+    questions_and_answers:
+      - question: What functionality does using a wildcard provide?
+        answer: Using a wildcard allows the process to handle multiple cubes matching
+          the pattern, enabling bulk operations.
+      - question: How are cubes handled when wildcards are used?
+        answer: When wildcards are used, an MDX expression is created to manage cubes
+          that match the specified pattern.
+      - question: What is the benefit of using wildcard expressions?
+        answer: Wildcard expressions enable efficient handling and deletion of multiple
+          cubes simultaneously.
+  - context: The process logs output based on specified parameters. A message log is
+      created with details like user, process name, and parameters when
+      pLogoutput is enabled.
+    questions_and_answers:
+      - question: What happens when pLogoutput is enabled?
+        answer: When pLogoutput is enabled, a log is created containing details about
+          the user, process name, and specified parameters.
+      - question: What information is included in the log message?
+        answer: The log message includes user details, process name, the parameter
+          pCube, delimiter pDelim, and control object setting pCtrlObj.
+      - question: Why is logging important in this process?
+        answer: Logging is important for monitoring the process execution, for error
+          tracking, and for auditing purposes.
+  - context: Error handling is implemented, logging errors when conditions are not
+      met and providing options for strict error handling or process break.
+    questions_and_answers:
+      - question: How does the process handle errors?
+        answer: The process logs errors when issues are detected and provides options
+          for strict error handling to abort or break the process.
+      - question: What is strict error handling?
+        answer: Strict error handling ensures the process quits immediately upon
+          encountering an error.
+      - question: What happens if an error occurs but strict error handling is not
+          enforced?
+        answer: If strict error handling is not enforced, the process might log the
+          error and proceed by breaking or attempting recovery.
+document_outline: Instructions to create and execute an IBM Turbo Integrator
+  process for deleting cubes, which is especially useful post-development for
+  removing unnecessary cubes.
 document:
   repo: https://github.com/GMC2alg/bedrockti.git
   commit: 8c3ed2fbaa5674f3c984a9ed08a1c51f77c2b271

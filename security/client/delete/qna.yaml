@@ -2,79 +2,83 @@ version: 3
 created_by: GMC2alg
 domain: turbointegrator
 seed_examples:
-- context: This IBM Turbo Integrator process is designed to delete clients. The use
-    case includes cleaning up users after the system goes live in both development
-    and production environments, as well as removing former employees from the system
-    upon termination. Note that specifying a valid client or multiple clients is mandatory;
-    otherwise, the process will abort. Multiple clients can be specified using a delimiter.
-  questions_and_answers:
-  - question: What is the purpose of the Turbo Integrator process?
-    answer: The Turbo Integrator process is designed to delete clients, clean up users
-      post-go live, and remove former employees upon termination.
-  - question: Is it mandatory to specify valid clients in the process?
-    answer: Yes, specifying a valid client or multiple clients is mandatory; otherwise,
-      the process will abort.
-  - question: How can multiple clients be specified in the process?
-    answer: Multiple clients can be specified using a delimiter.
-- context: This process will abort if no clients are specified. It logs an error message,
-    and if strict error handling is enabled, it will terminate the process. The process
-    also validates parameters, converts a blank delimiter to a default one, and checks
-    for the existence of necessary attributes in the given dimensions.
-  questions_and_answers:
-  - question: What happens if no clients are specified in the process?
-    answer: If no clients are specified, the process will log an error message and
-      may abort, especially if strict error handling is enabled.
-  - question: What does the process do if a blank delimiter is specified?
-    answer: The process converts a blank delimiter to a default one.
-  - question: Does the process check for the existence of necessary attributes?
-    answer: Yes, the process validates the parameters and checks for the existence
-      of necessary attributes in the given dimensions.
-- context: During the execution, the process deletes specified clients unless they
-    are 'Admin' or the currently logged-in TM1 user. For wildcard searches, the process
-    creates or re-uses a subset to handle deletion requests with wildcards, and logs
-    appropriate messages if an Admin or the current user is attempted to be deleted.
-  questions_and_answers:
-  - question: Does the process attempt to delete the 'Admin' or the current user?
-    answer: No, the process does not delete 'Admin' or the currently logged-in TM1
-      user, and logs a warning instead.
-  - question: How does the process handle wildcard searches for client deletion?
-    answer: The process creates or re-uses a subset for handling deletion requests
-      that include wildcards.
-  - question: What kind of messages does the process log if it attempts to delete
-      an Admin or the current user?
-    answer: The process logs a warning message if an Admin or the current user is
-      attempted to be deleted.
-- context: Error handling in the process includes logging errors, returning a process
-    return code, and optionally quitting the process if strict error handling is enabled.
-    The process sorts the client dimension after successful execution and logs a success
-    message if no errors occurred.
-  questions_and_answers:
-  - question: What happens if errors are encountered during the process execution?
-    answer: The process logs errors, returns a process error code, and may quit if
-      strict error handling is enabled.
-  - question: What happens after the successful execution of the process?
-    answer: After successful execution, the process sorts the client dimension and
-      logs a success message.
-  - question: Is there any logging of success or error messages?
-    answer: Yes, the process logs both success and error messages depending on the
-      outcome of the execution.
-- context: The Turbo Integrator process is executed within a specific procedural structure
-    containing prolog, metadata, data, and epilog sections. Each section serves a
-    distinct purpose ranging from defining variables and constants to executing the
-    main logic and finalizing the error handling.
-  questions_and_answers:
-  - question: What are the main sections of the Turbo Integrator process?
-    answer: The main sections include the prolog, metadata, data, and epilog, each
-      serving specific purposes such as defining variables and executing logic.
-  - question: What is the purpose of the prolog section in the process?
-    answer: The prolog section is used to define variables, constants, and perform
-      initial setup and validation.
-  - question: What is handled in the epilog section of the process?
-    answer: The epilog section handles final error message logging, process return
-      codes, and potentially quitting the process if errors occurred.
-document_outline: This document provides detailed information about an IBM Turbo Integrator
-  process designed for client deletion, addressing parameters, error handling, and
-  procedural structure.
+  - context: This IBM Turbo Integrator process is designed to delete clients. The
+      use case includes cleaning up users after the system goes live in both
+      development and production environments, as well as removing former
+      employees from the system upon termination. Note that specifying a valid
+      client or multiple clients is mandatory; otherwise, the process will
+      abort. Multiple clients can be specified using a delimiter.
+    questions_and_answers:
+      - question: What is the purpose of the Turbo Integrator process?
+        answer: The Turbo Integrator process is designed to delete clients, clean up
+          users post-go live, and remove former employees upon termination.
+      - question: Is it mandatory to specify valid clients in the process?
+        answer: Yes, specifying a valid client or multiple clients is mandatory;
+          otherwise, the process will abort.
+      - question: How can multiple clients be specified in the process?
+        answer: Multiple clients can be specified using a delimiter.
+  - context: This process will abort if no clients are specified. It logs an error
+      message, and if strict error handling is enabled, it will terminate the
+      process. The process also validates parameters, converts a blank delimiter
+      to a default one, and checks for the existence of necessary attributes in
+      the given dimensions.
+    questions_and_answers:
+      - question: What happens if no clients are specified in the process?
+        answer: If no clients are specified, the process will log an error message and
+          may abort, especially if strict error handling is enabled.
+      - question: What does the process do if a blank delimiter is specified?
+        answer: The process converts a blank delimiter to a default one.
+      - question: Does the process check for the existence of necessary attributes?
+        answer: Yes, the process validates the parameters and checks for the existence
+          of necessary attributes in the given dimensions.
+  - context: During the execution, the process deletes specified clients unless they
+      are 'Admin' or the currently logged-in TM1 user. For wildcard searches,
+      the process creates or re-uses a subset to handle deletion requests with
+      wildcards, and logs appropriate messages if an Admin or the current user
+      is attempted to be deleted.
+    questions_and_answers:
+      - question: Does the process attempt to delete the 'Admin' or the current user?
+        answer: No, the process does not delete 'Admin' or the currently logged-in TM1
+          user, and logs a warning instead.
+      - question: How does the process handle wildcard searches for client deletion?
+        answer: The process creates or re-uses a subset for handling deletion requests
+          that include wildcards.
+      - question: What kind of messages does the process log if it attempts to delete an
+          Admin or the current user?
+        answer: The process logs a warning message if an Admin or the current user is
+          attempted to be deleted.
+  - context: Error handling in the process includes logging errors, returning a
+      process return code, and optionally quitting the process if strict error
+      handling is enabled. The process sorts the client dimension after
+      successful execution and logs a success message if no errors occurred.
+    questions_and_answers:
+      - question: What happens if errors are encountered during the process execution?
+        answer: The process logs errors, returns a process error code, and may quit if
+          strict error handling is enabled.
+      - question: What happens after the successful execution of the process?
+        answer: After successful execution, the process sorts the client dimension and
+          logs a success message.
+      - question: Is there any logging of success or error messages?
+        answer: Yes, the process logs both success and error messages depending on the
+          outcome of the execution.
+  - context: The Turbo Integrator process is executed within a specific procedural
+      structure containing prolog, metadata, data, and epilog sections. Each
+      section serves a distinct purpose ranging from defining variables and
+      constants to executing the main logic and finalizing the error handling.
+    questions_and_answers:
+      - question: What are the main sections of the Turbo Integrator process?
+        answer: The main sections include the prolog, metadata, data, and epilog, each
+          serving specific purposes such as defining variables and executing
+          logic.
+      - question: What is the purpose of the prolog section in the process?
+        answer: The prolog section is used to define variables, constants, and perform
+          initial setup and validation.
+      - question: What is handled in the epilog section of the process?
+        answer: The epilog section handles final error message logging, process return
+          codes, and potentially quitting the process if errors occurred.
+document_outline: This document provides detailed information about an IBM Turbo
+  Integrator process designed for client deletion, addressing parameters, error
+  handling, and procedural structure.
 document:
   repo: https://github.com/GMC2alg/bedrockti.git
   commit: 8c3ed2fbaa5674f3c984a9ed08a1c51f77c2b271

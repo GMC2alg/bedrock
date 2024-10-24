@@ -2,68 +2,72 @@ version: 3
 created_by: GMC2alg
 domain: turbointegrator
 seed_examples:
-- context: 'This process refreshes TM1 security. Use case: Intended for development
-    or production. 1/ Refresh security after new clients or security groups are added.
-    2/ If security cubes have rules and they had to be changed. Note: This can be
-    a time consuming process and may need to be run overnight.'
-  questions_and_answers:
-  - question: What is the primary purpose of the Turbo Integrator process?
-    answer: The primary purpose of the Turbo Integrator process is to refresh TM1
-      security.
-  - question: In which scenarios should the TM1 security refresh process be used?
-    answer: The TM1 security refresh process should be used in scenarios where new
-      clients or security groups are added, or when security cubes have rules that
-      needed to be changed.
-  - question: Is the TM1 security refresh process quick to run?
-    answer: No, the TM1 security refresh process can be time-consuming and may need
-      to be run overnight.
-- context: "##Global Variables StringGlobalVariable('sProcessReturnCode'); NumericGlobalVariable('nProcessReturnCode');
-    nProcessReturnCode= 0;"
-  questions_and_answers:
-  - question: What is 'sProcessReturnCode'?
-    answer: "'sProcessReturnCode' is defined as a global string variable in the
-      process."
-  - question: What does 'nProcessReturnCode' represent?
-    answer: "'nProcessReturnCode' is a numeric global variable initialized to 0,
-      used to track the process return code."
-  - question: Why is 'nProcessReturnCode' initialized to 0?
-    answer: "'nProcessReturnCode' is initialized to 0 to indicate that there are
-      no errors at the start of the process."
-- context: '### End Prolog ### #Section Metadaten #****Begin: Generated Statements***
-    #****End: Generated Statements****'
-  questions_and_answers:
-  - question: What is the purpose of the Prolog section in the code?
-    answer: The Prolog section in the code contains initial setup instructions and
-      variable declarations necessary for the process execution.
-  - question: What follows after the Prolog section in the Turbo Integrator script?
-    answer: After the Prolog section, the code moves to the Metadaten section.
-  - question: Are there any generated statements in the Metadaten section?
-    answer: No, there are no generated statements in the Metadaten section as indicated
-      by the placeholders.
-- context: "## LogOutput parameters IF( pLogoutput = 1 ); LogOutput('INFO', Expand(
-    cLogInfo ) ); ENDIF;"
-  questions_and_answers:
-  - question: What is the purpose of the LogOutput statement in the code?
-    answer: The LogOutput statement is used to log information if the 'pLogoutput'
-      parameter is set to 1, which enables logging.
-  - question: What condition must be met for LogOutput to execute?
-    answer: For LogOutput to execute, 'pLogoutput' must be equal to 1.
-  - question: What information is logged when the condition for LogOutput is met?
-    answer: When the condition is met, a message containing the current process's
-      name and parameters is logged.
-- context: "### Return code & final error message handling If( nErrors > 0 ); sMessage
-    = 'the process incurred at least 1 error. Please see above lines in this file
-    for more details.'; nProcessReturnCode = 0;"
-  questions_and_answers:
-  - question: What does the process do when an error is detected?
-    answer: When an error is detected, it sets a message indicating the presence of
-      errors and assigns 0 to 'nProcessReturnCode'.
-  - question: What value is assigned to 'nProcessReturnCode' when no errors are found?
-    answer: When no errors are found, 'nProcessReturnCode' is set to 1.
-  - question: Where are detailed error logs advised to be checked?
-    answer: Detailed error logs are advised to be checked in the 'tm1server.log' file.
-document_outline: The document outlines the implementation and use of a Turbo Integrator
-  process designed to refresh TM1 security in both development and production environments.
+  - context: "This process refreshes TM1 security. Use case: Intended for
+      development or production. 1/ Refresh security after new clients or
+      security groups are added. 2/ If security cubes have rules and they had to
+      be changed. Note: This can be a time consuming process and may need to be
+      run overnight."
+    questions_and_answers:
+      - question: What is the primary purpose of the Turbo Integrator process?
+        answer: The primary purpose of the Turbo Integrator process is to refresh TM1
+          security.
+      - question: In which scenarios should the TM1 security refresh process be used?
+        answer: The TM1 security refresh process should be used in scenarios where new
+          clients or security groups are added, or when security cubes have
+          rules that needed to be changed.
+      - question: Is the TM1 security refresh process quick to run?
+        answer: No, the TM1 security refresh process can be time-consuming and may need
+          to be run overnight.
+  - context: "##Global Variables StringGlobalVariable('sProcessReturnCode');
+      NumericGlobalVariable('nProcessReturnCode'); nProcessReturnCode= 0;"
+    questions_and_answers:
+      - question: What is 'sProcessReturnCode'?
+        answer: "'sProcessReturnCode' is defined as a global string variable in the
+          process."
+      - question: What does 'nProcessReturnCode' represent?
+        answer: "'nProcessReturnCode' is a numeric global variable initialized to 0,
+          used to track the process return code."
+      - question: Why is 'nProcessReturnCode' initialized to 0?
+        answer: "'nProcessReturnCode' is initialized to 0 to indicate that there are no
+          errors at the start of the process."
+  - context: "### End Prolog ### #Section Metadaten #****Begin: Generated
+      Statements*** #****End: Generated Statements****"
+    questions_and_answers:
+      - question: What is the purpose of the Prolog section in the code?
+        answer: The Prolog section in the code contains initial setup instructions and
+          variable declarations necessary for the process execution.
+      - question: What follows after the Prolog section in the Turbo Integrator script?
+        answer: After the Prolog section, the code moves to the Metadaten section.
+      - question: Are there any generated statements in the Metadaten section?
+        answer: No, there are no generated statements in the Metadaten section as
+          indicated by the placeholders.
+  - context: "## LogOutput parameters IF( pLogoutput = 1 ); LogOutput('INFO',
+      Expand( cLogInfo ) ); ENDIF;"
+    questions_and_answers:
+      - question: What is the purpose of the LogOutput statement in the code?
+        answer: The LogOutput statement is used to log information if the 'pLogoutput'
+          parameter is set to 1, which enables logging.
+      - question: What condition must be met for LogOutput to execute?
+        answer: For LogOutput to execute, 'pLogoutput' must be equal to 1.
+      - question: What information is logged when the condition for LogOutput is met?
+        answer: When the condition is met, a message containing the current process's
+          name and parameters is logged.
+  - context: "### Return code & final error message handling If( nErrors > 0 );
+      sMessage = 'the process incurred at least 1 error. Please see above lines
+      in this file for more details.'; nProcessReturnCode = 0;"
+    questions_and_answers:
+      - question: What does the process do when an error is detected?
+        answer: When an error is detected, it sets a message indicating the presence of
+          errors and assigns 0 to 'nProcessReturnCode'.
+      - question: What value is assigned to 'nProcessReturnCode' when no errors are
+          found?
+        answer: When no errors are found, 'nProcessReturnCode' is set to 1.
+      - question: Where are detailed error logs advised to be checked?
+        answer: Detailed error logs are advised to be checked in the 'tm1server.log'
+          file.
+document_outline: The document outlines the implementation and use of a Turbo
+  Integrator process designed to refresh TM1 security in both development and
+  production environments.
 document:
   repo: https://github.com/GMC2alg/bedrockti.git
   commit: 8c3ed2fbaa5674f3c984a9ed08a1c51f77c2b271

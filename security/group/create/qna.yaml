@@ -2,74 +2,80 @@ version: 3
 created_by: GMC2alg
 domain: turbointegrator
 seed_examples:
-- context: 'This process will create client groups. Use case: Intended for development
-    or production. 1/ Create initial security groups. 2/ Add security groups as business
-    needs change. Note: Naturally, a group (pGroup) is mandatory otherwise the process
-    will abort. Multiple groups can be specified separated by a delimiter. If group
-    already exists then the process will skip that group.'
-  questions_and_answers:
-  - question: What is the primary purpose of this process?
-    answer: The primary purpose of this process is to create client groups, both for
-      development and production use cases.
-  - question: What happens if no group is specified?
-    answer: If no group (pGroup) is specified, the process will abort, as specifying
-      a group is mandatory.
-  - question: Can multiple groups be added at once?
-    answer: Yes, multiple groups can be specified and added at once by separating
-      them with a delimiter.
-- context: Global Variables are used throughout the process. StringGlobalVariable('sProcessReturnCode');
-    NumericGlobalVariable('nProcessReturnCode'); nProcessReturnCode= 0; Constants
-    in the code include cThisProcName, cTimeStamp, cRandomInt, cUserName, cMsgErrorLevel,
-    cMsgErrorContent, and cLogInfo.
-  questions_and_answers:
-  - question: What are some of the global variables used in the process?
-    answer: Some of the global variables used include 'sProcessReturnCode' and 'nProcessReturnCode'.
-  - question: What does the variable nProcessReturnCode represent?
-    answer: The variable nProcessReturnCode is a numeric global variable initialized
-      to 0 and used to indicate the number of errors or the process state.
-  - question: What kind of constants are defined in the process?
-    answer: The constants defined include cThisProcName, cTimeStamp, cRandomInt, cUserName,
-      cMsgErrorLevel, cMsgErrorContent, and cLogInfo.
-- context: The process checks for errors before proceeding. If nErrors <> 0, it will
-    either perform ProcessQuit or ProcessBreak based on the parameter pStrictErrorHandling.
-    LogOutput messages are used to log information or errors depending on the situation.
-  questions_and_answers:
-  - question: What happens if errors are found before the process continues?
-    answer: If errors are found (nErrors <> 0), the process will either quit or break,
-      depending on the pStrictErrorHandling parameter.
-  - question: How is logging used in the process?
-    answer: LogOutput is used to log information or error messages depending on the
-      success or failure of process steps.
-  - question: What is the role of pStrictErrorHandling?
-    answer: The pStrictErrorHandling parameter determines if the process should quit
-      immediately on encountering an error.
-- context: The code handles group creation by splitting groups with a specified delimiter
-    and checking if they exist before adding. If a group already exists, the process
-    skips adding that group.
-  questions_and_answers:
-  - question: How are groups processed in the code?
-    answer: Groups are processed by splitting them with a specified delimiter, and
-      each is checked for existence before adding.
-  - question: What occurs if a group already exists when processing?
-    answer: If a group already exists, the process skips adding that group.
-  - question: Is there a delimiter used in processing groups?
-    answer: Yes, groups are separated and processed using a specified delimiter.
-- context: The process has error and success messaging at the end. If there are errors,
-    a detailed message is logged, and the process might quit if pStrictErrorHandling
-    is enabled. Otherwise, it logs a successful creation of groups.
-  questions_and_answers:
-  - question: What happens if the process ends with errors?
-    answer: If the process ends with errors, a detailed error message is logged, and
-      the process might quit depending on pStrictErrorHandling.
-  - question: How is success indicated in the process?
-    answer: Success is indicated by logging a message stating that the process successfully
-      created the groups.
-  - question: What role does pStrictErrorHandling play in the final error message
-      handling?
-    answer: pStrictErrorHandling determines if the process should quit immediately
-      when errors are detected at the end of the process.
-document_outline: The document describes the steps for creating client groups using
-  a Turbo Integrator process, handling errors, and managing group existence checks.
+  - context: "This process will create client groups. Use case: Intended for
+      development or production. 1/ Create initial security groups. 2/ Add
+      security groups as business needs change. Note: Naturally, a group
+      (pGroup) is mandatory otherwise the process will abort. Multiple groups
+      can be specified separated by a delimiter. If group already exists then
+      the process will skip that group."
+    questions_and_answers:
+      - question: What is the primary purpose of this process?
+        answer: The primary purpose of this process is to create client groups, both for
+          development and production use cases.
+      - question: What happens if no group is specified?
+        answer: If no group (pGroup) is specified, the process will abort, as specifying
+          a group is mandatory.
+      - question: Can multiple groups be added at once?
+        answer: Yes, multiple groups can be specified and added at once by separating
+          them with a delimiter.
+  - context: Global Variables are used throughout the process.
+      StringGlobalVariable('sProcessReturnCode');
+      NumericGlobalVariable('nProcessReturnCode'); nProcessReturnCode= 0;
+      Constants in the code include cThisProcName, cTimeStamp, cRandomInt,
+      cUserName, cMsgErrorLevel, cMsgErrorContent, and cLogInfo.
+    questions_and_answers:
+      - question: What are some of the global variables used in the process?
+        answer: Some of the global variables used include 'sProcessReturnCode' and
+          'nProcessReturnCode'.
+      - question: What does the variable nProcessReturnCode represent?
+        answer: The variable nProcessReturnCode is a numeric global variable initialized
+          to 0 and used to indicate the number of errors or the process state.
+      - question: What kind of constants are defined in the process?
+        answer: The constants defined include cThisProcName, cTimeStamp, cRandomInt,
+          cUserName, cMsgErrorLevel, cMsgErrorContent, and cLogInfo.
+  - context: The process checks for errors before proceeding. If nErrors <> 0, it
+      will either perform ProcessQuit or ProcessBreak based on the parameter
+      pStrictErrorHandling. LogOutput messages are used to log information or
+      errors depending on the situation.
+    questions_and_answers:
+      - question: What happens if errors are found before the process continues?
+        answer: If errors are found (nErrors <> 0), the process will either quit or
+          break, depending on the pStrictErrorHandling parameter.
+      - question: How is logging used in the process?
+        answer: LogOutput is used to log information or error messages depending on the
+          success or failure of process steps.
+      - question: What is the role of pStrictErrorHandling?
+        answer: The pStrictErrorHandling parameter determines if the process should quit
+          immediately on encountering an error.
+  - context: The code handles group creation by splitting groups with a specified
+      delimiter and checking if they exist before adding. If a group already
+      exists, the process skips adding that group.
+    questions_and_answers:
+      - question: How are groups processed in the code?
+        answer: Groups are processed by splitting them with a specified delimiter, and
+          each is checked for existence before adding.
+      - question: What occurs if a group already exists when processing?
+        answer: If a group already exists, the process skips adding that group.
+      - question: Is there a delimiter used in processing groups?
+        answer: Yes, groups are separated and processed using a specified delimiter.
+  - context: The process has error and success messaging at the end. If there are
+      errors, a detailed message is logged, and the process might quit if
+      pStrictErrorHandling is enabled. Otherwise, it logs a successful creation
+      of groups.
+    questions_and_answers:
+      - question: What happens if the process ends with errors?
+        answer: If the process ends with errors, a detailed error message is logged, and
+          the process might quit depending on pStrictErrorHandling.
+      - question: How is success indicated in the process?
+        answer: Success is indicated by logging a message stating that the process
+          successfully created the groups.
+      - question: What role does pStrictErrorHandling play in the final error message
+          handling?
+        answer: pStrictErrorHandling determines if the process should quit immediately
+          when errors are detected at the end of the process.
+document_outline: The document describes the steps for creating client groups
+  using a Turbo Integrator process, handling errors, and managing group
+  existence checks.
 document:
   repo: https://github.com/GMC2alg/bedrockti.git
   commit: 8c3ed2fbaa5674f3c984a9ed08a1c51f77c2b271

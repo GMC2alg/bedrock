@@ -2,89 +2,77 @@ version: 3
 created_by: GMC2alg
 domain: turbointegrator
 seed_examples:
-  - context:
-      "This process replicates an existing cube. It can include data & rules
-      too. Use case: Intended for development/prototyping. 1. Take a snapshot of cube
-      data copying all rules to values. 2. Take an exact copy of a cube in a 'one click
-      action' as a starting point for prototyping rule changes or developing new features."
+  - context: "This process replicates an existing cube. It can include data & rules
+      too. Use case: Intended for development/prototyping. 1. Take a snapshot of
+      cube data copying all rules to values. 2. Take an exact copy of a cube in
+      a 'one click action' as a starting point for prototyping rule changes or
+      developing new features."
     questions_and_answers:
       - question: What is the primary purpose of this process?
-        answer: This process is primarily intended for development and prototyping purposes.
+        answer: This process is primarily intended for development and prototyping
+          purposes.
       - question: Can the process include data and rules?
         answer: Yes, the process can include both data and rules.
       - question: What is the first step in using this process?
-        answer:
-          The first step is taking a snapshot of cube data by copying all rules
-          to values.
-  - context:
-      There are parameter options to include data (pIncludeData) and rules (pIncludeRules)
-      with the creation of the cube. If the source cube (pSrcCube) is left blank or
-      doesn't exist in the model, the process will terminate without doing anything.
-      If the target cube (pTgtCube) already exists in the model, the process will terminate
-      without doing anything.
+        answer: The first step is taking a snapshot of cube data by copying all rules to
+          values.
+  - context: There are parameter options to include data (pIncludeData) and rules
+      (pIncludeRules) with the creation of the cube. If the source cube
+      (pSrcCube) is left blank or doesn't exist in the model, the process will
+      terminate without doing anything. If the target cube (pTgtCube) already
+      exists in the model, the process will terminate without doing anything.
     questions_and_answers:
       - question: What are the parameter options available for this process?
-        answer:
-          The parameter options available are to include data (pIncludeData) and
+        answer: The parameter options available are to include data (pIncludeData) and
           rules (pIncludeRules).
       - question: What happens if the source cube is left blank?
-        answer:
-          If the source cube is left blank or doesn't exist, the process will terminate
-          without doing anything.
+        answer: If the source cube is left blank or doesn't exist, the process will
+          terminate without doing anything.
       - question: Will the process proceed if the target cube already exists?
-        answer:
-          No, the process will terminate without doing anything if the target cube
+        answer: No, the process will terminate without doing anything if the target cube
           already exists.
-  - context:
-      If the target cube is left blank or is the same as the source cube, the
-      cloned cube will inherit the source cube name with '_Clone' appended. If the source
-      cube data only needs to be partially copied, then the pFilter parameter should
-      be entered.
+  - context: If the target cube is left blank or is the same as the source cube, the
+      cloned cube will inherit the source cube name with '_Clone' appended. If
+      the source cube data only needs to be partially copied, then the pFilter
+      parameter should be entered.
     questions_and_answers:
       - question: What happens if the target cube is left blank?
-        answer:
-          If the target cube is left blank, the cloned cube will inherit the source
-          cube name with '_Clone' appended.
+        answer: If the target cube is left blank, the cloned cube will inherit the
+          source cube name with '_Clone' appended.
       - question: How can partial data be copied from the source cube?
-        answer: Partial data can be copied from the source cube by using the pFilter parameter.
+        answer: Partial data can be copied from the source cube by using the pFilter
+          parameter.
       - question: What suffix is appended to the source cube name when cloning?
         answer: The suffix '_Clone' is appended to the source cube name when cloning.
-  - context:
-      In productive systems, this process may be called internally by other processes
-      (}bedrock.cube.data.copy, }bedrock.cube.data.copy.intercube) if copying data via
-      intermediate cloned cubes.
+  - context: In productive systems, this process may be called internally by other
+      processes (}bedrock.cube.data.copy, }bedrock.cube.data.copy.intercube) if
+      copying data via intermediate cloned cubes.
     questions_and_answers:
       - question: Can this process be used in productive systems?
-        answer:
-          Yes, this process can be used in productive systems where it may be called
-          internally by other processes.
+        answer: Yes, this process can be used in productive systems where it may be
+          called internally by other processes.
       - question: Which processes might call this process internally?
-        answer:
-          Processes like }bedrock.cube.data.copy and }bedrock.cube.data.copy.intercube
-          might call this process internally.
+        answer: Processes like }bedrock.cube.data.copy and
+          }bedrock.cube.data.copy.intercube might call this process internally.
       - question: Is this process involved in cloning cubes?
-        answer:
-          Yes, this process can be involved in cloning cubes, sometimes via intermediate
-          cloned cubes.
-  - context:
-      Create an IBM Turbo Integrator process that allows for the replication
-      of an existing cube. The process should offer options to include data and rules.
-      This process mainly serves development and prototyping purposes.
+        answer: Yes, this process can be involved in cloning cubes, sometimes via
+          intermediate cloned cubes.
+  - context: Create an IBM Turbo Integrator process that allows for the replication
+      of an existing cube. The process should offer options to include data and
+      rules. This process mainly serves development and prototyping purposes.
     questions_and_answers:
       - question: What is the primary function of the IBM Turbo Integrator process?
-        answer:
-          The primary function of the IBM Turbo Integrator process is to allow for
+        answer: The primary function of the IBM Turbo Integrator process is to allow for
           the replication of an existing cube.
       - question: Is the IBM Turbo Integrator process suitable for production use?
-        answer:
-          While the process can be used in production environments, it is mainly
+        answer: While the process can be used in production environments, it is mainly
           intended for development and prototyping purposes.
       - question: What options does the process offer for cube replication?
-        answer: The process offers options to include both data and rules for cube replication.
-document_outline:
-  Description and instructions for implementing an IBM Turbo Integrator
-  process to replicate existing cubes, including handling of data and rules for development
-  and prototyping purposes.
+        answer: The process offers options to include both data and rules for cube
+          replication.
+document_outline: Description and instructions for implementing an IBM Turbo
+  Integrator process to replicate existing cubes, including handling of data and
+  rules for development and prototyping purposes.
 document:
   repo: https://github.com/GMC2alg/bedrockti.git
   commit: 8c3ed2fbaa5674f3c984a9ed08a1c51f77c2b271

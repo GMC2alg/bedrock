@@ -2,53 +2,56 @@ version: 3
 created_by: GMC2alg
 domain: turbointegrator
 seed_examples:
-- context: 'This process will create a static subset in the hierarchy of a dimension
-    that consists of all leaf elements. This process uses modification parameters
-    to determine what to include in the subset: - pExclusions: If pExclusions is specified
-    then the elements (separated by a delimiter) will be excluded from the subset.
-    Wildcards characters `*` and `?` are accepted. - pAddToSubset: If the specified
-    subset already exists then this parameter will control whether elements will be
-    added to the existing subset (value 1) or a new subset will be created (value
-    0).'
-  questions_and_answers:
-  - question: What does the Turbo Integrator process create?
-    answer: The Turbo Integrator process creates a static subset in the hierarchy
-      of a dimension that consists of all leaf elements.
-  - question: What is the purpose of the pExclusions parameter?
-    answer: The pExclusions parameter specifies elements to be excluded from the subset,
-      accepting wildcard characters '*' and '?'.
-  - question: How does pAddToSubset affect the creation of subsets?
-    answer: The pAddToSubset parameter determines if elements should be added to the
-      existing subset (value 1) or if a new subset should be created (value 0).
-- context: In the Turbo Integrator code, parameters are logged for process monitoring.
-    A set of global variables, constants, and conditions manage the execution flow.
-    The process uses ExecuteProcess to create subsets and handles errors through return
-    codes and messages.
-  questions_and_answers:
-  - question: How does the Turbo Integrator process handle parameters?
-    answer: The process logs parameters for monitoring, uses global variables, constants,
-      and conditions to manage execution flow.
-  - question: What is ExecuteProcess used for in the code?
-    answer: ExecuteProcess is used to create subsets within the Turbo Integrator code.
-  - question: How are errors managed in the process?
-    answer: Errors are managed through return codes and error messages in the Turbo
-      Integrator process.
-- context: The process determines process success or failure through error checking.
-    If there are errors, an error message is logged, and if strict error handling
-    is specified, the process quits. Successful operations log a completion message.
-  questions_and_answers:
-  - question: What happens if the Turbo Integrator process encounters errors?
-    answer: If there are errors, an error message is logged, and the process may quit
-      if strict error handling is specified.
-  - question: How does the process communicate successful execution?
-    answer: The process logs a completion message if it executes successfully without
-      encountering any errors.
-  - question: What role does strict error handling play?
-    answer: Strict error handling forces the process to quit if errors are encountered
-      during execution.
-document_outline: This document provides a detailed description of a Turbo Integrator
-  process that creates static subsets in dimension hierarchies with options for exclusions
-  and adding to existing subsets.
+  - context: "This process will create a static subset in the hierarchy of a
+      dimension that consists of all leaf elements. This process uses
+      modification parameters to determine what to include in the subset: -
+      pExclusions: If pExclusions is specified then the elements (separated by a
+      delimiter) will be excluded from the subset. Wildcards characters `*` and
+      `?` are accepted. - pAddToSubset: If the specified subset already exists
+      then this parameter will control whether elements will be added to the
+      existing subset (value 1) or a new subset will be created (value 0)."
+    questions_and_answers:
+      - question: What does the Turbo Integrator process create?
+        answer: The Turbo Integrator process creates a static subset in the hierarchy of
+          a dimension that consists of all leaf elements.
+      - question: What is the purpose of the pExclusions parameter?
+        answer: The pExclusions parameter specifies elements to be excluded from the
+          subset, accepting wildcard characters '*' and '?'.
+      - question: How does pAddToSubset affect the creation of subsets?
+        answer: The pAddToSubset parameter determines if elements should be added to the
+          existing subset (value 1) or if a new subset should be created (value
+          0).
+  - context: In the Turbo Integrator code, parameters are logged for process
+      monitoring. A set of global variables, constants, and conditions manage
+      the execution flow. The process uses ExecuteProcess to create subsets and
+      handles errors through return codes and messages.
+    questions_and_answers:
+      - question: How does the Turbo Integrator process handle parameters?
+        answer: The process logs parameters for monitoring, uses global variables,
+          constants, and conditions to manage execution flow.
+      - question: What is ExecuteProcess used for in the code?
+        answer: ExecuteProcess is used to create subsets within the Turbo Integrator
+          code.
+      - question: How are errors managed in the process?
+        answer: Errors are managed through return codes and error messages in the Turbo
+          Integrator process.
+  - context: The process determines process success or failure through error
+      checking. If there are errors, an error message is logged, and if strict
+      error handling is specified, the process quits. Successful operations log
+      a completion message.
+    questions_and_answers:
+      - question: What happens if the Turbo Integrator process encounters errors?
+        answer: If there are errors, an error message is logged, and the process may
+          quit if strict error handling is specified.
+      - question: How does the process communicate successful execution?
+        answer: The process logs a completion message if it executes successfully
+          without encountering any errors.
+      - question: What role does strict error handling play?
+        answer: Strict error handling forces the process to quit if errors are
+          encountered during execution.
+document_outline: This document provides a detailed description of a Turbo
+  Integrator process that creates static subsets in dimension hierarchies with
+  options for exclusions and adding to existing subsets.
 document:
   repo: https://github.com/GMC2alg/bedrockti.git
   commit: 8c3ed2fbaa5674f3c984a9ed08a1c51f77c2b271

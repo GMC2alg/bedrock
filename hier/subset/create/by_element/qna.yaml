@@ -2,73 +2,75 @@ version: 3
 created_by: GMC2alg
 domain: turbointegrator
 seed_examples:
-- context: "This process will create a static subset in a Hierarchy of target Dimension
-    based on a list of supplied elements. - pAddToSubset: If the specified subset
-    already exists then this parameter will control whether elements will be added
-    to the existing subset (value 1) or a new subset will be created (value 0). -
-    pExpandConsol: If the specified list of elements contains consolidated elements
-    they will be replaced with their leaf level descendants. Caution: Process doesn't
-    accept wildcards in element names."
-  questions_and_answers:
-  - question: What does the process do?
-    answer: The process creates a static subset in a Hierarchy of the specified target
-      Dimension based on a list of supplied elements.
-  - question: What happens if pAddToSubset is set to 1?
-    answer: If pAddToSubset is set to 1 and the subset already exists, elements will
-      be added to the existing subset.
-  - question: Can wildcards be used in element names?
-    answer: No, the process does not accept wildcards in element names.
-- context: 'A hierarchy has been passed as dimension. Handle the input error by splitting
-    dim:hier into dimension & hierarchy. Validate dimension: If the dimension does
-    not exist, an error is logged. Validate hierarchy: An error is logged if the hierarchy
-    specified does not exist within the dimension.'
-  questions_and_answers:
-  - question: How is a hierarchy passed as a dimension handled?
-    answer: It is handled by splitting dim:hier into dimension and hierarchy to address
-      the input error.
-  - question: What happens if the dimension does not exist?
-    answer: An error is logged indicating that the dimension is invalid.
-  - question: What occurs if the specified hierarchy does not exist within the dimension?
-    answer: An error is logged indicating an invalid dimension hierarchy.
-- context: "Validate subset: An error is logged if no subset is specified. Validate
-    elements: An error is logged if no elements are specified. Validate delimiter:
-    If no delimiter is set, it defaults to '&'. Validate add to subset: An error
-    is logged if pAddToSubset is not 0 or 1."
-  questions_and_answers:
-  - question: What error is logged if no subset is specified?
-    answer: An error stating 'No subset specified' is logged.
-  - question: What is the default delimiter if none is specified?
-    answer: The default delimiter is '&'.
-  - question: What occurs if pAddToSubset is not 0 or 1?
-    answer: An error is logged indicating an invalid value for pAddToSubset.
-- context: 'Validate expand consolidations: An error is logged if pExpandConsol is
-    not 0, 1, or 2. Validate Alias: Checks are conducted to ensure attributes exist
-    and the alias is valid in the dimension. Validate pTemp: An error is logged if
-    pTemp is not 0 or 1.'
-  questions_and_answers:
-  - question: What are the valid values for pExpandConsol?
-    answer: The valid values are 0, 1, and 2.
-  - question: What validation is performed for an alias?
-    answer: It checks if attributes exist for the dimension and if the alias is valid
-      and is truly an alias within the dimension.
-  - question: What error is logged if pTemp is not 0 or 1?
-    answer: An error is logged indicating a wrong parameter value for pTemp.
-- context: 'Prepare subset: If the subset exists, it checks nSubsetSize based on pAddToSubset.
-    Insert elements: Elements are inserted into the subset while handling consolidated
-    elements based on pExpandConsol parameter.'
-  questions_and_answers:
-  - question: What happens if the subset already exists with pAddToSubset not equal
-      to 1?
-    answer: The elements of the existing subset are deleted before proceeding.
-  - question: How are consolidated elements handled during insertion?
-    answer: Consolidated elements are expanded into their leaf level descendants depending
-      on the pExpandConsol parameter.
-  - question: What is nSubsetSize?
-    answer: nSubsetSize is the size of the subset which is checked to determine the
-      actions based on pAddToSubset.
-document_outline: A detailed description of the Turbo Integrator process for creating
-  a static subset in a hierarchy of a target dimension, including parameter validation
-  and logging.
+  - context: "This process will create a static subset in a Hierarchy of target
+      Dimension based on a list of supplied elements. - pAddToSubset: If the
+      specified subset already exists then this parameter will control whether
+      elements will be added to the existing subset (value 1) or a new subset
+      will be created (value 0). - pExpandConsol: If the specified list of
+      elements contains consolidated elements they will be replaced with their
+      leaf level descendants. Caution: Process doesn't accept wildcards in
+      element names."
+    questions_and_answers:
+      - question: What does the process do?
+        answer: The process creates a static subset in a Hierarchy of the specified
+          target Dimension based on a list of supplied elements.
+      - question: What happens if pAddToSubset is set to 1?
+        answer: If pAddToSubset is set to 1 and the subset already exists, elements will
+          be added to the existing subset.
+      - question: Can wildcards be used in element names?
+        answer: No, the process does not accept wildcards in element names.
+  - context: "A hierarchy has been passed as dimension. Handle the input error by
+      splitting dim:hier into dimension & hierarchy. Validate dimension: If the
+      dimension does not exist, an error is logged. Validate hierarchy: An error
+      is logged if the hierarchy specified does not exist within the dimension."
+    questions_and_answers:
+      - question: How is a hierarchy passed as a dimension handled?
+        answer: It is handled by splitting dim:hier into dimension and hierarchy to
+          address the input error.
+      - question: What happens if the dimension does not exist?
+        answer: An error is logged indicating that the dimension is invalid.
+      - question: What occurs if the specified hierarchy does not exist within the
+          dimension?
+        answer: An error is logged indicating an invalid dimension hierarchy.
+  - context: "Validate subset: An error is logged if no subset is specified.
+      Validate elements: An error is logged if no elements are specified.
+      Validate delimiter: If no delimiter is set, it defaults to '&'. Validate
+      add to subset: An error is logged if pAddToSubset is not 0 or 1."
+    questions_and_answers:
+      - question: What error is logged if no subset is specified?
+        answer: An error stating 'No subset specified' is logged.
+      - question: What is the default delimiter if none is specified?
+        answer: The default delimiter is '&'.
+      - question: What occurs if pAddToSubset is not 0 or 1?
+        answer: An error is logged indicating an invalid value for pAddToSubset.
+  - context: "Validate expand consolidations: An error is logged if pExpandConsol is
+      not 0, 1, or 2. Validate Alias: Checks are conducted to ensure attributes
+      exist and the alias is valid in the dimension. Validate pTemp: An error is
+      logged if pTemp is not 0 or 1."
+    questions_and_answers:
+      - question: What are the valid values for pExpandConsol?
+        answer: The valid values are 0, 1, and 2.
+      - question: What validation is performed for an alias?
+        answer: It checks if attributes exist for the dimension and if the alias is
+          valid and is truly an alias within the dimension.
+      - question: What error is logged if pTemp is not 0 or 1?
+        answer: An error is logged indicating a wrong parameter value for pTemp.
+  - context: "Prepare subset: If the subset exists, it checks nSubsetSize based on
+      pAddToSubset. Insert elements: Elements are inserted into the subset while
+      handling consolidated elements based on pExpandConsol parameter."
+    questions_and_answers:
+      - question: What happens if the subset already exists with pAddToSubset not equal
+          to 1?
+        answer: The elements of the existing subset are deleted before proceeding.
+      - question: How are consolidated elements handled during insertion?
+        answer: Consolidated elements are expanded into their leaf level descendants
+          depending on the pExpandConsol parameter.
+      - question: What is nSubsetSize?
+        answer: nSubsetSize is the size of the subset which is checked to determine the
+          actions based on pAddToSubset.
+document_outline: A detailed description of the Turbo Integrator process for
+  creating a static subset in a hierarchy of a target dimension, including
+  parameter validation and logging.
 document:
   repo: https://github.com/GMC2alg/bedrockti.git
   commit: 8c3ed2fbaa5674f3c984a9ed08a1c51f77c2b271

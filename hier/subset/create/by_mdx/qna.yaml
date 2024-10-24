@@ -2,37 +2,40 @@ version: 3
 created_by: GMC2alg
 domain: turbointegrator
 seed_examples:
-- context: 'The process will create a dynamic subset from an MDX expression that evaluates
-    to a non-empty set in the specified dimension. Intended for Production & Development.
-    Note: Valid dimension name (pDim) is mandatory, otherwise the process will abort.
-    If the MDX does not compile or produces an empty set, the process will error.
-    If convert to static (pConvertToStatic) is set to 1, then the MDX subset will
-    be replaced by a static subset.'
-  questions_and_answers:
-  - question: What is the main function of the Turbo Integrator process described?
-    answer: The main function is to create a dynamic subset from an MDX expression
-      that evaluates to a non-empty set in the specified dimension.
-  - question: In what environments is this Turbo Integrator process intended to be
-      used?
-    answer: This process is intended for use in both Production and Development environments.
-  - question: What happens if an invalid dimension name is provided to the process?
-    answer: The process will abort if an invalid dimension name (pDim) is provided.
-- context: If the MDX does not compile or produces an empty set, an error will occur.
-    If convert to static (pConvertToStatic) is set to 1, the MDX subset will be replaced
-    by a static subset.
-  questions_and_answers:
-  - question: What occurs if the MDX expression does not compile?
-    answer: If the MDX expression does not compile or produces an empty set, an error
-      will occur in the process.
-  - question: What is the function of the 'pConvertToStatic' parameter?
-    answer: If 'pConvertToStatic' is set to 1, the MDX subset will be replaced by
-      a static subset.
-  - question: Does the process replace MDX expressions with static subsets by default?
-    answer: No, replacing MDX expressions with static subsets occurs only if 'pConvertToStatic'
-      is explicitly set to 1.
-document_outline: Instructions for creating a dynamic subset from an MDX expression
-  in an IBM Turbo Integrator process, covering parameter validation, error handling,
-  and subset creation steps.
+  - context: "The process will create a dynamic subset from an MDX expression that
+      evaluates to a non-empty set in the specified dimension. Intended for
+      Production & Development. Note: Valid dimension name (pDim) is mandatory,
+      otherwise the process will abort. If the MDX does not compile or produces
+      an empty set, the process will error. If convert to static
+      (pConvertToStatic) is set to 1, then the MDX subset will be replaced by a
+      static subset."
+    questions_and_answers:
+      - question: What is the main function of the Turbo Integrator process described?
+        answer: The main function is to create a dynamic subset from an MDX expression
+          that evaluates to a non-empty set in the specified dimension.
+      - question: In what environments is this Turbo Integrator process intended to be
+          used?
+        answer: This process is intended for use in both Production and Development
+          environments.
+      - question: What happens if an invalid dimension name is provided to the process?
+        answer: The process will abort if an invalid dimension name (pDim) is provided.
+  - context: If the MDX does not compile or produces an empty set, an error will
+      occur. If convert to static (pConvertToStatic) is set to 1, the MDX subset
+      will be replaced by a static subset.
+    questions_and_answers:
+      - question: What occurs if the MDX expression does not compile?
+        answer: If the MDX expression does not compile or produces an empty set, an
+          error will occur in the process.
+      - question: What is the function of the 'pConvertToStatic' parameter?
+        answer: If 'pConvertToStatic' is set to 1, the MDX subset will be replaced by a
+          static subset.
+      - question: Does the process replace MDX expressions with static subsets by
+          default?
+        answer: No, replacing MDX expressions with static subsets occurs only if
+          'pConvertToStatic' is explicitly set to 1.
+document_outline: Instructions for creating a dynamic subset from an MDX
+  expression in an IBM Turbo Integrator process, covering parameter validation,
+  error handling, and subset creation steps.
 document:
   repo: https://github.com/GMC2alg/bedrockti.git
   commit: 8c3ed2fbaa5674f3c984a9ed08a1c51f77c2b271

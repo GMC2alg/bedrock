@@ -2,59 +2,62 @@ version: 3
 created_by: GMC2alg
 domain: turbointegrator
 seed_examples:
-- context: The Turbo Integrator process is designed to delete a dimension or hierarchy
-    (or a list thereof) in IBM Planning Analytics. It is intended primarily for development
-    and prototyping purposes, helping to clean up unused dimensions/hierarchies after
-    a project goes live. A valid dimension name (pDim) is mandatory; otherwise, the
-    process will abort. If no hierarchy (pHier) is specified, the dimension will be
-    deleted if it is not used by a regular cube. If a hierarchy is specified, it must
-    be valid, or the process will abort.
-  questions_and_answers:
-  - question: What is the primary purpose of the Turbo Integrator process described?
-    answer: The primary purpose of the Turbo Integrator process is for development
-      and prototyping, specifically to delete unused dimensions or hierarchies after
-      a project goes live.
-  - question: What happens if an invalid dimension name is provided?
-    answer: If an invalid dimension name is provided, the process will abort.
-  - question: Under what condition will a dimension be deleted if no hierarchy is
-      specified?
-    answer: A dimension will be deleted if it is not used by a regular cube and no
-      hierarchy is specified.
-- context: In this Turbo Integrator process, several global variables and constants
-    are defined. These include sProcessReturnCode and nProcessReturnCode which are
-    used to track errors during the process execution. The constants cThisProcName,
-    cUserName, cTimeStamp, cRandomInt, cTempSub, cMsgErrorLevel, cMsgErrorContent,
-    cMsgInfoContent, and cLogInfo help manage the logging and process identification
-    aspects, ensuring clear and informative logging throughout the process.
-  questions_and_answers:
-  - question: What is the role of the sProcessReturnCode variable?
-    answer: The sProcessReturnCode variable is used to track errors during the execution
-      of the process.
-  - question: How is logging managed in this Turbo Integrator process?
-    answer: Logging is managed through predefined constants for error and information
-      messages, ensuring clear logging of process events and errors.
-  - question: What is cTimeStamp used for in the process?
-    answer: cTimeStamp is used to create a unique identifier for each process run
-      based on the current time.
-- context: The Turbo Integrator process includes validation to ensure appropriate
-    parameters are provided. It checks if a valid dimension name is given and verifies
-    the existence of specified hierarchies. If any validation check fails, the process
-    logs the error and handles it according to the strictness of the error handling
-    configuration. The process allows optional logging output to keep track of operations
-    and issues.
-  questions_and_answers:
-  - question: What checks are performed during the parameter validation step?
-    answer: The process checks for a valid dimension name and verifies the existence
-      of specified hierarchies.
-  - question: How does the process handle validation errors?
-    answer: The process logs validation errors and handles them based on the strictness
-      of the error handling configuration.
-  - question: Is logging output optional in this process?
-    answer: Yes, the process allows for optional logging output to track operations
-      and issues.
-document_outline: This document details the Turbo Integrator process code for deleting
-  dimensions or hierarchies in IBM Planning Analytics, including its purpose, parameter
-  validation methods, and logging procedures.
+  - context: The Turbo Integrator process is designed to delete a dimension or
+      hierarchy (or a list thereof) in IBM Planning Analytics. It is intended
+      primarily for development and prototyping purposes, helping to clean up
+      unused dimensions/hierarchies after a project goes live. A valid dimension
+      name (pDim) is mandatory; otherwise, the process will abort. If no
+      hierarchy (pHier) is specified, the dimension will be deleted if it is not
+      used by a regular cube. If a hierarchy is specified, it must be valid, or
+      the process will abort.
+    questions_and_answers:
+      - question: What is the primary purpose of the Turbo Integrator process described?
+        answer: The primary purpose of the Turbo Integrator process is for development
+          and prototyping, specifically to delete unused dimensions or
+          hierarchies after a project goes live.
+      - question: What happens if an invalid dimension name is provided?
+        answer: If an invalid dimension name is provided, the process will abort.
+      - question: Under what condition will a dimension be deleted if no hierarchy is
+          specified?
+        answer: A dimension will be deleted if it is not used by a regular cube and no
+          hierarchy is specified.
+  - context: In this Turbo Integrator process, several global variables and
+      constants are defined. These include sProcessReturnCode and
+      nProcessReturnCode which are used to track errors during the process
+      execution. The constants cThisProcName, cUserName, cTimeStamp, cRandomInt,
+      cTempSub, cMsgErrorLevel, cMsgErrorContent, cMsgInfoContent, and cLogInfo
+      help manage the logging and process identification aspects, ensuring clear
+      and informative logging throughout the process.
+    questions_and_answers:
+      - question: What is the role of the sProcessReturnCode variable?
+        answer: The sProcessReturnCode variable is used to track errors during the
+          execution of the process.
+      - question: How is logging managed in this Turbo Integrator process?
+        answer: Logging is managed through predefined constants for error and
+          information messages, ensuring clear logging of process events and
+          errors.
+      - question: What is cTimeStamp used for in the process?
+        answer: cTimeStamp is used to create a unique identifier for each process run
+          based on the current time.
+  - context: The Turbo Integrator process includes validation to ensure appropriate
+      parameters are provided. It checks if a valid dimension name is given and
+      verifies the existence of specified hierarchies. If any validation check
+      fails, the process logs the error and handles it according to the
+      strictness of the error handling configuration. The process allows
+      optional logging output to keep track of operations and issues.
+    questions_and_answers:
+      - question: What checks are performed during the parameter validation step?
+        answer: The process checks for a valid dimension name and verifies the existence
+          of specified hierarchies.
+      - question: How does the process handle validation errors?
+        answer: The process logs validation errors and handles them based on the
+          strictness of the error handling configuration.
+      - question: Is logging output optional in this process?
+        answer: Yes, the process allows for optional logging output to track operations
+          and issues.
+document_outline: This document details the Turbo Integrator process code for
+  deleting dimensions or hierarchies in IBM Planning Analytics, including its
+  purpose, parameter validation methods, and logging procedures.
 document:
   repo: https://github.com/GMC2alg/bedrockti.git
   commit: 8c3ed2fbaa5674f3c984a9ed08a1c51f77c2b271

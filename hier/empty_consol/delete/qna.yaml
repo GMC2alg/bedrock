@@ -2,70 +2,77 @@ version: 3
 created_by: GMC2alg
 domain: turbointegrator
 seed_examples:
-- context: 'This process will delete all consolidated elements with no children in
-    the target Hierarchy. Use case: Service process to clean-up consolidations after
-    dimension changes. Note: Valid target dimension (pDim) must be supplied otherwise
-    the process will terminate. Caution: Target hierarchy (pHier) cannot be `Leaves`.'
-  questions_and_answers:
-  - question: What is the purpose of this Turbo Integrator process?
-    answer: The purpose of this process is to delete all consolidated elements with
-      no children in the target hierarchy as a service process to clean-up consolidations
-      after dimension changes.
-  - question: What is a requirement for using this process?
-    answer: A valid target dimension (pDim) must be supplied; otherwise, the process
-      will terminate.
-  - question: What restriction is placed on the target hierarchy (pHier)?
-    answer: The target hierarchy (pHier) cannot be 'Leaves'.
-- context: Global variables are used, such as sProcessReturnCode and nProcessReturnCode.
-    The process begins by setting nProcessReturnCode to 0, and constants are defined
-    including cThisProcName, cUserName, and cTimeStamp.
-  questions_and_answers:
-  - question: What are some of the global variables used in this process?
-    answer: The process uses global variables such as sProcessReturnCode and nProcessReturnCode.
-  - question: What is the initial value of nProcessReturnCode?
-    answer: The initial value of nProcessReturnCode is set to 0.
-  - question: What constants are defined at the beginning of the process?
-    answer: Constants defined include cThisProcName, cUserName, and cTimeStamp.
-- context: The process logs output parameters and validates parameters such as the
-    target dimension (pDim) and delimiter (pDelim). If any errors are detected during
-    validation, the process takes actions like ProcessQuit or ProcessBreak.
-  questions_and_answers:
-  - question: What does the process do if pDim is not specified?
-    answer: If pDim is not specified, an error is logged, and the error handling logic
-      is initiated.
-  - question: What action is taken if a blank delimiter is specified?
-    answer: If a blank delimiter is specified, it is converted to the default '&'.
-  - question: What logging features are incorporated into the process?
-    answer: The process logs output parameters for validation and errors using constructs
-      like LogOutput.
-- context: The process loops through dimensions defined in pDim, creating subsets
-    and validating hierarchy names. It also checks for and creates hierarchies if
-    required, based on wildcard usage.
-  questions_and_answers:
-  - question: How does the process handle wildcard dimensions?
-    answer: The process creates subsets of dimensions using wildcard patterns to loop
-      through dimensions in pDim.
-  - question: What happens if a hierarchy specified does not exist in a dimension?
-    answer: If a hierarchy specified using a non-wildcard pattern does not exist,
-      it is created by the process.
-  - question: What mechanism is used for dimension validation?
-    answer: Dimension validation is carried out by checking DimensionExists(sDim)
-      and returning errors if necessary.
-- context: The process deletes consolidated elements without children by iterating
-    over dimensions and hierarchies, checking each element's type and child count.
-    End-of-process actions handle final error messages and return codes.
-  questions_and_answers:
-  - question: How does the process identify elements for deletion?
-    answer: The process identifies 'C' type elements with zero children for deletion.
-  - question: What does the process do once it completes the deletion actions?
-    answer: It logs the completion status and handles any remaining errors by setting
-      process return codes and outputs messages.
-  - question: Can you explain the end-of-process error handling?
-    answer: The process checks if nErrors > 0, logs error messages and conditional
-      actions like ProcessQuit if strict error handling is enabled.
-document_outline: This document provides the description and functionality of a Turbo
-  Integrator process designed to clean up consolidated elements without children in
-  specified hierarchies. It includes parameter validation, logging, and error handling.
+  - context: "This process will delete all consolidated elements with no children in
+      the target Hierarchy. Use case: Service process to clean-up consolidations
+      after dimension changes. Note: Valid target dimension (pDim) must be
+      supplied otherwise the process will terminate. Caution: Target hierarchy
+      (pHier) cannot be `Leaves`."
+    questions_and_answers:
+      - question: What is the purpose of this Turbo Integrator process?
+        answer: The purpose of this process is to delete all consolidated elements with
+          no children in the target hierarchy as a service process to clean-up
+          consolidations after dimension changes.
+      - question: What is a requirement for using this process?
+        answer: A valid target dimension (pDim) must be supplied; otherwise, the process
+          will terminate.
+      - question: What restriction is placed on the target hierarchy (pHier)?
+        answer: The target hierarchy (pHier) cannot be 'Leaves'.
+  - context: Global variables are used, such as sProcessReturnCode and
+      nProcessReturnCode. The process begins by setting nProcessReturnCode to 0,
+      and constants are defined including cThisProcName, cUserName, and
+      cTimeStamp.
+    questions_and_answers:
+      - question: What are some of the global variables used in this process?
+        answer: The process uses global variables such as sProcessReturnCode and
+          nProcessReturnCode.
+      - question: What is the initial value of nProcessReturnCode?
+        answer: The initial value of nProcessReturnCode is set to 0.
+      - question: What constants are defined at the beginning of the process?
+        answer: Constants defined include cThisProcName, cUserName, and cTimeStamp.
+  - context: The process logs output parameters and validates parameters such as the
+      target dimension (pDim) and delimiter (pDelim). If any errors are detected
+      during validation, the process takes actions like ProcessQuit or
+      ProcessBreak.
+    questions_and_answers:
+      - question: What does the process do if pDim is not specified?
+        answer: If pDim is not specified, an error is logged, and the error handling
+          logic is initiated.
+      - question: What action is taken if a blank delimiter is specified?
+        answer: If a blank delimiter is specified, it is converted to the default '&'.
+      - question: What logging features are incorporated into the process?
+        answer: The process logs output parameters for validation and errors using
+          constructs like LogOutput.
+  - context: The process loops through dimensions defined in pDim, creating subsets
+      and validating hierarchy names. It also checks for and creates hierarchies
+      if required, based on wildcard usage.
+    questions_and_answers:
+      - question: How does the process handle wildcard dimensions?
+        answer: The process creates subsets of dimensions using wildcard patterns to
+          loop through dimensions in pDim.
+      - question: What happens if a hierarchy specified does not exist in a dimension?
+        answer: If a hierarchy specified using a non-wildcard pattern does not exist, it
+          is created by the process.
+      - question: What mechanism is used for dimension validation?
+        answer: Dimension validation is carried out by checking DimensionExists(sDim)
+          and returning errors if necessary.
+  - context: The process deletes consolidated elements without children by iterating
+      over dimensions and hierarchies, checking each element's type and child
+      count. End-of-process actions handle final error messages and return
+      codes.
+    questions_and_answers:
+      - question: How does the process identify elements for deletion?
+        answer: The process identifies 'C' type elements with zero children for
+          deletion.
+      - question: What does the process do once it completes the deletion actions?
+        answer: It logs the completion status and handles any remaining errors by
+          setting process return codes and outputs messages.
+      - question: Can you explain the end-of-process error handling?
+        answer: The process checks if nErrors > 0, logs error messages and conditional
+          actions like ProcessQuit if strict error handling is enabled.
+document_outline: This document provides the description and functionality of a
+  Turbo Integrator process designed to clean up consolidated elements without
+  children in specified hierarchies. It includes parameter validation, logging,
+  and error handling.
 document:
   repo: https://github.com/GMC2alg/bedrockti.git
   commit: 8c3ed2fbaa5674f3c984a9ed08a1c51f77c2b271

@@ -2,72 +2,77 @@ version: 3
 created_by: GMC2alg
 domain: turbointegrator
 seed_examples:
-- context: "This process will copy security from one user to another. Target client(s)
-    will be created if it doesn't exist. Use case: Intended for production. When
-    a company hires new employees their profile can be set up by cloning an existing
-    employee. Note: A valid source client (pSrcClient) is mandatory otherwise the
-    process will abort. Also, a valid target client(s) (pTgtClient) must be specified,
-    otherwise the process will abort."
-  questions_and_answers:
-  - question: What is the primary function of this Turbo Integrator process?
-    answer: The primary function is to copy security from one user to another and
-      create target clients if they do not exist.
-  - question: When is this process intended to be used?
-    answer: It is intended for use in production, particularly when a company hires
-      new employees and their profiles are set up by cloning an existing employee.
-  - question: Is a source client mandatory for this process?
-    answer: Yes, a valid source client (pSrcClient) is mandatory, otherwise the process
-      will abort.
-- context: Multiple target clients can be specified separated by a delimiter. If target
-    client doesn't already exist then Bedrock.Security.Client.Create will be called.
-    The process has 2 modes REPLACE (default) clears any existing group memberships.
-    ADD only adds new ones.
-  questions_and_answers:
-  - question: How can multiple target clients be specified?
-    answer: Multiple target clients can be specified separated by a delimiter.
-  - question: What happens if a target client does not exist?
-    answer: If a target client does not exist, the process calls Bedrock.Security.Client.Create
-      to create it.
-  - question: What are the two modes of this process and what do they do?
-    answer: 'The process has two modes: REPLACE, which clears any existing group memberships,
-      and ADD, which only adds new ones.'
-- context: The process validates parameters such as pDelim, pMode, pSrcClient, and
-    pTgtClient. It logs errors and aborts if essential parameters are missing or invalid.
-  questions_and_answers:
-  - question: What parameters does the process validate?
-    answer: The process validates parameters like pDelim, pMode, pSrcClient, and pTgtClient.
-  - question: What happens if essential parameters are missing or invalid?
-    answer: The process logs errors and either aborts or handles the error depending
-      on the parameter pStrictErrorHandling.
-  - question: What is the role of pStrictErrorHandling?
-    answer: If pStrictErrorHandling is set to 1, the process will terminate on errors;
-      otherwise, it will break and continue.
-- context: Upon completion, the process logs the final action taken and returns a
-    process return code indicating success or failure.
-  questions_and_answers:
-  - question: How does the process indicate completion?
-    answer: It logs the final action and returns a process return code indicating
-      success or failure.
-  - question: What information is logged upon process completion?
-    answer: The process logs which client was cloned to which target by what mode,
-      along with error details if any.
-  - question: What does a return code of 1 indicate?
-    answer: A return code of 1 indicates the process completed successfully.
-- context: The source code outlines a structured process flow involving parameter
-    validation, client creation, group membership updating, and error handling.
-  questions_and_answers:
-  - question: What is the general flow of the process?
-    answer: The process includes parameter validation, client creation, updating group
-      memberships, and handling errors.
-  - question: How are errors handled during the process?
-    answer: Errors are logged with specific messages, and the process can either quit
-      or continue based on pStrictErrorHandling.
-  - question: Does the process update security group memberships?
-    answer: Yes, the process updates security group memberships for specified target
-      clients based on the mode (ADD or REPLACE).
-document_outline: This document provides an overview of an IBM Turbo Integrator process
-  designed to copy security data from one user to another, ensuring target clients
-  are created if they do not exist.
+  - context: "This process will copy security from one user to another. Target
+      client(s) will be created if it doesn't exist. Use case: Intended for
+      production. When a company hires new employees their profile can be set up
+      by cloning an existing employee. Note: A valid source client (pSrcClient)
+      is mandatory otherwise the process will abort. Also, a valid target
+      client(s) (pTgtClient) must be specified, otherwise the process will
+      abort."
+    questions_and_answers:
+      - question: What is the primary function of this Turbo Integrator process?
+        answer: The primary function is to copy security from one user to another and
+          create target clients if they do not exist.
+      - question: When is this process intended to be used?
+        answer: It is intended for use in production, particularly when a company hires
+          new employees and their profiles are set up by cloning an existing
+          employee.
+      - question: Is a source client mandatory for this process?
+        answer: Yes, a valid source client (pSrcClient) is mandatory, otherwise the
+          process will abort.
+  - context: Multiple target clients can be specified separated by a delimiter. If
+      target client doesn't already exist then Bedrock.Security.Client.Create
+      will be called. The process has 2 modes REPLACE (default) clears any
+      existing group memberships. ADD only adds new ones.
+    questions_and_answers:
+      - question: How can multiple target clients be specified?
+        answer: Multiple target clients can be specified separated by a delimiter.
+      - question: What happens if a target client does not exist?
+        answer: If a target client does not exist, the process calls
+          Bedrock.Security.Client.Create to create it.
+      - question: What are the two modes of this process and what do they do?
+        answer: "The process has two modes: REPLACE, which clears any existing group
+          memberships, and ADD, which only adds new ones."
+  - context: The process validates parameters such as pDelim, pMode, pSrcClient, and
+      pTgtClient. It logs errors and aborts if essential parameters are missing
+      or invalid.
+    questions_and_answers:
+      - question: What parameters does the process validate?
+        answer: The process validates parameters like pDelim, pMode, pSrcClient, and
+          pTgtClient.
+      - question: What happens if essential parameters are missing or invalid?
+        answer: The process logs errors and either aborts or handles the error depending
+          on the parameter pStrictErrorHandling.
+      - question: What is the role of pStrictErrorHandling?
+        answer: If pStrictErrorHandling is set to 1, the process will terminate on
+          errors; otherwise, it will break and continue.
+  - context: Upon completion, the process logs the final action taken and returns a
+      process return code indicating success or failure.
+    questions_and_answers:
+      - question: How does the process indicate completion?
+        answer: It logs the final action and returns a process return code indicating
+          success or failure.
+      - question: What information is logged upon process completion?
+        answer: The process logs which client was cloned to which target by what mode,
+          along with error details if any.
+      - question: What does a return code of 1 indicate?
+        answer: A return code of 1 indicates the process completed successfully.
+  - context: The source code outlines a structured process flow involving parameter
+      validation, client creation, group membership updating, and error
+      handling.
+    questions_and_answers:
+      - question: What is the general flow of the process?
+        answer: The process includes parameter validation, client creation, updating
+          group memberships, and handling errors.
+      - question: How are errors handled during the process?
+        answer: Errors are logged with specific messages, and the process can either
+          quit or continue based on pStrictErrorHandling.
+      - question: Does the process update security group memberships?
+        answer: Yes, the process updates security group memberships for specified target
+          clients based on the mode (ADD or REPLACE).
+document_outline: This document provides an overview of an IBM Turbo Integrator
+  process designed to copy security data from one user to another, ensuring
+  target clients are created if they do not exist.
 document:
   repo: https://github.com/GMC2alg/bedrockti.git
   commit: 8c3ed2fbaa5674f3c984a9ed08a1c51f77c2b271

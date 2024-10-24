@@ -2,76 +2,79 @@ version: 3
 created_by: GMC2alg
 domain: turbointegrator
 seed_examples:
-- context: 'This process can insert one or more attributes in one or more specified
-    dimensions. Use case: Intended for development/prototyping. Add multiple dimension
-    attributes. Delimited lists and/or wildcard (*) are acceptable for pDim & pAttr.
-    Naturally, valid dimension name(s) (pDim) are mandatory otherwise the process
-    will abort. Known limitation: This process can insert multiple attributes to multiple
-    dimensions but only for a single attribute type.'
-  questions_and_answers:
-  - question: What is the primary use case for this Turbo Integrator process?
-    answer: The primary use case is for development and prototyping by inserting multiple
-      attributes into specified dimensions.
-  - question: What are acceptable formats for pDim and pAttr?
-    answer: Delimited lists and/or wildcard (*) are acceptable formats for pDim and
-      pAttr.
-  - question: What is a limitation of this process?
-    answer: This process can add multiple attributes to multiple dimensions but only
-      supports a single attribute type.
-- context: A known limitation of this process is that it can insert multiple attributes
-    to multiple dimensions but only for a single attribute type. Valid dimension names
-    (pDim) are mandatory, otherwise, the process will terminate. The process uses
-    global variables for logging and return codes.
-  questions_and_answers:
-  - question: What happens if an invalid dimension name is provided?
-    answer: If an invalid dimension name is provided, the process will terminate.
-  - question: How does the process handle errors?
-    answer: The process uses global variables for logging errors and determining return
-      codes, potentially terminating if errors occur.
-  - question: What does the process log?
-    answer: The process logs details such as error messages, user information, and
-      process parameters.
-- context: If the parameter for delimiter (pDelim) is blank, it defaults to '&'. The
-    process checks for errors before continuing. If multiple dimensions or attributes
-    are specified with a wildcard, the process will create a subset to loop through
-    the dimensions.
-  questions_and_answers:
-  - question: What is the default delimiter if none is specified?
-    answer: If no delimiter is specified, the default delimiter is '&'.
-  - question: What does the process do when using a wildcard in dimension names?
-    answer: When using a wildcard, the process creates a subset to loop through the
-      dimensions that match the wildcard pattern.
-  - question: Does the process continue if there are errors?
-    answer: The process checks for errors before continuing and may terminate or break
-      if errors are present.
-- context: The process logs errors using a specific error message format and may break
-    or quit if errors occur, depending on strict error handling settings. It provides
-    detailed logging information for debugging purposes.
-  questions_and_answers:
-  - question: What determines whether the process breaks or quits on error?
-    answer: The strict error handling settings determine whether the process breaks
-      or quits when errors occur.
-  - question: What kind of information is logged by the process for debugging?
-    answer: The process logs detailed information such as the process name, user,
-      error messages, and parameters used during execution.
-  - question: Is a specific error message format used in logging?
-    answer: Yes, the process uses a specific error message format for logging errors.
-- context: The process involves looping through dimensions in pDim and attributes
-    in pAttr using specified delimiters. It checks for existing attributes before
-    inserting new ones to prevent duplication.
-  questions_and_answers:
-  - question: How does the process prevent duplication of attributes?
-    answer: The process checks for existing attributes in the dimension before inserting
-      new ones to prevent duplication.
-  - question: How are dimensions and attributes looped through?
-    answer: Dimensions and attributes are looped through using specified delimiters,
-      and subsets are created for wildcard entries.
-  - question: What mechanism is used to handle attribute insertion?
-    answer: The process uses the AttrInsert function to handle attribute insertion
-      if the attribute doesn't already exist.
-document_outline: This document describes a Turbo Integrator process that inserts
-  attributes into dimensions as part of software development and prototyping. It outlines
-  the process's capabilities, limitations, error handling, and logging procedures.
+  - context: "This process can insert one or more attributes in one or more
+      specified dimensions. Use case: Intended for development/prototyping. Add
+      multiple dimension attributes. Delimited lists and/or wildcard (*) are
+      acceptable for pDim & pAttr. Naturally, valid dimension name(s) (pDim) are
+      mandatory otherwise the process will abort. Known limitation: This process
+      can insert multiple attributes to multiple dimensions but only for a
+      single attribute type."
+    questions_and_answers:
+      - question: What is the primary use case for this Turbo Integrator process?
+        answer: The primary use case is for development and prototyping by inserting
+          multiple attributes into specified dimensions.
+      - question: What are acceptable formats for pDim and pAttr?
+        answer: Delimited lists and/or wildcard (*) are acceptable formats for pDim and
+          pAttr.
+      - question: What is a limitation of this process?
+        answer: This process can add multiple attributes to multiple dimensions but only
+          supports a single attribute type.
+  - context: A known limitation of this process is that it can insert multiple
+      attributes to multiple dimensions but only for a single attribute type.
+      Valid dimension names (pDim) are mandatory, otherwise, the process will
+      terminate. The process uses global variables for logging and return codes.
+    questions_and_answers:
+      - question: What happens if an invalid dimension name is provided?
+        answer: If an invalid dimension name is provided, the process will terminate.
+      - question: How does the process handle errors?
+        answer: The process uses global variables for logging errors and determining
+          return codes, potentially terminating if errors occur.
+      - question: What does the process log?
+        answer: The process logs details such as error messages, user information, and
+          process parameters.
+  - context: If the parameter for delimiter (pDelim) is blank, it defaults to '&'.
+      The process checks for errors before continuing. If multiple dimensions or
+      attributes are specified with a wildcard, the process will create a subset
+      to loop through the dimensions.
+    questions_and_answers:
+      - question: What is the default delimiter if none is specified?
+        answer: If no delimiter is specified, the default delimiter is '&'.
+      - question: What does the process do when using a wildcard in dimension names?
+        answer: When using a wildcard, the process creates a subset to loop through the
+          dimensions that match the wildcard pattern.
+      - question: Does the process continue if there are errors?
+        answer: The process checks for errors before continuing and may terminate or
+          break if errors are present.
+  - context: The process logs errors using a specific error message format and may
+      break or quit if errors occur, depending on strict error handling
+      settings. It provides detailed logging information for debugging purposes.
+    questions_and_answers:
+      - question: What determines whether the process breaks or quits on error?
+        answer: The strict error handling settings determine whether the process breaks
+          or quits when errors occur.
+      - question: What kind of information is logged by the process for debugging?
+        answer: The process logs detailed information such as the process name, user,
+          error messages, and parameters used during execution.
+      - question: Is a specific error message format used in logging?
+        answer: Yes, the process uses a specific error message format for logging
+          errors.
+  - context: The process involves looping through dimensions in pDim and attributes
+      in pAttr using specified delimiters. It checks for existing attributes
+      before inserting new ones to prevent duplication.
+    questions_and_answers:
+      - question: How does the process prevent duplication of attributes?
+        answer: The process checks for existing attributes in the dimension before
+          inserting new ones to prevent duplication.
+      - question: How are dimensions and attributes looped through?
+        answer: Dimensions and attributes are looped through using specified delimiters,
+          and subsets are created for wildcard entries.
+      - question: What mechanism is used to handle attribute insertion?
+        answer: The process uses the AttrInsert function to handle attribute insertion
+          if the attribute doesn't already exist.
+document_outline: This document describes a Turbo Integrator process that
+  inserts attributes into dimensions as part of software development and
+  prototyping. It outlines the process's capabilities, limitations, error
+  handling, and logging procedures.
 document:
   repo: https://github.com/GMC2alg/bedrockti.git
   commit: 8c3ed2fbaa5674f3c984a9ed08a1c51f77c2b271
