@@ -2,11 +2,11 @@ version: 3
 created_by: GMC2alg
 domain: turbointegrator
 seed_examples:
-- context: 'This process will delete specified or all elements from a dimension Hierarchy.
+- context: "This process will delete specified or all elements from a dimension Hierarchy.
     Elements might be specified as a delimited list of elements. Each member in the
     list might be specified exactly or by a wildcard pattern. Wildcards '*' and
     '?' are accepted. Caution: When pEle is set to *, __all__ elements in pHier
-    will be deleted!'
+    will be deleted!"
   questions_and_answers:
   - question: What does the process do?
     answer: The process deletes specified or all elements from a dimension hierarchy.
@@ -26,9 +26,9 @@ seed_examples:
       these for deletion.
   - question: Are wildcards allowed in parameter specifications?
     answer: Yes, both '*' and '?' are allowed as wildcards in parameter specifications.
-- context: 'The process includes logging for errors and actions depending on the log
+- context: "The process includes logging for errors and actions depending on the log
     output parameter setting. If there are errors or important actions, the process
-    logs these messages with the appropriate level: 'ERROR' or 'INFO'.'
+    logs these messages with the appropriate level: 'ERROR' or 'INFO'."
   questions_and_answers:
   - question: How does the process handle errors and actions?
     answer: The process logs errors and actions using messages with levels 'ERROR'
@@ -68,4 +68,7 @@ document_outline: This document outlines the usage, functionality, parameters, a
   cautionary details of an IBM Turbo Integrator process for deleting elements from
   dimension hierarchies.
 document:
-  repo: https://raw.githubusercontent.com/GMC2alg/bedrockti/refs/heads/main/processes/%7Dbedrock.hier.element.delete.ti
+  repo: https://github.com/GMC2alg/bedrockti.git
+  commit: 8c3ed2fbaa5674f3c984a9ed08a1c51f77c2b271
+  patterns:
+    - processes/}bedrock.hier.element.delete.ti

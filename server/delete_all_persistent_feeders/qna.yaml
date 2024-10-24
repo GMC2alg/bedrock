@@ -70,4 +70,7 @@ document_outline: This document provides an overview of the Turbo Integrator pro
   designed for deleting persistent feeders, intended for development or production
   environments, with an emphasis on proper configuration and error handling.
 document:
-  repo: https://raw.githubusercontent.com/GMC2alg/bedrockti/refs/heads/main/processes/%7Dbedrock.server.deleteallpersistentfeeders.ti
+  repo: https://github.com/GMC2alg/bedrockti.git
+  commit: 8c3ed2fbaa5674f3c984a9ed08a1c51f77c2b271
+  patterns:
+    - processes/}bedrock.server.deleteallpersistentfeeders.ti

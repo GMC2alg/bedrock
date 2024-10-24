@@ -69,4 +69,7 @@ document_outline: Instructions to create and execute an IBM Turbo Integrator pro
   for deleting cubes, which is especially useful post-development for removing unnecessary
   cubes.
 document:
-  repo: https://raw.githubusercontent.com/GMC2alg/bedrockti/refs/heads/main/processes/%7Dbedrock.cube.delete.ti
+  repo: https://github.com/GMC2alg/bedrockti.git
+  commit: 8c3ed2fbaa5674f3c984a9ed08a1c51f77c2b271
+  patterns:
+    - processes/}bedrock.cube.delete.ti

@@ -28,16 +28,11 @@ seed_examples:
       defined dimensions, as it automates script generation without needing a data
       source or other process parameters.
 - context: '#Section Prolog
-
-
     This process exports a dimension hierarchies as TurboIntegrator script. This is
     rather than creating a CSV which can be read by a generic TurboIntegrator process
     this process creates a hardcoded TurboIntegrator process to create a dimension/hierarchy
     complete with rollup structure, attribute values, subsets and metadata information
-    such as sort order, MDX hierarchy names and levels and captions.
-
-
-    ...'
+    such as sort order, MDX hierarchy names and levels and captions.'
   questions_and_answers:
   - question: What type of script does the TurboIntegrator process generate?
     answer: It generates a hardcoded TurboIntegrator script to create a dimension/hierarchy
@@ -53,4 +48,7 @@ document_outline: The document describes a TurboIntegrator process for exporting
   TM1 dimensions, detailing the script's creation and the process' parameters for
   effective use in various environments.
 document:
-  repo: https://raw.githubusercontent.com/GMC2alg/bedrockti/refs/heads/main/processes/%7Dbedrock.hier.export.script.ti
+  repo: https://github.com/GMC2alg/bedrockti.git
+  commit: 8c3ed2fbaa5674f3c984a9ed08a1c51f77c2b271
+  patterns:
+    - processes/}bedrock.hier.export.script.ti

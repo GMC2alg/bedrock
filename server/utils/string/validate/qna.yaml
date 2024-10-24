@@ -22,12 +22,12 @@ seed_examples:
   - question: What kind of limitations influence pInputString validation?
     answer: pInputString validation is influenced by file system limitations or undesirable
       first characters.
-- context: 'pChanges: This string defines the rule of how to change undesirable characters.
+- context: "pChanges: This string defines the rule of how to change undesirable characters.
     It can be made up of many definitions delimited by pDelim (e.g., '&') which
     is not considered undesirable anywhere. Each definition would contain a character
     considered undesirable and the desired character separated by pSeperator (e.g.,
-    to change a '%' to 'Percentage' and "'" to 'inches', it would be '%,Percentage&',inches'
-    if pDelim = '&' and pSeperator = ',').'
+    to change a '%' to 'Percentage' and ' to 'inches', it would be '%,Percentage&',inches'
+    if pDelim = '&' and pSeperator = ',')."
   questions_and_answers:
   - question: How is pChanges structured in this process?
     answer: pChanges is structured as a string that defines how to change undesirable
@@ -41,10 +41,10 @@ seed_examples:
     answer: pDelim is a character used to separate definitions in pChanges, and pSeperator
       is a character used to separate the current and desired character within each
       definition in pChanges.
-- context: 'pReplaceIfNotFound: This is a catch-all for characters listed in pUndesirableFileSystem
+- context: "pReplaceIfNotFound: This is a catch-all for characters listed in pUndesirableFileSystem
     or pUndesirable1st that don't have a rule in pChanges. pMode: This can be used
     to limit whether the TI looks at pUndesirableFileSystem or pUndesirable1st without
-    having to delete the characters in those parameters.'
+    having to delete the characters in those parameters."
   questions_and_answers:
   - question: What does pReplaceIfNotFound do?
     answer: pReplaceIfNotFound acts as a catch-all for characters listed in pUndesirableFileSystem
@@ -55,8 +55,8 @@ seed_examples:
   - question: Why would pReplaceIfNotFound be used in this process?
     answer: pReplaceIfNotFound provides substitutions for characters that are undesirable
       but don't have specific transformation rules defined in pChanges.
-- context: 'Global Variables: StringGlobalVariable('sProcessReturnCode'); StringGlobalVariable('sOutputString');
-    NumericGlobalVariable('nProcessReturnCode'); nProcessReturnCode = 0;'
+- context: "Global Variables: StringGlobalVariable('sProcessReturnCode'); StringGlobalVariable('sOutputString');
+    NumericGlobalVariable('nProcessReturnCode'); nProcessReturnCode = 0;"
   questions_and_answers:
   - question: What are the global variables initialized in this process?
     answer: The global variables initialized include sProcessReturnCode, sOutputString,
@@ -83,4 +83,7 @@ document_outline: This document outlines the Turbo Integrator process to validat
   and transform input strings based on predefined rules, highlighting error handling,
   global variables, and specific parameter functions.
 document:
-  repo: https://raw.githubusercontent.com/GMC2alg/bedrockti/refs/heads/main/processes/%7Dbedrock.server.util.string.validate.ti
+  repo: https://github.com/GMC2alg/bedrockti.git
+  commit: 8c3ed2fbaa5674f3c984a9ed08a1c51f77c2b271
+  patterns:
+    - processes/}bedrock.server.util.string.validate.ti

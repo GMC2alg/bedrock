@@ -10,7 +10,7 @@ seed_examples:
       Elements, which is a subset of all 'top node' elements, i.e., consolidated elements
       that have no parents.
   - question: What are 'top node' elements in this context?
-    answer: ''Top node' elements are consolidated elements that have no parents.'
+    answer: "'Top node' elements are consolidated elements that have no parents."
   - question: How does the process handle hierarchies?
     answer: The process aims to create a hierarchy from N-Level Elements that form
       a subset of 'top node' elements.
@@ -18,8 +18,8 @@ seed_examples:
     nProcessReturnCode= 0;
   questions_and_answers:
   - question: What are the global variables defined in this process?
-    answer: 'The process defines two global variables: 'sProcessReturnCode' as a
-      string and 'nProcessReturnCode' as a numeric global variable.'
+    answer: "The process defines two global variables: 'sProcessReturnCode' as a
+      string and 'nProcessReturnCode' as a numeric global variable."
   - question: What is the initial value of 'nProcessReturnCode'?
     answer: The initial value of 'nProcessReturnCode' is set to 0.
   - question: How are global variables used in this code?
@@ -32,12 +32,15 @@ seed_examples:
     answer: The 'cLogInfo' constant is a string template for logging information about
       the process run with specific parameters like pDim, pHier, pSub, etc.
   - question: Which parameters' values are logged in 'cLogInfo'?
-    answer: ''cLogInfo' logs the parameter values for pDim, pHier, pSub, pConvertToStatic,
-      pAlias, and pTemp.'
+    answer: "'cLogInfo' logs the parameter values for pDim, pHier, pSub, pConvertToStatic,
+      pAlias, and pTemp."
   - question: How is process information logged in this code?
     answer: Process information is logged using a string template stored in the 'cLogInfo'
       constant, which is populated with runtime parameter values.
 document_outline: A Turbo Integrator process that handles the creation of a top-level
   hierarchy of elements and its validation.
 document:
-  repo: https://raw.githubusercontent.com/GMC2alg/bedrockti/refs/heads/main/processes/%7Dbedrock.hier.sub.create.toplevelhierarchy.ti
+  repo: https://github.com/GMC2alg/bedrockti.git
+  commit: 8c3ed2fbaa5674f3c984a9ed08a1c51f77c2b271
+  patterns:
+    - processes/}bedrock.hier.sub.create.toplevelhierarchy.ti
